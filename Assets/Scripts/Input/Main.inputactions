@@ -15,13 +15,22 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Pause",
+                    "name": "Fire",
                     "type": "Button",
                     "id": "5cd379dc-af9a-479d-83d4-f77c2f5720a0",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Aim",
+                    "type": "Value",
+                    "id": "e558ebf3-25ff-4bd9-bbc0-75e2ce81dbc5",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -138,11 +147,22 @@
                 {
                     "name": "",
                     "id": "0de5937f-bb7a-48a6-a5fe-09830c508bf6",
-                    "path": "<Keyboard>/escape",
+                    "path": "<Keyboard>/space",
                     "interactions": "Press",
                     "processors": "",
-                    "groups": "",
-                    "action": "Pause",
+                    "groups": "Mouse and Keyboard",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d8cfb043-bca7-4c83-84bf-4f329c474a4f",
+                    "path": "<Pointer>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse and Keyboard",
+                    "action": "Aim",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

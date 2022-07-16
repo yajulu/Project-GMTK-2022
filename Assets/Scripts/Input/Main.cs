@@ -39,13 +39,22 @@ namespace Yajulu.Input
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Pause"",
+                    ""name"": ""Fire"",
                     ""type"": ""Button"",
                     ""id"": ""5cd379dc-af9a-479d-83d4-f77c2f5720a0"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Aim"",
+                    ""type"": ""Value"",
+                    ""id"": ""e558ebf3-25ff-4bd9-bbc0-75e2ce81dbc5"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -162,11 +171,22 @@ namespace Yajulu.Input
                 {
                     ""name"": """",
                     ""id"": ""0de5937f-bb7a-48a6-a5fe-09830c508bf6"",
-                    ""path"": ""<Keyboard>/escape"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Pause"",
+                    ""groups"": ""Mouse and Keyboard"",
+                    ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d8cfb043-bca7-4c83-84bf-4f329c474a4f"",
+                    ""path"": ""<Pointer>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse and Keyboard"",
+                    ""action"": ""Aim"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -223,7 +243,8 @@ namespace Yajulu.Input
             // Player
             m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
             m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
-            m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
+            m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
+            m_Player_Aim = m_Player.FindAction("Aim", throwIfNotFound: true);
             // UI
             m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
             m_UI_Pause = m_UI.FindAction("Pause", throwIfNotFound: true);
@@ -287,13 +308,15 @@ namespace Yajulu.Input
         private readonly InputActionMap m_Player;
         private IPlayerActions m_PlayerActionsCallbackInterface;
         private readonly InputAction m_Player_Move;
-        private readonly InputAction m_Player_Pause;
+        private readonly InputAction m_Player_Fire;
+        private readonly InputAction m_Player_Aim;
         public struct PlayerActions
         {
             private @Main m_Wrapper;
             public PlayerActions(@Main wrapper) { m_Wrapper = wrapper; }
             public InputAction @Move => m_Wrapper.m_Player_Move;
-            public InputAction @Pause => m_Wrapper.m_Player_Pause;
+            public InputAction @Fire => m_Wrapper.m_Player_Fire;
+            public InputAction @Aim => m_Wrapper.m_Player_Aim;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -306,9 +329,12 @@ namespace Yajulu.Input
                     @Move.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
                     @Move.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
                     @Move.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
-                    @Pause.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
-                    @Pause.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
-                    @Pause.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
+                    @Fire.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
+                    @Fire.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
+                    @Fire.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
+                    @Aim.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim;
+                    @Aim.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim;
+                    @Aim.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim;
                 }
                 m_Wrapper.m_PlayerActionsCallbackInterface = instance;
                 if (instance != null)
@@ -316,9 +342,12 @@ namespace Yajulu.Input
                     @Move.started += instance.OnMove;
                     @Move.performed += instance.OnMove;
                     @Move.canceled += instance.OnMove;
-                    @Pause.started += instance.OnPause;
-                    @Pause.performed += instance.OnPause;
-                    @Pause.canceled += instance.OnPause;
+                    @Fire.started += instance.OnFire;
+                    @Fire.performed += instance.OnFire;
+                    @Fire.canceled += instance.OnFire;
+                    @Aim.started += instance.OnAim;
+                    @Aim.performed += instance.OnAim;
+                    @Aim.canceled += instance.OnAim;
                 }
             }
         }
@@ -368,7 +397,8 @@ namespace Yajulu.Input
         public interface IPlayerActions
         {
             void OnMove(InputAction.CallbackContext context);
-            void OnPause(InputAction.CallbackContext context);
+            void OnFire(InputAction.CallbackContext context);
+            void OnAim(InputAction.CallbackContext context);
         }
         public interface IUIActions
         {

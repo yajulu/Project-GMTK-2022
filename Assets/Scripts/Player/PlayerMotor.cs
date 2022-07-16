@@ -9,12 +9,13 @@ namespace Player
     [RequireComponent(typeof(PlayerInputController))]
     public class PlayerMotor : MonoBehaviour
     {
-        private PlayerInputController _inputController;
+        private PlayerInputController inputController;
         [SerializeField, MinValue(0)] private float movementSpeed = 10f;
 
+        private Vector2 currentMoveVector;
         private void Awake()
         {
-            _inputController = GetComponent<PlayerInputController>();
+            inputController = GetComponent<PlayerInputController>();
         }
 
         void Start()
@@ -29,7 +30,8 @@ namespace Player
 
         private void HandlePlayerMovement()
         {
-            transform.Translate(_inputController.GetPlayerInput() * (movementSpeed * Time.deltaTime));
+            inputController.GetPlayerInput(out currentMoveVector);
+            transform.Translate(currentMoveVector * (movementSpeed * Time.deltaTime));
         }
 
         [Button]
