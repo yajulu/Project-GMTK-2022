@@ -1,13 +1,12 @@
-using System;
 using DG.Tweening;
 using Essentials;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using Weapons;
 
-namespace Player
+namespace Core
 {
-    public class PlayerMainController : MonoBehaviour
+    public class MainControllerBase : MonoBehaviour
     {
         [SerializeField, ReadOnly, FoldoutGroup("Refs")] private DamageManagerBase damageManager;
 

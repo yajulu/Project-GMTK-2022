@@ -6,9 +6,9 @@ namespace Weapons
 {
     public class DamageManagerBase : MonoBehaviour, IDamageable
     {
-        [SerializeField, ReadOnly] protected int currentHealthPoint;
-        [SerializeField, ReadOnly] private int maxHealthPoints = 100;
-        [SerializeField, ReadOnly] protected bool isDead;
+        [SerializeField] private int maxHealthPoints = 100;
+        [SerializeField, ReadOnly, TitleGroup("Debug")] protected int currentHealthPoint;
+        [SerializeField, ReadOnly, TitleGroup("Debug")] protected bool isDead;
 
         public event Action<int> OnDamageTaken;
         public event Action OnDamageableKilled;
