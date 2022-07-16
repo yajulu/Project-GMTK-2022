@@ -12,17 +12,25 @@ namespace Player.Abilities
         private PlayerInputController inputController;
 
         private Transform weaponTransform;
-        private Vector2 currentMousePosition;
-        private Vector2 currentAimDirection;
-        
+
         private readonly Vector3 upVector = Vector3.back;
-        protected void Awake()
+        protected override void Awake()
         {
-            weapon = GetComponentInChildren<WeaponControllerBase>();
+            base.Awake();
+            weapon = GetComponentInChildren<WeaponControllerBase>(true);
             weaponTransform = weapon.transform;
-            inputController = GetComponent<PlayerInputController>();
         }
-        
+
+        private void OnEnable()
+        {
+            weaponTransform.gameObject.SetActive(true);
+        }
+
+        private void OnDisable()
+        {
+            weaponTransform.gameObject.SetActive(false);
+        }
+
         protected void Start()
         {
         
@@ -32,12 +40,11 @@ namespace Player.Abilities
         {
             AimWeapon();
         }
-
+        
         private void AimWeapon()
         {
-            inputController.GetPlayerWorldMousePosition(out currentMousePosition);
-            currentAimDirection = currentMousePosition - (Vector2) weaponTransform.position;
-            weaponTransform.right = currentAimDirection;
+            UpdateCurrentAimDirection(weaponTransform.position);
+            weaponTransform.right = CurrentAimDirection;
         }
     }
 }

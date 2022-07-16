@@ -39,9 +39,18 @@ namespace Yajulu.Input
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Fire"",
+                    ""name"": ""Dash"",
                     ""type"": ""Button"",
                     ""id"": ""5cd379dc-af9a-479d-83d4-f77c2f5720a0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Field"",
+                    ""type"": ""Button"",
+                    ""id"": ""d2912b68-8467-4c40-93c3-6615f7dc1077"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -55,6 +64,15 @@ namespace Yajulu.Input
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""SwitchAbility"",
+                    ""type"": ""Button"",
+                    ""id"": ""d818150f-0025-43ee-862d-0ab8cd3e8887"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -175,7 +193,7 @@ namespace Yajulu.Input
                     ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": ""Mouse and Keyboard"",
-                    ""action"": ""Fire"",
+                    ""action"": ""Dash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -187,6 +205,28 @@ namespace Yajulu.Input
                     ""processors"": """",
                     ""groups"": ""Mouse and Keyboard"",
                     ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""911641e2-16b9-44cd-a901-eab48439643e"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": ""Mouse and Keyboard"",
+                    ""action"": ""Field"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2360df36-78a7-448a-991f-6ecc7ca16a0a"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": ""Mouse and Keyboard"",
+                    ""action"": ""SwitchAbility"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -243,8 +283,10 @@ namespace Yajulu.Input
             // Player
             m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
             m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
-            m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
+            m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
+            m_Player_Field = m_Player.FindAction("Field", throwIfNotFound: true);
             m_Player_Aim = m_Player.FindAction("Aim", throwIfNotFound: true);
+            m_Player_SwitchAbility = m_Player.FindAction("SwitchAbility", throwIfNotFound: true);
             // UI
             m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
             m_UI_Pause = m_UI.FindAction("Pause", throwIfNotFound: true);
@@ -308,15 +350,19 @@ namespace Yajulu.Input
         private readonly InputActionMap m_Player;
         private IPlayerActions m_PlayerActionsCallbackInterface;
         private readonly InputAction m_Player_Move;
-        private readonly InputAction m_Player_Fire;
+        private readonly InputAction m_Player_Dash;
+        private readonly InputAction m_Player_Field;
         private readonly InputAction m_Player_Aim;
+        private readonly InputAction m_Player_SwitchAbility;
         public struct PlayerActions
         {
             private @Main m_Wrapper;
             public PlayerActions(@Main wrapper) { m_Wrapper = wrapper; }
             public InputAction @Move => m_Wrapper.m_Player_Move;
-            public InputAction @Fire => m_Wrapper.m_Player_Fire;
+            public InputAction @Dash => m_Wrapper.m_Player_Dash;
+            public InputAction @Field => m_Wrapper.m_Player_Field;
             public InputAction @Aim => m_Wrapper.m_Player_Aim;
+            public InputAction @SwitchAbility => m_Wrapper.m_Player_SwitchAbility;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -329,12 +375,18 @@ namespace Yajulu.Input
                     @Move.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
                     @Move.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
                     @Move.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
-                    @Fire.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
-                    @Fire.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
-                    @Fire.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
+                    @Dash.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
+                    @Dash.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
+                    @Dash.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
+                    @Field.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnField;
+                    @Field.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnField;
+                    @Field.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnField;
                     @Aim.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim;
                     @Aim.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim;
                     @Aim.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAim;
+                    @SwitchAbility.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchAbility;
+                    @SwitchAbility.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchAbility;
+                    @SwitchAbility.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchAbility;
                 }
                 m_Wrapper.m_PlayerActionsCallbackInterface = instance;
                 if (instance != null)
@@ -342,12 +394,18 @@ namespace Yajulu.Input
                     @Move.started += instance.OnMove;
                     @Move.performed += instance.OnMove;
                     @Move.canceled += instance.OnMove;
-                    @Fire.started += instance.OnFire;
-                    @Fire.performed += instance.OnFire;
-                    @Fire.canceled += instance.OnFire;
+                    @Dash.started += instance.OnDash;
+                    @Dash.performed += instance.OnDash;
+                    @Dash.canceled += instance.OnDash;
+                    @Field.started += instance.OnField;
+                    @Field.performed += instance.OnField;
+                    @Field.canceled += instance.OnField;
                     @Aim.started += instance.OnAim;
                     @Aim.performed += instance.OnAim;
                     @Aim.canceled += instance.OnAim;
+                    @SwitchAbility.started += instance.OnSwitchAbility;
+                    @SwitchAbility.performed += instance.OnSwitchAbility;
+                    @SwitchAbility.canceled += instance.OnSwitchAbility;
                 }
             }
         }
@@ -397,8 +455,10 @@ namespace Yajulu.Input
         public interface IPlayerActions
         {
             void OnMove(InputAction.CallbackContext context);
-            void OnFire(InputAction.CallbackContext context);
+            void OnDash(InputAction.CallbackContext context);
+            void OnField(InputAction.CallbackContext context);
             void OnAim(InputAction.CallbackContext context);
+            void OnSwitchAbility(InputAction.CallbackContext context);
         }
         public interface IUIActions
         {

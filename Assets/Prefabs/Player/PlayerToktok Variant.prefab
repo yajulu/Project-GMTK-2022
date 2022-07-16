@@ -82,7 +82,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8513044760601494676, guid: da759cea077bc6e4d863d7e434101f79, type: 3}
       propertyPath: m_Name
-      value: PlayerToktok
+      value: PlayerToktok Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8513044760601494682, guid: da759cea077bc6e4d863d7e434101f79, type: 3}
       propertyPath: m_RootOrder

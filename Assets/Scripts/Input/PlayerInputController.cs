@@ -1,4 +1,5 @@
 using System;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Yajulu.Input;
@@ -11,27 +12,27 @@ namespace Input
 
         private Camera mainCamera;
         private Transform mainCameraTransform;
-        private Vector3 currentScreenMousePosition; 
-            
+        private Vector3 currentScreenMousePosition;
+
+        public Main MainInput => mainInput;
+
+        void Awake()
+        {
+            mainInput = new Main();
+        }
+        
         private void OnEnable()
         {
             mainInput.Player.Enable();
             mainCamera = Camera.main;
             if (mainCamera != null) mainCameraTransform = mainCamera.transform;
         }
-
-
-
+        
         private void OnDisable()
         {
             mainInput.Player.Disable();
         }
-
-        void Awake()
-        {
-            mainInput = new Main();
-        }
-
+        
         // Update is called once per frame
         void Update()
         {
@@ -49,8 +50,19 @@ namespace Input
             // currentScreenMousePosition.z = 1000;
             position = mainCamera.ScreenToWorldPoint(currentScreenMousePosition);
         }
-        
 
+        [Button]
+        private void EnableDashAbility()
+        {
+            mainInput.Player.Dash.Enable();
+            mainInput.Player.Field.Disable();
+        }
 
+        [Button]
+        private void EnableFieldAbility()
+        {
+            mainInput.Player.Dash.Disable();
+            mainInput.Player.Field.Enable();
+        }
     }
 }
