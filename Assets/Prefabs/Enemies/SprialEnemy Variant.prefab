@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 622231757269494617, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
       propertyPath: m_Name
-      value: SprialEnemy
+      value: SprialEnemy Variant
       objectReference: {fileID: 0}
     - target: {fileID: 622231757269494622, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
       propertyPath: m_RootOrder
@@ -90,6 +90,10 @@ PrefabInstance:
     - target: {fileID: 3918025737903329793, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3918025737903329793, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.7411765
       objectReference: {fileID: 0}
     - target: {fileID: 3918025737903329793, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[1].time
