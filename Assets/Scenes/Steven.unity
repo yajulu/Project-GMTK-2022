@@ -516,6 +516,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8900739920029294777, guid: b61cdead50b60c243b445510f690ce25, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8900739920029294777, guid: b61cdead50b60c243b445510f690ce25, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b61cdead50b60c243b445510f690ce25, type: 3}
 --- !u!1001 &3711900024974560674
@@ -729,7 +737,7 @@ MonoBehaviour:
     m_Bits: 64
   dashMouseEnable: 0
   isCoolingDown: 0
-  isDashing: 0
+  isPerformingAbility: 0
   coolDownTimer: 0
 --- !u!114 &8513044760382889365
 MonoBehaviour:
@@ -754,7 +762,7 @@ MonoBehaviour:
     m_Bits: 64
   dashMouseEnable: 1
   isCoolingDown: 0
-  isDashing: 0
+  isPerformingAbility: 0
   coolDownTimer: 0
 --- !u!1001 &8697943254285143027
 PrefabInstance:
