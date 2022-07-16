@@ -1,35 +1,51 @@
 using System;
+using DG.Tweening;
+using Essentials;
+using Sirenix.OdinInspector;
 using UnityEngine;
+using Weapons;
 
 namespace Player
 {
-    public class PlayerMainController : MonoBehaviour, IDamageable
+    public class PlayerMainController : MonoBehaviour
     {
-        // Start is called before the first frame update
+        [SerializeField, ReadOnly, FoldoutGroup("Refs")] private DamageManagerBase damageManager;
+
+        [SerializeField, ReadOnly, FoldoutGroup("Refs")]
+        private Transform gfx;
+
+        private Vector3 damageScale;
+
+        private void Awake()
+        {
+            damageScale = Vector3.one * 1.1f;
+        }
+
+        private void OnEnable()
+        {
+            damageManager.OnDamageTaken += DamageManagerOnDamageTaken;
+        }
         void Start()
         {
         
         }
-
-        // Update is called once per frame
+        
         void Update()
         {
         
         }
-
-        public void TakeDamage(int dmg)
+        
+        private void DamageManagerOnDamageTaken(int obj)
         {
-            Debug.Log(dmg);
+            gfx.DOPunchScale(damageScale, 0.2f);
         }
 
-        private void OnCollisionEnter2D(Collision2D col)
+        [Button]
+        private void SetRefs()
         {
-            Debug.Log(col);
+            damageManager = GetComponent<DamageManagerBase>();
+            gfx = transform.FindDeepChild<Transform>("GFX");
         }
-
-        private void OnTriggerEnter2D(Collider2D col)
-        {
-            Debug.Log("Trigger");
-        }
+        
     }
 }
