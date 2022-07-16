@@ -11,7 +11,7 @@ namespace Player
     public class PlayerMotor : MonoBehaviour
     {
         private PlayerInputController inputController;
-        private PlayerAbility ability;
+        private PlayerDashAbility dashAbility;
         
         [SerializeField, MinValue(0)] private float movementSpeed = 10f;
         [SerializeField, ReadOnly, TitleGroup("Debug")] private bool movementPause;
@@ -20,18 +20,18 @@ namespace Player
         private void Awake()
         {
             inputController = GetComponent<PlayerInputController>();
-            ability = GetComponent<PlayerAbility>();
+            dashAbility = GetComponent<PlayerDashAbility>();
         }
 
         private void OnEnable()
         {
-            ability.AbilityPerformed += SetPlayerMovementPause;
+            dashAbility.AbilityPerformed += SetPlayerMovementPause;
             movementPause = false;
         }
 
         private void OnDisable()
         {
-            ability.AbilityPerformed -= SetPlayerMovementPause;
+            dashAbility.AbilityPerformed -= SetPlayerMovementPause;
         }
         
         void Start()
