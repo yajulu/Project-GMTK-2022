@@ -1,10 +1,11 @@
+using System;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Weapons
 {
-    [CreateAssetMenu(menuName = "Weapon/NewWeapon")]
-    public class WeaponConfig : ScriptableObject
+    [Serializable]
+    public class WeaponConfig 
     {
         [SerializeField, MinValue(1)] private int damage;
 

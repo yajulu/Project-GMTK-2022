@@ -9,12 +9,12 @@ namespace Input
         private Main mainInput;
         private void OnEnable()
         {
-            mainInput.Enable();
+            mainInput.Player.Enable();
         }
 
         private void OnDisable()
         {
-            mainInput.Disable();
+            mainInput.Player.Disable();
         }
 
         void Awake()
