@@ -19,9 +19,9 @@ namespace Player
 
         void Start()
         {
-        
+
         }
-        
+
         void Update()
         {
             HandlePlayerMovement();

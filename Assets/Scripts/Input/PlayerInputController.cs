@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using Yajulu.Input;
 
 namespace Input
@@ -11,6 +12,8 @@ namespace Input
         {
             mainInput.Enable();
         }
+
+
 
         private void OnDisable()
         {
@@ -25,12 +28,15 @@ namespace Input
         // Update is called once per frame
         void Update()
         {
-            
+
         }
 
         public Vector2 GetPlayerInput()
         {
             return mainInput.Player.Move.ReadValue<Vector2>();
         }
+
+
+
     }
 }
