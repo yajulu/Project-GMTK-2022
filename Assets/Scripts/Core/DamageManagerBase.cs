@@ -2,7 +2,7 @@ using System;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace Weapons
+namespace Core
 {
     public class DamageManagerBase : MonoBehaviour, IDamageable
     {
@@ -14,13 +14,18 @@ namespace Weapons
         public event Action OnDamageableKilled;
 
         protected bool IsDead => isDead;
-
         public int MaxHealthPoints => maxHealthPoints;
 
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
             InitDamageable();
         }
+
+        protected virtual void OnDisable()
+        {
+            
+        }
+
         protected virtual void InitDamageable()
         {
             currentHealthPoint = maxHealthPoints;
@@ -28,7 +33,7 @@ namespace Weapons
         }
         public virtual void TakeDamage(int dmg)
         {
-            if (isDead)
+            if (isDead || !enabled)
                 return;
             currentHealthPoint -= dmg;
             Debug.Log($"{gameObject.name} took {dmg} damage points, current HP {currentHealthPoint}");

@@ -11,27 +11,27 @@ namespace Input
 
         private Camera mainCamera;
         private Transform mainCameraTransform;
-        private Vector3 currentScreenMousePosition; 
-            
+        private Vector3 currentScreenMousePosition;
+
+        public Main MainInput => mainInput;
+
+        void Awake()
+        {
+            mainInput = new Main();
+        }
+        
         private void OnEnable()
         {
             mainInput.Player.Enable();
             mainCamera = Camera.main;
             if (mainCamera != null) mainCameraTransform = mainCamera.transform;
         }
-
-
-
+        
         private void OnDisable()
         {
             mainInput.Player.Disable();
         }
-
-        void Awake()
-        {
-            mainInput = new Main();
-        }
-
+        
         // Update is called once per frame
         void Update()
         {

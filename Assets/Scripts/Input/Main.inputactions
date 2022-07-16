@@ -15,7 +15,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Fire",
+                    "name": "Dash",
                     "type": "Button",
                     "id": "5cd379dc-af9a-479d-83d4-f77c2f5720a0",
                     "expectedControlType": "Button",
@@ -151,7 +151,7 @@
                     "interactions": "Press",
                     "processors": "",
                     "groups": "Mouse and Keyboard",
-                    "action": "Fire",
+                    "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
