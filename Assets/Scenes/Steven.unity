@@ -401,7 +401,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -490,7 +490,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4260912238789465939, guid: 0f4631a64cd055a4a894269a5bc4f0ec, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.97
+      value: 13.54
       objectReference: {fileID: 0}
     - target: {fileID: 4260912238789465939, guid: 0f4631a64cd055a4a894269a5bc4f0ec, type: 3}
       propertyPath: m_LocalPosition.y
@@ -532,10 +532,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AimEnemy
       objectReference: {fileID: 0}
-    - target: {fileID: 4260912238789465940, guid: 0f4631a64cd055a4a894269a5bc4f0ec, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f4631a64cd055a4a894269a5bc4f0ec, type: 3}
 --- !u!1001 &7590782082899571575
@@ -549,21 +545,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: DiagonalEnemy
       objectReference: {fileID: 0}
-    - target: {fileID: 7058684789700895331, guid: 85e91b89859a5e8479915bdc03f26463, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7058684789700895332, guid: 85e91b89859a5e8479915bdc03f26463, type: 3}
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7058684789700895332, guid: 85e91b89859a5e8479915bdc03f26463, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.81
+      value: 13.54
       objectReference: {fileID: 0}
     - target: {fileID: 7058684789700895332, guid: 85e91b89859a5e8479915bdc03f26463, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.14
+      value: -3.85
       objectReference: {fileID: 0}
     - target: {fileID: 7058684789700895332, guid: 85e91b89859a5e8479915bdc03f26463, type: 3}
       propertyPath: m_LocalPosition.z
@@ -612,11 +604,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7121704832930903522, guid: 732993d8d6fdf1e46ad3aa86abb7ed15, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.81
+      value: 13.54
       objectReference: {fileID: 0}
     - target: {fileID: 7121704832930903522, guid: 732993d8d6fdf1e46ad3aa86abb7ed15, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.14
+      value: 1.19
       objectReference: {fileID: 0}
     - target: {fileID: 7121704832930903522, guid: 732993d8d6fdf1e46ad3aa86abb7ed15, type: 3}
       propertyPath: m_LocalPosition.z
@@ -654,10 +646,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SprialEnemy
       objectReference: {fileID: 0}
-    - target: {fileID: 7121704832930903525, guid: 732993d8d6fdf1e46ad3aa86abb7ed15, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 732993d8d6fdf1e46ad3aa86abb7ed15, type: 3}
 --- !u!1001 &8697943254285143027
@@ -671,21 +659,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: BurstEnemy
       objectReference: {fileID: 0}
-    - target: {fileID: 8697943253664650656, guid: f336195735ca518439207e0983322483, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8697943253664650663, guid: f336195735ca518439207e0983322483, type: 3}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8697943253664650663, guid: f336195735ca518439207e0983322483, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.81
+      value: 13.54
       objectReference: {fileID: 0}
     - target: {fileID: 8697943253664650663, guid: f336195735ca518439207e0983322483, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.14
+      value: 3.79
       objectReference: {fileID: 0}
     - target: {fileID: 8697943253664650663, guid: f336195735ca518439207e0983322483, type: 3}
       propertyPath: m_LocalPosition.z

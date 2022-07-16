@@ -17,11 +17,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 622231757269494622, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.81
+      value: 4.95
       objectReference: {fileID: 0}
     - target: {fileID: 622231757269494622, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.14
+      value: 1.19
       objectReference: {fileID: 0}
     - target: {fileID: 622231757269494622, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
       propertyPath: m_LocalPosition.z
@@ -54,6 +54,18 @@ PrefabInstance:
     - target: {fileID: 622231757269494622, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 622231757332585171, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 622231757332585171, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7467409
+      objectReference: {fileID: 0}
+    - target: {fileID: 622231757332585171, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3918025737903329793, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
       propertyPath: ShapeModule.arc.mode
