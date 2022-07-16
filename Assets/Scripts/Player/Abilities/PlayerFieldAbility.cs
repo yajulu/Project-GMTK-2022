@@ -1,14 +1,13 @@
-using System;
 using UnityEngine;
 
 namespace Player.Abilities
 {
-    public class PlayerDashAbility : PlayerAbility
+    public class PlayerFieldAbility : PlayerAbility
     {
         protected override void Start()
         {
             base.Start();
-            AbilityAction = InputController.MainInput.Player.Dash;
+            AbilityAction = InputController.MainInput.Player.Field;
             AbilityAction.performed += OnAbilityPerformed;
         }
 

@@ -1,4 +1,5 @@
 using System;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Yajulu.Input;
@@ -49,8 +50,19 @@ namespace Input
             // currentScreenMousePosition.z = 1000;
             position = mainCamera.ScreenToWorldPoint(currentScreenMousePosition);
         }
-        
 
+        [Button]
+        private void EnableDashAbility()
+        {
+            mainInput.Player.Dash.Enable();
+            mainInput.Player.Field.Disable();
+        }
 
+        [Button]
+        private void EnableFieldAbility()
+        {
+            mainInput.Player.Dash.Disable();
+            mainInput.Player.Field.Enable();
+        }
     }
 }

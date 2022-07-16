@@ -706,7 +706,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 878243742037264305, guid: b61cdead50b60c243b445510f690ce25, type: 3}
   m_PrefabInstance: {fileID: 878243741753613991}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8513044760382889356
+--- !u!114 &8513044760382889364
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -715,15 +715,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 8513044760382889348}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b6bc9d678bd2674f91dd8f3822179e5, type: 3}
+  m_Script: {fileID: 11500000, guid: 2054e1fafe774cc4a8da74648ca59ebf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashDamage: 10
-  dashDistance: 10
-  dashRadius: 1.5
-  dashDuration: 0.2
-  dashEase: 21
-  coolDown: 1
+  damage: 10
+  distance: 0
+  radius: 5
+  duration: 0
+  ease: 0
+  coolDown: 1.5
+  damageMask:
+    serializedVersion: 2
+    m_Bits: 64
+  dashMouseEnable: 0
+  isCoolingDown: 0
+  isDashing: 0
+  coolDownTimer: 0
+--- !u!114 &8513044760382889365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8513044760382889348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6700b19c75867474ba2f45f7858820d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1000
+  distance: 10
+  radius: 1.5
+  duration: 0.2
+  ease: 21
+  coolDown: 1.5
   damageMask:
     serializedVersion: 2
     m_Bits: 64

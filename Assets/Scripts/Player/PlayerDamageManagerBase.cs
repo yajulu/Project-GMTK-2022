@@ -9,23 +9,23 @@ namespace Player
     public class PlayerDamageManagerBase : DamageManagerBase
     {
         [SerializeField, ReadOnly, TitleGroup("Debug")] protected bool isInvulnerable;
-        private PlayerDashAbility dashAbility;
+        private PlayerAbility ability;
 
         private void Awake()
         {
-            dashAbility = GetComponent<PlayerDashAbility>();
+            ability = GetComponent<PlayerAbility>();
         }
 
         protected override void OnEnable()
         {
             base.OnEnable();
-            dashAbility.DashPerformed += SetInvulnerability;
+            ability.AbilityPerformed += SetInvulnerability;
         }
 
         protected override void OnDisable()
         {
             base.OnDisable();
-            dashAbility.DashPerformed -= SetInvulnerability;
+            ability.AbilityPerformed -= SetInvulnerability;
         }
 
         public override void TakeDamage(int dmg)
