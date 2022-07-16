@@ -2,22 +2,25 @@ using UnityEngine;
 using Yajulu.Input;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using Essentials;
 
-public class UIManager : MonoBehaviour
+public class UIManager : Singleton<UIManager>
 {
 
 
     private Main mainInput;
 
 
+
     [SerializeField]
-    GameObject StartMenuPanel, PauseMenuPanel, HUDPanel;
+    GameObject StartMenuPanel, PauseMenuPanel, HUDPanel, CreditsPanel;
 
     bool isGamePaused;
 
 
-    void Awake()
+    protected override void OnAwake()
     {
+        base.OnAwake();
         mainInput = new Main();
 
     }
@@ -77,11 +80,35 @@ public class UIManager : MonoBehaviour
     }
 
 
+    public void ShowCredits()
+    {
+        if (StartMenuPanel.activeSelf)
+        {
+            StartMenuPanel.SetActive(false);
+            CreditsPanel.SetActive(true);
+
+        }
+    }
+
+    public void CloseCredits()
+    {
+        if (CreditsPanel.activeSelf)
+        {
+            CreditsPanel.SetActive(false);
+            StartMenuPanel.SetActive(true);
+
+
+        }
+    }
+
+
     public void Restart()
     {
         if (PauseMenuPanel.activeSelf)
         {
-            SceneManager.LoadSceneAsync(0).completed += ((AsyncOp) => StartGame());
+
+            SceneManager.LoadScene(0);
+
 
             //Set "Start Game Boolean" here
         }
