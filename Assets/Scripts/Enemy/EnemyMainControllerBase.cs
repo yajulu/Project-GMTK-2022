@@ -1,4 +1,5 @@
 using Core;
+using UI;
 
 namespace Enemy
 {
@@ -18,6 +19,7 @@ namespace Enemy
 
         private void DamageManagerOnOnDamageableKilled()
         {
+            UIManager.Instance.UpdatePlayerScore(1000);
             gameObject.SetActive(false);
             transform.SetParent(null);
             Destroy(gameObject, 5f);

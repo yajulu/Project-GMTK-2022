@@ -1,127 +1,180 @@
+using System;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
-using Yajulu.Input;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using Essentials;
-using TMPro;
-public class UIManager : Singleton<UIManager>
+using Yajulu.Input;
+
+namespace UI
 {
-
-
-    private Main mainInput;
-
-
-
-    [SerializeField]
-    GameObject StartMenuPanel, PauseMenuPanel, HUDPanel, CreditsPanel, TutorialPanel;
-
-    bool isGamePaused;
-    TextMeshProUGUI hintTextBox;
-
-
-    protected override void OnAwake()
+    public class UIManager : Essentials.Singleton<UIManager>
     {
-        base.OnAwake();
-        mainInput = new Main();
 
-    }
-    private void OnEnable()
-    {
-        mainInput.UI.Enable();
-        mainInput.UI.Pause.performed += OnPausePerformed;
-        hintTextBox = TutorialPanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
 
-    }
+        private Main mainInput;
 
-    private void OnPausePerformed(InputAction.CallbackContext obj)
-    {
-        if (!PauseMenuPanel.activeSelf && !StartMenuPanel.activeSelf)
+
+
+        [SerializeField]
+        GameObject StartMenuPanel, PauseMenuPanel, HUDPanel, CreditsPanel, TutorialPanel, GameOverPanel;
+        
+        TextMeshProUGUI hintTextBox;
+
+        private TextMeshProUGUI gameOverScoreText;
+
+        public static event Action TutorialStarted;
+        public static event Action GameStarted;
+        public static event Action GameOver;
+
+        private int currentScore;
+
+        private GameState currentState;
+
+        public int CurrentScore => currentScore;
+
+        public enum GameState
         {
-            PauseMenuPanel.SetActive(true);
+            Initialized,
+            Tutorial,
+            Started, 
+            Paused,
+            Ended
+        }
+
+        protected override void OnAwake()
+        {
+            base.OnAwake();
+            mainInput = new Main();
+            currentState = GameState.Initialized;
+        }
+        private void OnEnable()
+        {
+            mainInput.UI.Enable();
+            mainInput.UI.Pause.performed += OnPausePerformed;
+            hintTextBox = TutorialPanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+
+        }
+
+        private void Start()
+        {
+            currentState = GameState.Tutorial;
+            TutorialStarted?.Invoke();
+        }
+
+        private void OnPausePerformed(InputAction.CallbackContext obj)
+        {
+            if (!PauseMenuPanel.activeSelf && !StartMenuPanel.activeSelf)
+            {
+                PauseMenuPanel.SetActive(true);
+                HUDPanel.SetActive(false);
+                Time.timeScale = 0;
+                //Set "Start Game Boolean" here
+            }
+            else
+            {
+                PauseMenuPanel.SetActive(false);
+                HUDPanel.SetActive(true);
+                Time.timeScale = 1;
+
+            }
+
+
+        }
+
+        public void UpdatePlayerScore(int score)
+        {
+            if (currentState == GameState.Started)
+                currentScore += score;
+        }
+
+        private void Update()
+        {
+            if (currentState == GameState.Started)
+                UpdatePlayerScore((int) (1000 * Time.deltaTime));
+        }
+
+        public void StartGame()
+        {
+            Debug.Log("Started");
+
+            if (StartMenuPanel.activeSelf)
+            {
+                StartMenuPanel.SetActive(false);
+                HUDPanel.SetActive(true);
+                Time.timeScale = 1;
+                currentScore = 0;
+                currentState = GameState.Started;
+                GameStarted?.Invoke();
+            }
+            
+            //Set "Start Game Boolean" here
+        }
+
+
+        public void Resume()
+        {
+            if (PauseMenuPanel.activeSelf)
+            {
+                PauseMenuPanel.SetActive(false);
+                HUDPanel.SetActive(true);
+                Time.timeScale = 1;
+                currentState = GameState.Started;
+                //Set "Start Game Boolean" here
+            }
+        }
+
+        public void StopGame()
+        {
+            currentState = GameState.Ended;
+            gameOverScoreText.text = currentScore.ToString();
             HUDPanel.SetActive(false);
-            Time.timeScale = 0;
-            //Set "Start Game Boolean" here
+            GameOverPanel.SetActive(true);
+            GameOver?.Invoke();
         }
-        else
+
+
+        public void ShowCredits()
         {
-            PauseMenuPanel.SetActive(false);
-            HUDPanel.SetActive(true);
-            Time.timeScale = 1;
+            if (StartMenuPanel.activeSelf)
+            {
+                StartMenuPanel.SetActive(false);
+                CreditsPanel.SetActive(true);
 
+            }
         }
 
-
-    }
-
-    public void StartGame()
-    {
-        Debug.Log("Started");
-
-        if (StartMenuPanel.activeSelf)
+        public void CloseCredits()
         {
-            StartMenuPanel.SetActive(false);
-            HUDPanel.SetActive(true);
-            Time.timeScale = 1;
+            if (CreditsPanel.activeSelf)
+            {
+                CreditsPanel.SetActive(false);
+                StartMenuPanel.SetActive(true);
+
+
+            }
         }
 
 
-
-        //Set "Start Game Boolean" here
-    }
-
-
-    public void Resume()
-    {
-        if (PauseMenuPanel.activeSelf)
+        public void Restart()
         {
-            PauseMenuPanel.SetActive(false);
-            HUDPanel.SetActive(true);
-            Time.timeScale = 1;
-            //Set "Start Game Boolean" here
+            if (PauseMenuPanel.activeSelf)
+            {
+
+                SceneManager.LoadScene(0);
+
+
+                //Set "Start Game Boolean" here
+            }
         }
-    }
 
 
-    public void ShowCredits()
-    {
-        if (StartMenuPanel.activeSelf)
+        public void ShowHint(string hint)
         {
-            StartMenuPanel.SetActive(false);
-            CreditsPanel.SetActive(true);
-
+            hintTextBox.text = hint;
         }
+
+
+
     }
-
-    public void CloseCredits()
-    {
-        if (CreditsPanel.activeSelf)
-        {
-            CreditsPanel.SetActive(false);
-            StartMenuPanel.SetActive(true);
-
-
-        }
-    }
-
-
-    public void Restart()
-    {
-        if (PauseMenuPanel.activeSelf)
-        {
-
-            SceneManager.LoadScene(0);
-
-
-            //Set "Start Game Boolean" here
-        }
-    }
-
-
-    public void ShowHint(string hint)
-    {
-        hintTextBox.text = hint;
-    }
-
-
-
 }

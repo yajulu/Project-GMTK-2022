@@ -4,6 +4,7 @@ using Core;
 using DG.Tweening;
 using Essentials;
 using Sirenix.OdinInspector;
+using UI;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -29,6 +30,23 @@ namespace Enemy
         {
             diceManager = FindObjectOfType<DiceManager>();
             diceManager.EnemyDiceRolled += SwitchEnemies;
+            spawning = false;
+        }
+
+        private void OnEnable()
+        {
+            spawning = false;
+            UIManager.GameStarted += UIManagerOnGameStarted;
+        }
+
+        private void OnDisable()
+        {
+            UIManager.GameStarted -= UIManagerOnGameStarted;
+        }
+
+        private void UIManagerOnGameStarted()
+        {
+            spawning = true;
         }
 
         private void OnDestroy()

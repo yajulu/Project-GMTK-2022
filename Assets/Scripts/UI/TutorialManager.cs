@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Essentials;
 using UnityEngine;
 using Player;
+using UI;
+
 public class TutorialManager : MonoBehaviour
 {
     public string[] hints;

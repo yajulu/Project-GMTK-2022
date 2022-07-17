@@ -3,6 +3,7 @@ using UnityEngine;
 using Core;
 using Player.Abilities;
 using Sirenix.OdinInspector;
+using UI;
 
 namespace Player
 {
@@ -27,14 +28,21 @@ namespace Player
             dashAbility.AbilityPerformed += SetInvulnerability;
             fieldAbility.AbilityPerformed += SetInvulnerability;
             mainController.PlayerTypeChanged += MainControllerOnPlayerTypeChanged;
+            OnDamageableKilled += OnOnDamageableKilled;
         }
-        
+
+        private void OnOnDamageableKilled()
+        {
+            UIManager.Instance.StopGame();
+        }
+
         protected override void OnDisable()
         {
             base.OnDisable();
             dashAbility.AbilityPerformed -= SetInvulnerability;
             fieldAbility.AbilityPerformed -= SetInvulnerability;
             mainController.PlayerTypeChanged -= MainControllerOnPlayerTypeChanged;
+            OnDamageableKilled -= OnOnDamageableKilled;
         }
 
         public override void TakeDamage(int dmg)

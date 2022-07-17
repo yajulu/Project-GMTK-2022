@@ -2,6 +2,7 @@ using System;
 using Core;
 using Player;
 using Sirenix.OdinInspector;
+using UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Yajulu.Input;
@@ -31,13 +32,20 @@ namespace Input
             mainCamera = Camera.main;
             if (mainCamera != null) mainCameraTransform = mainCamera.transform;
             mainController.PlayerTypeChanged += MainControllerOnPlayerTypeChanged;
+            UIManager.GameOver += UIManagerOnGameOver;
             DisableAbilities();
         }
-        
+
+        private void UIManagerOnGameOver()
+        {
+            mainInput.Player.Disable();
+        }
+
         private void OnDisable()
         {
             mainInput.Player.Disable();
             mainController.PlayerTypeChanged -= MainControllerOnPlayerTypeChanged;
+            UIManager.GameOver -= UIManagerOnGameOver;
         }
 
         private void MainControllerOnPlayerTypeChanged(ePlayerType type)
