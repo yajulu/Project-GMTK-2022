@@ -38,6 +38,7 @@ namespace Core
         
         private void DamageManagerOnDamageTaken(int obj)
         {
+            gfx.DOComplete();
             gfx.DOPunchScale(damageScale, 0.2f);
         }
 
