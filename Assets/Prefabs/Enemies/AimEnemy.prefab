@@ -66,7 +66,7 @@ PrefabInstance:
     - target: {fileID: 622231757332585171, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d39736edeaa071b47ab5705ee27391a1, type: 3}
+      objectReference: {fileID: 1778930909, guid: df6a442cca039bd478dab0ab8f6f6574, type: 3}
     - target: {fileID: 622231757332585171, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -78,6 +78,26 @@ PrefabInstance:
     - target: {fileID: 622231757332585171, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3918025737903329793, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
+      propertyPath: UVModule.mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3918025737903329793, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
+      propertyPath: UVModule.cycles
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 3918025737903329793, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
+      propertyPath: UVModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3918025737903329793, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
+      propertyPath: UVModule.timeMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3918025737903329793, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
+      propertyPath: UVModule.sprites.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3918025737903329793, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
       propertyPath: InitialModule.startSize.scalar
@@ -98,6 +118,26 @@ PrefabInstance:
     - target: {fileID: 3918025737903329793, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
       value: 0.4784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 3918025737903329793, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
+      propertyPath: UVModule.sprites.Array.data[0].sprite
+      value: 
+      objectReference: {fileID: -1333620758, guid: abbf13a2267d47f4c82428a1faf2b868, type: 3}
+    - target: {fileID: 3918025737903329793, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
+      propertyPath: UVModule.sprites.Array.data[1].sprite
+      value: 
+      objectReference: {fileID: 840594132, guid: abbf13a2267d47f4c82428a1faf2b868, type: 3}
+    - target: {fileID: 3918025737903329793, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
+      propertyPath: UVModule.sprites.Array.data[2].sprite
+      value: 
+      objectReference: {fileID: 1709163274, guid: abbf13a2267d47f4c82428a1faf2b868, type: 3}
+    - target: {fileID: 3918025737903329793, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
+      propertyPath: UVModule.sprites.Array.data[3].sprite
+      value: 
+      objectReference: {fileID: -1851144604, guid: abbf13a2267d47f4c82428a1faf2b868, type: 3}
+    - target: {fileID: 3918025737903329806, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6213646448164102773, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
       propertyPath: m_Size.x
@@ -143,3 +183,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 10
   weaponTransform: {fileID: 422439797562945026}
+--- !u!1 &4260912238852597456 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 622231757332585181, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
+  m_PrefabInstance: {fileID: 3711900023125638157}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1587031533234713095
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4260912238852597456}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 24f688ff068b9ac48b34bf811b7228b8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

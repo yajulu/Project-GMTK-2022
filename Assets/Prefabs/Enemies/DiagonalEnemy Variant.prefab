@@ -74,7 +74,7 @@ PrefabInstance:
     - target: {fileID: 622231757332585171, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: ae15f2b6443e4374f86d0000620a3d9e, type: 3}
+      objectReference: {fileID: 1351613857, guid: e30599935109d9f45b249415e0580934, type: 3}
     - target: {fileID: 622231757332585171, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -88,8 +88,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3918025737903329793, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
+      propertyPath: UVModule.mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3918025737903329793, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
+      propertyPath: UVModule.cycles
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 3918025737903329793, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
+      propertyPath: UVModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3918025737903329793, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
       propertyPath: EmissionModule.m_BurstCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3918025737903329793, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
+      propertyPath: UVModule.sprites.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3918025737903329793, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
       propertyPath: InitialModule.startSize.scalar
@@ -111,6 +127,22 @@ PrefabInstance:
       propertyPath: InitialModule.startColor.maxColor.r
       value: 0.70980394
       objectReference: {fileID: 0}
+    - target: {fileID: 3918025737903329793, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
+      propertyPath: UVModule.sprites.Array.data[0].sprite
+      value: 
+      objectReference: {fileID: 1272596931, guid: 15b05d8c5511f864fa30a51230fdbaea, type: 3}
+    - target: {fileID: 3918025737903329793, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
+      propertyPath: UVModule.sprites.Array.data[1].sprite
+      value: 
+      objectReference: {fileID: -356163428, guid: 15b05d8c5511f864fa30a51230fdbaea, type: 3}
+    - target: {fileID: 3918025737903329793, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
+      propertyPath: UVModule.sprites.Array.data[2].sprite
+      value: 
+      objectReference: {fileID: -429889747, guid: 15b05d8c5511f864fa30a51230fdbaea, type: 3}
+    - target: {fileID: 3918025737903329793, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
+      propertyPath: UVModule.sprites.Array.data[3].sprite
+      value: 
+      objectReference: {fileID: 1560125478, guid: 15b05d8c5511f864fa30a51230fdbaea, type: 3}
     - target: {fileID: 3918025737903329793, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[1].time
       value: 0.5
@@ -249,3 +281,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
+--- !u!1 &7058684789646578663 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 622231757332585181, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
+  m_PrefabInstance: {fileID: 7590782083720595770}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2797533799149159981
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7058684789646578663}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ca035e09c2cd70e499e7ce04e7c37987, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
