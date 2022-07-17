@@ -3,7 +3,7 @@ using Yajulu.Input;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using Essentials;
-
+using TMPro;
 public class UIManager : Singleton<UIManager>
 {
 
@@ -13,9 +13,10 @@ public class UIManager : Singleton<UIManager>
 
 
     [SerializeField]
-    GameObject StartMenuPanel, PauseMenuPanel, HUDPanel, CreditsPanel;
+    GameObject StartMenuPanel, PauseMenuPanel, HUDPanel, CreditsPanel, TutorialPanel;
 
     bool isGamePaused;
+    TextMeshProUGUI hintTextBox;
 
 
     protected override void OnAwake()
@@ -28,6 +29,7 @@ public class UIManager : Singleton<UIManager>
     {
         mainInput.UI.Enable();
         mainInput.UI.Pause.performed += OnPausePerformed;
+        hintTextBox = TutorialPanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
 
     }
 
@@ -112,6 +114,12 @@ public class UIManager : Singleton<UIManager>
 
             //Set "Start Game Boolean" here
         }
+    }
+
+
+    public void ShowHint(string hint)
+    {
+        hintTextBox.text = hint;
     }
 
 
