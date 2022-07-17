@@ -1,6 +1,7 @@
 using System;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Core
 {
@@ -12,6 +13,8 @@ namespace Core
 
         public event Action<int> OnDamageTaken;
         public event Action OnDamageableKilled;
+
+        public UnityEvent OnDamageableKilledUnityEvent;
 
         protected bool IsDead => isDead;
         public int MaxHealthPoints => maxHealthPoints;
@@ -50,6 +53,7 @@ namespace Core
         {
             isDead = true;
             Debug.Log($"{gameObject.name} is Dead.");
+            OnDamageableKilledUnityEvent?.Invoke();
             OnDamageableKilled?.Invoke();
         }
         

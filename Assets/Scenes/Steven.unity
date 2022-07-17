@@ -504,26 +504,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5619642585818367535, guid: b61cdead50b60c243b445510f690ce25, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8153822770657122853, guid: b61cdead50b60c243b445510f690ce25, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8513044760382889349, guid: b61cdead50b60c243b445510f690ce25, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8900739920029294777, guid: b61cdead50b60c243b445510f690ce25, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8900739920029294777, guid: b61cdead50b60c243b445510f690ce25, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b61cdead50b60c243b445510f690ce25, type: 3}
 --- !u!1001 &3711900024974560674
@@ -709,61 +689,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 732993d8d6fdf1e46ad3aa86abb7ed15, type: 3}
---- !u!1 &8513044760382889348 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 878243742037264305, guid: b61cdead50b60c243b445510f690ce25, type: 3}
-  m_PrefabInstance: {fileID: 878243741753613991}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8513044760382889364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8513044760382889348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2054e1fafe774cc4a8da74648ca59ebf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 10
-  distance: 0
-  radius: 5
-  duration: 0
-  ease: 0
-  coolDown: 1.5
-  damageMask:
-    serializedVersion: 2
-    m_Bits: 64
-  dashMouseEnable: 0
-  isCoolingDown: 0
-  isPerformingAbility: 0
-  coolDownTimer: 0
---- !u!114 &8513044760382889365
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8513044760382889348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6700b19c75867474ba2f45f7858820d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1000
-  distance: 10
-  radius: 1.5
-  duration: 0.2
-  ease: 21
-  coolDown: 1.5
-  damageMask:
-    serializedVersion: 2
-    m_Bits: 64
-  dashMouseEnable: 1
-  isCoolingDown: 0
-  isPerformingAbility: 0
-  coolDownTimer: 0
 --- !u!1001 &8697943254285143027
 PrefabInstance:
   m_ObjectHideFlags: 0

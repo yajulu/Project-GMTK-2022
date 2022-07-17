@@ -15,6 +15,7 @@ namespace Player
         private void Awake()
         {
             dashAbility = GetComponent<PlayerDashAbility>();
+            fieldAbility = GetComponent<PlayerFieldAbility>();
         }
 
         protected override void OnEnable()
