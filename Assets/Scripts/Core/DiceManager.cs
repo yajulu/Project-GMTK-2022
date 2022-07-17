@@ -73,7 +73,7 @@ namespace Core
 
         private void Update()
         {
-            if (UIManager.Instance.CurrentGameState == UIManager.GameState.Started)
+            if (UIManager.Instance.CurrentGameState != UIManager.GameState.Started)
                 return;
             if (timer < 0)
             {
