@@ -1,4 +1,5 @@
 using System;
+using Core;
 using Input;
 using Player.Abilities;
 using Sirenix.OdinInspector;
@@ -12,6 +13,7 @@ namespace Player
     {
         private PlayerInputController inputController;
         private PlayerDashAbility dashAbility;
+        private PlayerMainControllerBase mainController;
         
         [SerializeField, MinValue(0)] private float movementSpeed = 10f;
         [SerializeField, ReadOnly, TitleGroup("Debug")] private bool movementPause;
@@ -21,17 +23,21 @@ namespace Player
         {
             inputController = GetComponent<PlayerInputController>();
             dashAbility = GetComponent<PlayerDashAbility>();
+            mainController = GetComponent<PlayerMainControllerBase>();
         }
 
         private void OnEnable()
         {
             dashAbility.AbilityPerformed += SetPlayerMovementPause;
+            mainController.PlayerTypeChanged += MainControllerOnPlayerTypeChanged;
             movementPause = false;
         }
 
+   
         private void OnDisable()
         {
             dashAbility.AbilityPerformed -= SetPlayerMovementPause;
+            mainController.PlayerTypeChanged -= MainControllerOnPlayerTypeChanged;
         }
         
         void Start()
@@ -48,7 +54,11 @@ namespace Player
         {
             movementPause = pause;
         }
-
+        
+        private void MainControllerOnPlayerTypeChanged(ePlayerType type)
+        {
+            movementSpeed = mainController.PlayerDict[type].MovementSpeed;
+        }
 
         private void HandlePlayerMovement()
         {

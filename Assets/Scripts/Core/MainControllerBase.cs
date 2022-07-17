@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using Essentials;
 using Sirenix.OdinInspector;
@@ -24,11 +25,12 @@ namespace Core
         {
             damageManager.OnDamageTaken += DamageManagerOnDamageTaken;
         }
-        void Start()
+
+        protected virtual void Start()
         {
-        
+            
         }
-        
+
         void Update()
         {
         

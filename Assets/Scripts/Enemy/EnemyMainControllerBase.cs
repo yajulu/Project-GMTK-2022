@@ -7,7 +7,7 @@ namespace Enemy
     public class EnemyMainControllerBase : MainControllerBase
     {
         // Start is called before the first frame update
-        void Start()
+        protected override void Start()
         {
         
         }

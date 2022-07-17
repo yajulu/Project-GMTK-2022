@@ -7,7 +7,7 @@ namespace Core
 {
     public class DamageManagerBase : MonoBehaviour, IDamageable
     {
-        [SerializeField] private int maxHealthPoints = 100;
+        [SerializeField] protected int maxHealthPoints = 100;
         [SerializeField, ReadOnly, TitleGroup("Debug")] protected int currentHealthPoint;
         [SerializeField, ReadOnly, TitleGroup("Debug")] protected bool isDead;
 

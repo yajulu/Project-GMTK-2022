@@ -994,6 +994,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6869873574044560967}
     - target: {fileID: 8513044760601494685, guid: da759cea077bc6e4d863d7e434101f79, type: 3}
+      propertyPath: playerDict.valueData.Array.data[0].graphics
+      value: 
+      objectReference: {fileID: 1965589266373610934}
+    - target: {fileID: 8513044760601494685, guid: da759cea077bc6e4d863d7e434101f79, type: 3}
+      propertyPath: playerDict.valueData.Array.data[1].graphics
+      value: 
+      objectReference: {fileID: 8220724071028326430}
+    - target: {fileID: 8513044760601494685, guid: da759cea077bc6e4d863d7e434101f79, type: 3}
+      propertyPath: playerDict.valueData.Array.data[2].graphics
+      value: 
+      objectReference: {fileID: 2185354578957370722}
+    - target: {fileID: 8513044760601494685, guid: da759cea077bc6e4d863d7e434101f79, type: 3}
       propertyPath: playerDict.valueData.Array.data[0].movementSpeed
       value: 5
       objectReference: {fileID: 0}

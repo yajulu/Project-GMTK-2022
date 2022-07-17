@@ -11,11 +11,14 @@ namespace Player
         [SerializeField, ReadOnly, TitleGroup("Debug")] protected bool isInvulnerable;
         private PlayerDashAbility dashAbility;
         private PlayerFieldAbility fieldAbility;
+        private PlayerMainControllerBase mainController;
 
         private void Awake()
         {
             dashAbility = GetComponent<PlayerDashAbility>();
             fieldAbility = GetComponent<PlayerFieldAbility>();
+            mainController = GetComponent<PlayerMainControllerBase>();
+
         }
 
         protected override void OnEnable()
@@ -23,13 +26,15 @@ namespace Player
             base.OnEnable();
             dashAbility.AbilityPerformed += SetInvulnerability;
             fieldAbility.AbilityPerformed += SetInvulnerability;
+            mainController.PlayerTypeChanged += MainControllerOnPlayerTypeChanged;
         }
-
+        
         protected override void OnDisable()
         {
             base.OnDisable();
             dashAbility.AbilityPerformed -= SetInvulnerability;
             fieldAbility.AbilityPerformed -= SetInvulnerability;
+            mainController.PlayerTypeChanged -= MainControllerOnPlayerTypeChanged;
         }
 
         public override void TakeDamage(int dmg)
@@ -44,5 +49,10 @@ namespace Player
             isInvulnerable = enable;
         }
         
+        private void MainControllerOnPlayerTypeChanged(ePlayerType type)
+        {
+            maxHealthPoints = mainController.PlayerDict[type].MaxHealthPoints;
+            InitDamageable();
+        }
     }
 }
