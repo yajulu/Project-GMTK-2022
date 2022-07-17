@@ -568,11 +568,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7189945480147921123, guid: 7a4eb4a784178e740acdf20875690fac, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.33333334
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7189945480147921123, guid: 7a4eb4a784178e740acdf20875690fac, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.33333334
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7189945480147921123, guid: 7a4eb4a784178e740acdf20875690fac, type: 3}
       propertyPath: m_LocalPosition.x
@@ -674,7 +674,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8513044760601494676, guid: da759cea077bc6e4d863d7e434101f79, type: 3}
       propertyPath: m_Name
-      value: PlayerToktok Variant
+      value: PlayerCombined Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8513044760601494681, guid: da759cea077bc6e4d863d7e434101f79, type: 3}
       propertyPath: m_Size.x
@@ -763,6 +763,56 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8513044760601494676, guid: da759cea077bc6e4d863d7e434101f79, type: 3}
   m_PrefabInstance: {fileID: 8796742956774081317}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &877000291336563207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878243742037264305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6700b19c75867474ba2f45f7858820d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1000
+  distance: 10
+  radius: 1
+  duration: 0.2
+  ease: 21
+  coolDown: 1.5
+  damageMask:
+    serializedVersion: 2
+    m_Bits: 64
+  dashMouseEnable: 1
+  isCoolingDown: 0
+  isPerformingAbility: 0
+  coolDownTimer: 0
+--- !u!114 &2943297775408633339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878243742037264305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2054e1fafe774cc4a8da74648ca59ebf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 50
+  distance: 0
+  radius: 3
+  duration: 2
+  ease: 0
+  coolDown: 1.5
+  damageMask:
+    serializedVersion: 2
+    m_Bits: 64
+  dashMouseEnable: 0
+  isCoolingDown: 0
+  isPerformingAbility: 0
+  coolDownTimer: 0
 --- !u!114 &8513044760382889349
 MonoBehaviour:
   m_ObjectHideFlags: 0
