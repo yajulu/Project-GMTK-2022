@@ -34,6 +34,8 @@ namespace Core
             currentHealthPoint = maxHealthPoints;
             isDead = false;
         }
+        
+        [Button]
         public virtual void TakeDamage(int dmg)
         {
             if (isDead || !enabled)
