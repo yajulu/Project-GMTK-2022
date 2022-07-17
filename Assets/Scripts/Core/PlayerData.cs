@@ -1,4 +1,5 @@
 
+using System;
 using Essentials;
 using UnityEngine;
 
@@ -9,12 +10,19 @@ namespace Core
         
     }
 
+    [Serializable]
     public class PlayerProperties
     {
-        private float movementSpeed;
-        private int damage;
-        // private Vector2
+        [SerializeField] private float movementSpeed;
+        
+        [SerializeField] private int maxHealthPoints;
+        
+        [SerializeField] private Transform gfx;
     }
-    
-    // public class PlayerDataDictionary : UnitySerializedDictionary<ePlayerType, PlayerDa>
+
+    [Serializable]
+    public class PlayerDataDictionary : UnitySerializedDictionary<ePlayerType, PlayerProperties>
+    {
+        
+    }
 }
