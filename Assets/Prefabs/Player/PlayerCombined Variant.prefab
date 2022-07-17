@@ -1209,7 +1209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1000
-  distance: 10
+  distance: 2.5
   radius: 0.6
   duration: 0.2
   ease: 21

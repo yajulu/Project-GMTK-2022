@@ -199,6 +199,17 @@ namespace Yajulu.Input
                 },
                 {
                     ""name"": """",
+                    ""id"": ""d354cf23-be86-46f8-b77a-d1a6d3f47e34"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse and Keyboard"",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""d8cfb043-bca7-4c83-84bf-4f329c474a4f"",
                     ""path"": ""<Pointer>/position"",
                     ""interactions"": """",
@@ -213,6 +224,17 @@ namespace Yajulu.Input
                     ""id"": ""911641e2-16b9-44cd-a901-eab48439643e"",
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": ""Mouse and Keyboard"",
+                    ""action"": ""Field"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9ace9c6f-9e26-47e2-9ffd-fcce0f021879"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Mouse and Keyboard"",
                     ""action"": ""Field"",
