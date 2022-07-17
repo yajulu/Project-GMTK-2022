@@ -39,7 +39,6 @@ namespace Core
         private void Awake()
         {
             playingDices = new List<eDiceType>();
-            mainInput = FindObjectOfType<PlayerInputController>().MainInput;
         }
         
         private void OnDestroy()
@@ -60,6 +59,7 @@ namespace Core
 
         private void Start()
         {
+            mainInput = FindObjectOfType<PlayerInputController>().MainInput;
             mainInput.Player.RollEnemyDice.performed += RollEnemyDiceOnPerformed;
             mainInput.Player.RollPlayerDice.performed += RollPlayerDiceOnPerformed;
             ENEMY_DICE_HASH = Animator.StringToHash(ENEMY_DICE);
