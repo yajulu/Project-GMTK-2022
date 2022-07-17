@@ -9,10 +9,10 @@ namespace Core
 {
     public class MainControllerBase : MonoBehaviour
     {
-        [SerializeField, ReadOnly, FoldoutGroup("Refs")] private DamageManagerBase damageManager;
+        [SerializeField, ReadOnly, FoldoutGroup("Refs")] protected DamageManagerBase damageManager;
 
         [SerializeField, ReadOnly, FoldoutGroup("Refs")]
-        private Transform gfx;
+        protected Transform gfx;
 
         private Vector3 damageScale;
 
@@ -21,9 +21,14 @@ namespace Core
             damageScale = Vector3.one * 1.1f;
         }
 
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
             damageManager.OnDamageTaken += DamageManagerOnDamageTaken;
+        }
+
+        protected virtual void OnDisable()
+        {
+            damageManager.OnDamageTaken -= DamageManagerOnDamageTaken;
         }
 
         protected virtual void Start()

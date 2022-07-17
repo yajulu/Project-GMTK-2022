@@ -1,21 +1,26 @@
 using Core;
-using Player;
-using UnityEngine;
 
 namespace Enemy
 {
     public class EnemyMainControllerBase : MainControllerBase
     {
-        // Start is called before the first frame update
-        protected override void Start()
+        protected override void OnEnable()
         {
-        
+            base.OnEnable();
+            damageManager.OnDamageableKilled += DamageManagerOnOnDamageableKilled;
         }
 
-        // Update is called once per frame
-        void Update()
+        protected override void OnDisable()
         {
-        
+            base.OnDisable();
+            damageManager.OnDamageableKilled -= DamageManagerOnOnDamageableKilled;
+        }
+
+        private void DamageManagerOnOnDamageableKilled()
+        {
+            gameObject.SetActive(false);
+            transform.SetParent(null);
+            Destroy(gameObject, 5f);
         }
     }
 }
