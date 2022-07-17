@@ -18,10 +18,10 @@ namespace UI
 
         [SerializeField]
         GameObject StartMenuPanel, PauseMenuPanel, HUDPanel, CreditsPanel, TutorialPanel, GameOverPanel;
-        
+
         TextMeshProUGUI hintTextBox;
 
-        private TextMeshProUGUI gameOverScoreText;
+        public TextMeshProUGUI gameOverScoreText;
 
         public static event Action TutorialStarted;
         public static event Action GameStarted;
@@ -37,7 +37,7 @@ namespace UI
         {
             Initialized,
             Tutorial,
-            Started, 
+            Started,
             Paused,
             Ended
         }
@@ -91,7 +91,7 @@ namespace UI
         private void Update()
         {
             if (currentState == GameState.Started)
-                UpdatePlayerScore((int) (1000 * Time.deltaTime));
+                UpdatePlayerScore((int)(1000 * Time.deltaTime));
         }
 
         public void StartGame()
@@ -107,7 +107,7 @@ namespace UI
                 currentState = GameState.Started;
                 GameStarted?.Invoke();
             }
-            
+
             //Set "Start Game Boolean" here
         }
 
