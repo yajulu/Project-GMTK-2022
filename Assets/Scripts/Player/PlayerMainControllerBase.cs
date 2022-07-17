@@ -23,7 +23,10 @@ namespace Player
         [Button]
         private void SwitchPlayerType(ePlayerType type)
         {
-            playerDict[currentPlayerType].Graphics.SetActive(false);
+            foreach (var properties in playerDict.Values)
+            {
+                properties.Graphics.SetActive(false);
+            }
             currentPlayerType = type;
             playerDict[currentPlayerType].Graphics.SetActive(true);
             PlayerTypeChanged?.Invoke(currentPlayerType);
