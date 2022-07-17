@@ -6,7 +6,7 @@ public class ParallexEffect : MonoBehaviour
 {
     private float length, startPos;
     public GameObject cam;
-    public float parallexEffect, offset;
+    public float parallexEffect;
 
     void Start()
     {
@@ -20,9 +20,9 @@ public class ParallexEffect : MonoBehaviour
         float temp = (cam.transform.position.x * (1 - parallexEffect));
         float dist = (cam.transform.position.x * parallexEffect);
         transform.position = new Vector3(startPos + dist, transform.position.y, transform.position.z);
-        if (temp > startPos + (length - offset))
+        if (temp > startPos + length)
             startPos += length;
-        else if (temp <= startPos - (length - offset))
+        else if (temp <= startPos - length)
             startPos -= length;
 
 

@@ -494,7 +494,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 458907987}
   parallexEffect: 0.3
-  offset: 100
 --- !u!1 &45124444
 GameObject:
   m_ObjectHideFlags: 0
@@ -1011,6 +1010,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85e91b89859a5e8479915bdc03f26463, type: 3}
+--- !u!1001 &253237482
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8982039543711013245, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
+      propertyPath: m_Name
+      value: DiceManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982039543711013247, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982039543711013247, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982039543711013247, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.0515888
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982039543711013247, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.012287318
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982039543711013247, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982039543711013247, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982039543711013247, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982039543711013247, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982039543711013247, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982039543711013247, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982039543711013247, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
 --- !u!1 &291207893
 GameObject:
   m_ObjectHideFlags: 0
@@ -1253,7 +1309,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 458907987}
   parallexEffect: 0.6
-  offset: 100
 --- !u!1 &334467567
 GameObject:
   m_ObjectHideFlags: 0
@@ -2006,7 +2061,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 458907987}
   parallexEffect: 0.45
-  offset: 100
 --- !u!1 &451093828
 GameObject:
   m_ObjectHideFlags: 0
@@ -2144,7 +2198,6 @@ GameObject:
   - component: {fileID: 458907991}
   - component: {fileID: 458907990}
   - component: {fileID: 458907989}
-  - component: {fileID: 458907988}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2152,18 +2205,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &458907988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 458907987}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa6cf096d5b4e2b45a2ca8e56ad6bea7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &458907989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3364,7 +3405,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 458907987}
   parallexEffect: 0
-  offset: 100
 --- !u!1001 &680492411
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3376,9 +3416,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCombined Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 878243742037264305, guid: b61cdead50b60c243b445510f690ce25, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 878243742037264319, guid: b61cdead50b60c243b445510f690ce25, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 878243742037264319, guid: b61cdead50b60c243b445510f690ce25, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3863,7 +3907,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 458907987}
   parallexEffect: 0.85
-  offset: 100
 --- !u!4 &801072145 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7121704832930903522, guid: 732993d8d6fdf1e46ad3aa86abb7ed15, type: 3}
@@ -3918,7 +3961,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 458907987}
   parallexEffect: 0
-  offset: 100
 --- !u!212 &817317316
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4513,7 +4555,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 458907987}
   parallexEffect: 0
-  offset: 100
 --- !u!4 &919522925 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7058684789700895332, guid: 85e91b89859a5e8479915bdc03f26463, type: 3}
@@ -4987,7 +5028,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1178187640
 GameObject:
@@ -6943,7 +6984,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 458907987}
   parallexEffect: 0.15
-  offset: 100
 --- !u!1001 &1652818201
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7313,7 +7353,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1698307842
 MonoBehaviour:
