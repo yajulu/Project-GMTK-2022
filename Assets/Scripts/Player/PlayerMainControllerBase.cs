@@ -8,7 +8,7 @@ namespace Player
     public class PlayerMainControllerBase : MainControllerBase
     {
         [SerializeField] private ePlayerType currentPlayerType;
-        
+
         [SerializeField] private PlayerDataDictionary playerDict;
         public event Action<ePlayerType> PlayerTypeChanged;
 
@@ -21,7 +21,7 @@ namespace Player
         }
 
         [Button]
-        private void SwitchPlayerType(ePlayerType type)
+        public void SwitchPlayerType(ePlayerType type)
         {
             foreach (var properties in playerDict.Values)
             {
@@ -31,6 +31,6 @@ namespace Player
             playerDict[currentPlayerType].Graphics.SetActive(true);
             PlayerTypeChanged?.Invoke(currentPlayerType);
         }
-        
+
     }
 }

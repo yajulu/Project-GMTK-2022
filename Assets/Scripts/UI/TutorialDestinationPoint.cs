@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class TutorialDestinationPoint : MonoBehaviour
 {
+    TutorialManager tutorialManager;
+
+
+    void Start()
+    {
+        tutorialManager = transform.parent.GetComponent<TutorialManager>();
+    }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player")
-        {
 
-        }
+        tutorialManager.ActivateNextHint();
+        tutorialManager.transform.GetChild(tutorialManager.currentHint).gameObject.SetActive(true);
+        this.gameObject.SetActive(false);
+
     }
 
 }
