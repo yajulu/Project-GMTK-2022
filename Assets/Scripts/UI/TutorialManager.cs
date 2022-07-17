@@ -16,7 +16,7 @@ public class TutorialManager : MonoBehaviour
     {
         if (currentHint < hints.Length)
         {
-            UIManager.Instance.ShowHint(hints[currentHint]);
+            //UIManager.Instance.ShowHint(hints[currentHint]);
             currentHint++;
         }
 
@@ -39,5 +39,7 @@ public class TutorialManager : MonoBehaviour
         transform.GetChild(currentHint).gameObject.SetActive(true);
         playerController.SwitchPlayerType(Core.ePlayerType.Bus);
         transform.GetChild(currentHint - 1).gameObject.SetActive(false);
+
+
     }
 }

@@ -33,6 +33,8 @@ namespace UI
 
         public int CurrentScore => currentScore;
 
+        public GameState CurrentGameState => currentState;
+
         public enum GameState
         {
             Initialized,
@@ -52,14 +54,15 @@ namespace UI
         {
             mainInput.UI.Enable();
             mainInput.UI.Pause.performed += OnPausePerformed;
-            hintTextBox = TutorialPanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+            //hintTextBox = TutorialPanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
 
         }
 
         private void Start()
         {
-            currentState = GameState.Tutorial;
-            TutorialStarted?.Invoke();
+            //currentState = GameState.Tutorial;
+            //TutorialStarted?.Invoke();
+            StartGame();
         }
 
         private void OnPausePerformed(InputAction.CallbackContext obj)

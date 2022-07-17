@@ -79,6 +79,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3918025737903329792, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
+      propertyPath: weaponConfig.damage
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3918025737903329793, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
       propertyPath: UVModule.mode
       value: 1

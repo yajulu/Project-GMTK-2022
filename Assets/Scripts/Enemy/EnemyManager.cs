@@ -17,13 +17,16 @@ namespace Enemy
         [SerializeField, TitleGroup("Spawning")] private EnemyTypeDict enemyTypeDict;
         [SerializeField, TitleGroup("Spawning")] private bool spawning = true;
         [SerializeField, TitleGroup("Spawning")] private float spawnInterval = 15f;
+        [SerializeField, TitleGroup("Spawning")] private int maxNumber = 4;
         [SerializeField, TitleGroup("Spawning")] private Vector2 spawnRange;
-        
+
         [SerializeField, TitleGroup("Debug")] private eEnemyType currentEnemyType;
         [SerializeField, TitleGroup("Debug"), ReadOnly] private float spawnTimer;
+        //[SerializeField, TitleGroup("Debug"), ReadOnly] private int spawnCounter;
+
 
         private GameObject dummyCurrentEnemy;
-        
+
         private DiceManager diceManager;
 
         private void Awake()
@@ -47,6 +50,7 @@ namespace Enemy
         private void UIManagerOnGameStarted()
         {
             spawning = true;
+
         }
 
         private void OnDestroy()
@@ -56,7 +60,7 @@ namespace Enemy
 
         private void Start()
         {
-            spawning = true;
+            //spawning = true;
         }
 
         private void Update()
@@ -74,6 +78,8 @@ namespace Enemy
 
         private void SpawnEnemy()
         {
+            if (transform.childCount >= maxNumber)
+                return;
             spawnTimer = spawnInterval;
             var spawnPosition = GetRandomPosition();
             var initialPosition = new Vector2(Mathf.Abs(spawnPosition.x) + spawnRange.x * 0.5f,
@@ -81,6 +87,8 @@ namespace Enemy
             dummyCurrentEnemy = Instantiate(enemyTypeDict[currentEnemyType], spawnPosition, Quaternion.identity, transform);
             dummyCurrentEnemy.transform.DOMove(spawnPosition, 3f)
                 .From(initialPosition);
+
+
         }
 
         [Button]
@@ -106,7 +114,7 @@ namespace Enemy
     [Serializable]
     public class EnemyTypeDict : UnitySerializedDictionary<eEnemyType, GameObject>
     {
-        
+
     }
 
 }
