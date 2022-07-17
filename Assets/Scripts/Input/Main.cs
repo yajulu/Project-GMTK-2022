@@ -73,6 +73,24 @@ namespace Yajulu.Input
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RollEnemyDice"",
+                    ""type"": ""Button"",
+                    ""id"": ""181b010e-325c-4924-a5e3-084e105bca1c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RollPlayerDice"",
+                    ""type"": ""Button"",
+                    ""id"": ""ba6c9815-a297-4a6c-a2a5-86fee526d03b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -251,6 +269,28 @@ namespace Yajulu.Input
                     ""action"": ""SwitchAbility"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f8e862e3-190f-4f81-be20-fdbf8d8dbad8"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": ""Mouse and Keyboard"",
+                    ""action"": ""RollEnemyDice"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""171cb73c-141c-4d27-a440-e3028378f82e"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": ""Mouse and Keyboard"",
+                    ""action"": ""RollPlayerDice"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -309,6 +349,8 @@ namespace Yajulu.Input
             m_Player_Field = m_Player.FindAction("Field", throwIfNotFound: true);
             m_Player_Aim = m_Player.FindAction("Aim", throwIfNotFound: true);
             m_Player_SwitchAbility = m_Player.FindAction("SwitchAbility", throwIfNotFound: true);
+            m_Player_RollEnemyDice = m_Player.FindAction("RollEnemyDice", throwIfNotFound: true);
+            m_Player_RollPlayerDice = m_Player.FindAction("RollPlayerDice", throwIfNotFound: true);
             // UI
             m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
             m_UI_Pause = m_UI.FindAction("Pause", throwIfNotFound: true);
@@ -376,6 +418,8 @@ namespace Yajulu.Input
         private readonly InputAction m_Player_Field;
         private readonly InputAction m_Player_Aim;
         private readonly InputAction m_Player_SwitchAbility;
+        private readonly InputAction m_Player_RollEnemyDice;
+        private readonly InputAction m_Player_RollPlayerDice;
         public struct PlayerActions
         {
             private @Main m_Wrapper;
@@ -385,6 +429,8 @@ namespace Yajulu.Input
             public InputAction @Field => m_Wrapper.m_Player_Field;
             public InputAction @Aim => m_Wrapper.m_Player_Aim;
             public InputAction @SwitchAbility => m_Wrapper.m_Player_SwitchAbility;
+            public InputAction @RollEnemyDice => m_Wrapper.m_Player_RollEnemyDice;
+            public InputAction @RollPlayerDice => m_Wrapper.m_Player_RollPlayerDice;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -409,6 +455,12 @@ namespace Yajulu.Input
                     @SwitchAbility.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchAbility;
                     @SwitchAbility.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchAbility;
                     @SwitchAbility.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchAbility;
+                    @RollEnemyDice.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRollEnemyDice;
+                    @RollEnemyDice.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRollEnemyDice;
+                    @RollEnemyDice.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRollEnemyDice;
+                    @RollPlayerDice.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRollPlayerDice;
+                    @RollPlayerDice.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRollPlayerDice;
+                    @RollPlayerDice.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRollPlayerDice;
                 }
                 m_Wrapper.m_PlayerActionsCallbackInterface = instance;
                 if (instance != null)
@@ -428,6 +480,12 @@ namespace Yajulu.Input
                     @SwitchAbility.started += instance.OnSwitchAbility;
                     @SwitchAbility.performed += instance.OnSwitchAbility;
                     @SwitchAbility.canceled += instance.OnSwitchAbility;
+                    @RollEnemyDice.started += instance.OnRollEnemyDice;
+                    @RollEnemyDice.performed += instance.OnRollEnemyDice;
+                    @RollEnemyDice.canceled += instance.OnRollEnemyDice;
+                    @RollPlayerDice.started += instance.OnRollPlayerDice;
+                    @RollPlayerDice.performed += instance.OnRollPlayerDice;
+                    @RollPlayerDice.canceled += instance.OnRollPlayerDice;
                 }
             }
         }
@@ -481,6 +539,8 @@ namespace Yajulu.Input
             void OnField(InputAction.CallbackContext context);
             void OnAim(InputAction.CallbackContext context);
             void OnSwitchAbility(InputAction.CallbackContext context);
+            void OnRollEnemyDice(InputAction.CallbackContext context);
+            void OnRollPlayerDice(InputAction.CallbackContext context);
         }
         public interface IUIActions
         {

@@ -12,12 +12,25 @@ namespace Player
         [SerializeField] private PlayerDataDictionary playerDict;
         public event Action<ePlayerType> PlayerTypeChanged;
 
+        private DiceManager diceManager;
         public PlayerDataDictionary PlayerDict => playerDict;
 
+        protected override void Awake()
+        {
+            base.Awake();
+            diceManager = FindObjectOfType<DiceManager>();
+            diceManager.PlayerDiceRolled += SwitchPlayerType;
+        }
+        
         protected override void Start()
         {
             base.Start();
             SwitchPlayerType(currentPlayerType);
+        }
+
+        private void OnDestroy()
+        {
+            diceManager.PlayerDiceRolled -= SwitchPlayerType;
         }
 
         [Button]

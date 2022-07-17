@@ -16,7 +16,7 @@ namespace Core
 
         private Vector3 damageScale;
 
-        private void Awake()
+        protected virtual void Awake()
         {
             damageScale = Vector3.one * 1.1f;
         }
