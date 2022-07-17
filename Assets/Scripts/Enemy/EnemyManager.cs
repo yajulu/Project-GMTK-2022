@@ -23,6 +23,19 @@ namespace Enemy
 
         private GameObject dummyCurrentEnemy;
         
+        private DiceManager diceManager;
+
+        private void Awake()
+        {
+            diceManager = FindObjectOfType<DiceManager>();
+            diceManager.EnemyDiceRolled += SwitchEnemies;
+        }
+
+        private void OnDestroy()
+        {
+            diceManager.EnemyDiceRolled -= SwitchEnemies;
+        }
+
         private void Start()
         {
             spawning = true;
@@ -52,13 +65,17 @@ namespace Enemy
                 .From(initialPosition);
         }
 
+        [Button]
         private void SwitchEnemies(eEnemyType newType)
         {
-            for (int i = 0; i < transform.childCount; i++)
+            currentEnemyType = newType;
+            var count = transform.childCount;
+            for (int i = 0; i < count; i++)
             {
                 var currentChild = transform.GetChild(i);
-
                 Instantiate(enemyTypeDict[currentEnemyType], currentChild.position, Quaternion.identity, transform);
+                currentChild.gameObject.SetActive(false);
+                Destroy(currentChild.gameObject, 3f);
             }
         }
 
