@@ -169,6 +169,7 @@ namespace Core
             {
                 case eDiceType.Player:
                     ePlayerType newPlayerType = GetRandomType(playerTypes, currentPlayerType);
+                    newStateHash = playerTypeHashes[newPlayerType];
                     currentAnimator.AttachedAnimator.SetInteger(diceIntegerHashes[diceType], (int)newPlayerType);
                     callBack = () =>
                     {
@@ -183,6 +184,7 @@ namespace Core
                     break;
                 case eDiceType.Enemy:
                     eEnemyType newEnemyType = GetRandomType(enemyTypes, currentEnemyType);
+                    newStateHash = enemyTypeHashes[newEnemyType];
                     currentAnimator.AttachedAnimator.SetInteger(diceIntegerHashes[diceType], (int)newEnemyType);
                     callBack = () =>
                     {
@@ -200,7 +202,7 @@ namespace Core
             }
 
 
-            currentAnimator.AddStateCallBack(diceTriggerHashes[diceType], callBack);
+            currentAnimator.AddStateCallBack(newStateHash, callBack);
             currentAnimator.AttachedAnimator.SetTrigger(diceTriggerHashes[diceType]);
 
             // switch (diceType)

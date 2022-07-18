@@ -47,9 +47,12 @@ MonoBehaviour:
   enemyTypeDict:
     keyData: 000000000200000003000000
     valueData:
-    - {fileID: 4260912238789465940, guid: 0f4631a64cd055a4a894269a5bc4f0ec, type: 3}
-    - {fileID: 7058684789700895331, guid: 85e91b89859a5e8479915bdc03f26463, type: 3}
-    - {fileID: 7121704832930903525, guid: 732993d8d6fdf1e46ad3aa86abb7ed15, type: 3}
+    - Prefab: {fileID: 4260912238789465940, guid: 0f4631a64cd055a4a894269a5bc4f0ec, type: 3}
+      RandomizeRotation: 0
+    - Prefab: {fileID: 7058684789700895331, guid: 85e91b89859a5e8479915bdc03f26463, type: 3}
+      RandomizeRotation: 1
+    - Prefab: {fileID: 7121704832930903525, guid: 732993d8d6fdf1e46ad3aa86abb7ed15, type: 3}
+      RandomizeRotation: 1
   spawning: 1
   spawnInterval: 5
   maxNumber: 4
