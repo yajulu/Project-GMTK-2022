@@ -16,7 +16,7 @@ namespace Core
 {
     public class DiceManager : MonoBehaviour
     {
-        
+
         [SerializeField] private float userCoolDownTime = 3f;
         [SerializeField] private List<eEnemyType> enemyTypes;
         [SerializeField] private List<ePlayerType> playerTypes;
@@ -26,7 +26,7 @@ namespace Core
 
         [SerializeField, ReadOnly] private float aiDiceRollTimer;
         [SerializeField, ReadOnly] private float coolDownTimer;
-        
+
         public event Action<eEnemyType> EnemyDiceRolled;
         public event Action<ePlayerType> PlayerDiceRolled;
 
@@ -62,7 +62,7 @@ namespace Core
         {
             playingDices = new List<eDiceType>();
         }
-        
+
         private void Start()
         {
             _playerMainControllerBase = FindObjectOfType<PlayerMainControllerBase>();
@@ -92,20 +92,20 @@ namespace Core
         {
             RollDice(eDiceType.Enemy, true);
         }
-        
+
         private void Update()
         {
             if (UIManager.Instance.CurrentGameState != UIManager.GameState.Started)
                 return;
             if (aiDiceRollTimer < 0)
             {
-                aiDiceRollTimer = Random.Range(10, 20);
+                aiDiceRollTimer = Random.Range(5, 10);
                 RollDice(Random.Range(0, 4) > 1 ? eDiceType.Enemy : eDiceType.Player, false);
                 return;
             }
             aiDiceRollTimer -= Time.deltaTime;
             coolDownTimer -= Time.deltaTime;
-            
+
             UIManager.Instance.UpdateCooldown(coolDownTimer, userCoolDownTime);
 
         }
