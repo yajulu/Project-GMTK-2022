@@ -47,7 +47,7 @@ namespace Core
             OnDamageTaken?.Invoke(dmg);
 
             //Killed
-            if (currentHealthPoint < 0 && !isDead)
+            if (currentHealthPoint <= 0 && !isDead)
             {
                 KillObject();
             }
