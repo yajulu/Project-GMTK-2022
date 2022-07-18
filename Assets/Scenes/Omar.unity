@@ -981,8 +981,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40fe4028720613540a4a37446f081360, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 1802945880}
+  speed: 0
   parallexEffect: 0.45
+  cameraPos: {fileID: 1802945884}
 --- !u!212 &241263677
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1042,26 +1043,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8982039542863792868, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -1665813759, guid: 64089e0789e992a47bd8b8ffa44fef09, type: 3}
-    - target: {fileID: 8982039542863792875, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8982039542863792875, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8982039542863792875, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.61
-      objectReference: {fileID: 0}
-    - target: {fileID: 8982039542863792875, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -5.95
-      objectReference: {fileID: 0}
     - target: {fileID: 8982039543711013245, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
       propertyPath: m_Name
       value: DiceManager
@@ -1110,26 +1091,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8982039544404672137, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8982039544404672137, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8982039544404672137, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.09
-      objectReference: {fileID: 0}
-    - target: {fileID: 8982039544404672137, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -5.93
-      objectReference: {fileID: 0}
-    - target: {fileID: 8982039544404672138, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 702371020, guid: 0c880223ce2bd854e98033649d42920c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
 --- !u!1 &254586739
@@ -1179,8 +1140,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40fe4028720613540a4a37446f081360, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 1802945880}
+  speed: 0
   parallexEffect: 0.3
+  cameraPos: {fileID: 1802945884}
 --- !u!212 &254586742
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1955,8 +1917,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40fe4028720613540a4a37446f081360, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 1802945880}
+  speed: 0
   parallexEffect: 0
+  cameraPos: {fileID: 1802945884}
 --- !u!212 &525820381
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2056,8 +2019,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40fe4028720613540a4a37446f081360, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 1802945880}
+  speed: 0
   parallexEffect: 0
+  cameraPos: {fileID: 1802945884}
 --- !u!212 &680015935
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2711,8 +2675,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40fe4028720613540a4a37446f081360, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 1802945880}
+  speed: 0
   parallexEffect: 0.15
+  cameraPos: {fileID: 1802945884}
 --- !u!212 &861916704
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3975,8 +3940,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40fe4028720613540a4a37446f081360, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 1802945880}
+  speed: 0
   parallexEffect: 0.6
+  cameraPos: {fileID: 1802945884}
 --- !u!212 &1171075399
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4385,8 +4351,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40fe4028720613540a4a37446f081360, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 1802945880}
+  speed: 0
   parallexEffect: 0
+  cameraPos: {fileID: 1802945884}
 --- !u!212 &1359606487
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4486,8 +4453,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40fe4028720613540a4a37446f081360, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 1802945880}
+  speed: 0
   parallexEffect: 0.85
+  cameraPos: {fileID: 1802945884}
 --- !u!212 &1381594863
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5816,6 +5784,10 @@ PrefabInstance:
     - target: {fileID: 7914585189756256126, guid: ef5a63e6d6a66dd4e8f15a238f40dab4, type: 3}
       propertyPath: m_Name
       value: EnemyManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7914585189756256126, guid: ef5a63e6d6a66dd4e8f15a238f40dab4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef5a63e6d6a66dd4e8f15a238f40dab4, type: 3}

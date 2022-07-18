@@ -59,8 +59,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8982039542863792872}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -4.61, y: -5.95, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8982039542694833677}
@@ -139,7 +139,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1796572421, guid: debdba25a4e603540b36160aae982e25, type: 3}
+  m_Sprite: {fileID: -1665813759, guid: 64089e0789e992a47bd8b8ffa44fef09, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -195,12 +195,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be4c2de466692cd479e5104b4d0eb569, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: 0
   enemyTypes: 000000000200000003000000
   playerTypes: 000000000100000002000000
   currentEnemyType: 0
   currentPlayerType: 0
+  enemyDiceRolledUnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  playerDiceRolledUnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
   userAnimatorTrigger: {fileID: 8982039542863792874}
   aiDiceAnimatorTrigger: {fileID: 8982039544404672136}
+  playerTypeHashes:
+    keyData: 000000000100000002000000
+    valueData: e87465ba892d1b1735ac7faf
+  enemyTypeHashes:
+    keyData: 00000000010000000200000003000000
+    valueData: eef32509b48fffbc001b8f271748b3eb
+  diceTriggerHashes:
+    keyData: 0000000001000000
+    valueData: 537fb59fad755e3a
+  diceIntegerHashes:
+    keyData: 0000000001000000
+    valueData: fe4075faf089ae11
+  userRolling: 0
+  aiRolling: 0
 --- !u!1 &8982039543792002469
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,8 +281,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8982039544404672142}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 2.09, y: -5.93, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8982039543792002468}
@@ -277,7 +298,7 @@ Animator:
   m_GameObject: {fileID: 8982039544404672142}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 177e20b8b6e2ad140996cc2f284371e9, type: 2}
+  m_Controller: {fileID: 9100000, guid: 96eac967dac58c44a9c498abe7361f72, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -340,7 +361,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1796572421, guid: debdba25a4e603540b36160aae982e25, type: 3}
+  m_Sprite: {fileID: 702371020, guid: 0c880223ce2bd854e98033649d42920c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

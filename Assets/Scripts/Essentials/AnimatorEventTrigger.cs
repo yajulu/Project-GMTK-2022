@@ -29,12 +29,12 @@ namespace Essentials
             CheckAnimationState();
         }
         
-        public void PlayAnimation(int stateHash, Action onCompleteCallBack)
+        public void AddStateCallBack(int stateHash, Action onCompleteCallBack)
         {
             currentCompleteCallBack = onCompleteCallBack;
             currentStateHash = stateHash;
-            attachedAnimator.Play(stateHash, 0, 0);
-            currentState = attachedAnimator.GetCurrentAnimatorStateInfo(0);
+            // attachedAnimator.Play(stateHash, 0, 0);
+            // currentState = attachedAnimator.GetCurrentAnimatorStateInfo(0);
             started = true;
         }
         
