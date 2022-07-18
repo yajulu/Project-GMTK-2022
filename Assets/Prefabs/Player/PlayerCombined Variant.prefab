@@ -1194,7 +1194,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7189945480147921132, guid: 7a4eb4a784178e740acdf20875690fac, type: 3}
       propertyPath: weaponConfig.damage
-      value: 15
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 7189945480147921133, guid: 7a4eb4a784178e740acdf20875690fac, type: 3}
       propertyPath: UVModule.mode
@@ -1553,8 +1553,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1000
-  distance: 2.5
-  radius: 0.6
+  distance: 6
+  radius: 1
   duration: 0.2
   ease: 21
   coolDown: 1.5
@@ -1578,7 +1578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2054e1fafe774cc4a8da74648ca59ebf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 50
+  damage: 1000
   distance: 0
   radius: 2.7
   duration: 2
