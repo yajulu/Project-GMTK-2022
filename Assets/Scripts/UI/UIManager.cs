@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using Yajulu.Input;
 
 namespace UI
@@ -16,6 +17,12 @@ namespace UI
 
         [HideInInspector]
         public float diceCooldown;
+
+
+        [SerializeField]
+        Image dice, diceCoolDown;
+        [SerializeField]
+        Transform hpParent;
 
 
 
@@ -200,11 +207,20 @@ namespace UI
 
         public void UpdateHP(int hp)
         {
+            for (int i = 0; i < hp; i++)
+            {
+                hpParent.GetChild(i).gameObject.SetActive(true);
+            }
 
+            for (int j = hp; j < hpParent.childCount; j++)
+            {
+                hpParent.GetChild(j).gameObject.SetActive(false);
+            }
         }
 
         public void UpdateCooldown(float timeRemaining, float maxTime)
         {
+
 
         }
 

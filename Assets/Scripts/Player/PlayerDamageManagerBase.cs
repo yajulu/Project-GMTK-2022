@@ -51,6 +51,7 @@ namespace Player
                 return;
 
             base.TakeDamage(dmg);
+            UIManager.Instance.UpdateHP(currentHealthPoint);
 
         }
 
