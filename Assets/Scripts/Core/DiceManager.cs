@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Essentials;
 using Input;
+using Player;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -35,6 +36,8 @@ namespace Core
 
         private Main mainInput;
 
+        private PlayerMainControllerBase _playerMainControllerBase;
+
         // private const string ENEMY_DICE = "EnemyDice";
         // private const string PLAYER_DICE = "PlayerDice";
         // private const string PLAYER_ENEMEY_DICE = "PlayerEnemyDice";
@@ -55,11 +58,24 @@ namespace Core
         {
             playingDices = new List<eDiceType>();
         }
+        
+        private void Start()
+        {
+            mainInput = FindObjectOfType<PlayerInputController>().MainInput;
+            mainInput.Player.RollEnemyDice.performed += RollEnemyDiceOnPerformed;
+            mainInput.Player.RollPlayerDice.performed += RollPlayerDiceOnPerformed;
+            _playerMainControllerBase.PlayerTypeChanged += UpdateCurrentPlayerType;
+            // ENEMY_DICE_HASH = Animator.StringToHash(nameof(eEnemyType));
+            // PLAYER_DICE_HASH = Animator.StringToHash(nameof(ePlayerType));
+            // PLAYER_ENEMEY_DICE_HASH = Animator.StringToHash(PLAYER_ENEMEY_DICE);
+
+        }
 
         private void OnDestroy()
         {
             mainInput.Player.RollEnemyDice.performed -= RollEnemyDiceOnPerformed;
             mainInput.Player.RollPlayerDice.performed -= RollPlayerDiceOnPerformed;
+            _playerMainControllerBase.PlayerTypeChanged -= UpdateCurrentPlayerType;
         }
 
         private void RollPlayerDiceOnPerformed(InputAction.CallbackContext obj)
@@ -71,19 +87,7 @@ namespace Core
         {
             RollDice(eDiceType.Enemy, true);
         }
-
-        private void Start()
-        {
-            mainInput = FindObjectOfType<PlayerInputController>().MainInput;
-            mainInput.Player.RollEnemyDice.performed += RollEnemyDiceOnPerformed;
-            mainInput.Player.RollPlayerDice.performed += RollPlayerDiceOnPerformed;
-            // ENEMY_DICE_HASH = Animator.StringToHash(nameof(eEnemyType));
-            // PLAYER_DICE_HASH = Animator.StringToHash(nameof(ePlayerType));
-            // PLAYER_ENEMEY_DICE_HASH = Animator.StringToHash(PLAYER_ENEMEY_DICE);
-
-        }
-
-
+        
         private void Update()
         {
             if (UIManager.Instance.CurrentGameState != UIManager.GameState.Started)
@@ -97,6 +101,11 @@ namespace Core
             timer -= Time.deltaTime;
             UIManager.Instance.UpdateCooldown(timer);
 
+        }
+
+        private void UpdateCurrentPlayerType(ePlayerType type)
+        {
+            currentPlayerType = type;
         }
 
         [Button]
