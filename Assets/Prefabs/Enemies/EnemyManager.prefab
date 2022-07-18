@@ -52,7 +52,7 @@ MonoBehaviour:
     - Prefab: {fileID: 7058684789700895331, guid: 85e91b89859a5e8479915bdc03f26463, type: 3}
       RandomizeRotation: 1
     - Prefab: {fileID: 7121704832930903525, guid: 732993d8d6fdf1e46ad3aa86abb7ed15, type: 3}
-      RandomizeRotation: 1
+      RandomizeRotation: 0
   spawning: 1
   spawnInterval: 5
   maxNumber: 4
@@ -60,7 +60,7 @@ MonoBehaviour:
   quadList:
   - center: {x: 5, y: 3}
     range: {x: 7, y: 3}
-    halfRange: {x: 3.5, y: 1.5}
+    halfRange: {x: 4.5, y: 3.5}
   - center: {x: -5, y: 3}
     range: {x: 7, y: 3}
     halfRange: {x: 3.5, y: 1.5}
