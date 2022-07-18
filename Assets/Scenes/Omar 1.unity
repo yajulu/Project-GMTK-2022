@@ -1184,9 +1184,81 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7774367436456631942, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8cafb26ec4b150d4fa9a3371d5e5e2ed, type: 3}
+    - target: {fileID: 7774367436456631942, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982039543711013244, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982039543711013244, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
+      propertyPath: enemyDiceRolledUnityEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982039543711013244, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
+      propertyPath: playerDiceRolledUnityEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982039543711013244, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
+      propertyPath: enemyDiceRolledUnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982039543711013244, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
+      propertyPath: playerDiceRolledUnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982039543711013244, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
+      propertyPath: enemyDiceRolledUnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 929713076}
+    - target: {fileID: 8982039543711013244, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
+      propertyPath: playerDiceRolledUnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 929713076}
+    - target: {fileID: 8982039543711013244, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
+      propertyPath: enemyDiceRolledUnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982039543711013244, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
+      propertyPath: enemyDiceRolledUnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982039543711013244, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
+      propertyPath: playerDiceRolledUnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982039543711013244, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
+      propertyPath: playerDiceRolledUnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982039543711013244, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
+      propertyPath: enemyDiceRolledUnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.AudioSource, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982039543711013244, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
+      propertyPath: playerDiceRolledUnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.AudioSource, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982039543711013244, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
+      propertyPath: enemyDiceRolledUnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982039543711013244, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
+      propertyPath: playerDiceRolledUnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8982039543711013245, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
       propertyPath: m_Name
       value: DiceManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982039543711013245, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8982039543711013247, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
       propertyPath: m_RootOrder
@@ -4390,7 +4462,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &781996340
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4974,9 +5046,10 @@ MonoBehaviour:
     Electric field
   - Press Q to roll the (Changing Vehicle) dice
   - Press E to roll the (Changing Enemy) dice
-  - Move towards a human to onboard him/her and save his/her life
+  - Be careful! The Alien can also roll the dice and change both Vehicles and Enemies
   currentHint: 0
   playerController: {fileID: 2047863384}
+  diceManager: {fileID: 0}
 --- !u!1 &848807050
 GameObject:
   m_ObjectHideFlags: 0
@@ -5221,6 +5294,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!82 &929713076 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7774367436456631942, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
+  m_PrefabInstance: {fileID: 253237482}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &951542857 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7058684789700895332, guid: 85e91b89859a5e8479915bdc03f26463, type: 3}

@@ -4,13 +4,19 @@ using Essentials;
 using UnityEngine;
 using Player;
 using UI;
-
+using Core;
 public class TutorialManager : MonoBehaviour
 {
     public string[] hints;
     public int currentHint;
 
     public PlayerMainControllerBase playerController;
+
+
+    [SerializeField]
+    DiceManager diceManager;
+
+
 
     public void ActivateNextHint()
     {
@@ -42,4 +48,7 @@ public class TutorialManager : MonoBehaviour
 
 
     }
+
+
+
 }
