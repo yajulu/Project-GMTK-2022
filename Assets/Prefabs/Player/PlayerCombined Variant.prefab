@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6868603205475932614
 Transform:
   m_ObjectHideFlags: 0
@@ -782,7 +782,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4412830340140071702
 Transform:
   m_ObjectHideFlags: 0
@@ -998,6 +998,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7189945480147921132, guid: 7a4eb4a784178e740acdf20875690fac, type: 3}
+      propertyPath: weaponConfig.damage
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7189945480147921133, guid: 7a4eb4a784178e740acdf20875690fac, type: 3}
       propertyPath: UVModule.mode
       value: 1
@@ -1059,6 +1063,30 @@ PrefabInstance:
     - target: {fileID: 8513044760601494676, guid: da759cea077bc6e4d863d7e434101f79, type: 3}
       propertyPath: m_Name
       value: PlayerCombined Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8513044760601494680, guid: da759cea077bc6e4d863d7e434101f79, type: 3}
+      propertyPath: movementRange.x
+      value: 23.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8513044760601494680, guid: da759cea077bc6e4d863d7e434101f79, type: 3}
+      propertyPath: movementRange.y
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8513044760601494680, guid: da759cea077bc6e4d863d7e434101f79, type: 3}
+      propertyPath: movementRangeCenter.x
+      value: -0.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 8513044760601494680, guid: da759cea077bc6e4d863d7e434101f79, type: 3}
+      propertyPath: movementRangeCenter.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8513044760601494680, guid: da759cea077bc6e4d863d7e434101f79, type: 3}
+      propertyPath: movementRangeHalfExtent.x
+      value: 11.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 8513044760601494680, guid: da759cea077bc6e4d863d7e434101f79, type: 3}
+      propertyPath: movementRangeHalfExtent.y
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 8513044760601494681, guid: da759cea077bc6e4d863d7e434101f79, type: 3}
       propertyPath: m_Size.x
@@ -1253,7 +1281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 50
   distance: 0
-  radius: 1.5
+  radius: 2.7
   duration: 2
   ease: 0
   coolDown: 1.5
