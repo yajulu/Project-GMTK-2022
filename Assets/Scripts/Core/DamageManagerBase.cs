@@ -42,7 +42,7 @@ namespace Core
             if (isDead || !enabled)
                 return;
             currentHealthPoint -= dmg;
-            UIManager.Instance.UpdateHP(currentHealthPoint);
+
             Debug.Log($"{gameObject.name} took {dmg} damage points, current HP {currentHealthPoint}");
             OnDamageTaken?.Invoke(dmg);
 
