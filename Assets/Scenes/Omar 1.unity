@@ -3703,34 +3703,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCombined Variant
       objectReference: {fileID: 0}
-    - target: {fileID: 878243742037264305, guid: b61cdead50b60c243b445510f690ce25, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 878243742037264317, guid: b61cdead50b60c243b445510f690ce25, type: 3}
-      propertyPath: movementRange.x
-      value: 23.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 878243742037264317, guid: b61cdead50b60c243b445510f690ce25, type: 3}
-      propertyPath: movementRange.y
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 878243742037264317, guid: b61cdead50b60c243b445510f690ce25, type: 3}
-      propertyPath: movementRangeCenter.x
-      value: -0.29
-      objectReference: {fileID: 0}
-    - target: {fileID: 878243742037264317, guid: b61cdead50b60c243b445510f690ce25, type: 3}
-      propertyPath: movementRangeCenter.y
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 878243742037264317, guid: b61cdead50b60c243b445510f690ce25, type: 3}
-      propertyPath: movementRangeHalfExtent.x
-      value: 11.95
-      objectReference: {fileID: 0}
-    - target: {fileID: 878243742037264317, guid: b61cdead50b60c243b445510f690ce25, type: 3}
-      propertyPath: movementRangeHalfExtent.y
-      value: 3.5
-      objectReference: {fileID: 0}
     - target: {fileID: 878243742037264319, guid: b61cdead50b60c243b445510f690ce25, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -4833,6 +4805,7 @@ MonoBehaviour:
   CreditsPanel: {fileID: 1982766947}
   TutorialPanel: {fileID: 712108528}
   GameOverPanel: {fileID: 410491582}
+  TutorialManager: {fileID: 0}
   gameOverScoreText: {fileID: 0}
 --- !u!1 &841477596
 GameObject:

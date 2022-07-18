@@ -25,8 +25,8 @@ namespace Essentials
 
         private void Update()
         {
-            if (UIManager.Instance.CurrentGameState != UIManager.GameState.Started)
-                return;
+            //if (UIManager.Instance.CurrentGameState != UIManager.GameState.Started)
+            //  return;
 
             // Debug.Log(attachedAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime);
             CheckAnimationState();
