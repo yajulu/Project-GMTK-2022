@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Core;
 using DG.Tweening;
 using Essentials;
 using Sirenix.OdinInspector;
 using UI;
+using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -19,6 +21,9 @@ namespace Enemy
         [SerializeField, TitleGroup("Spawning")] private float spawnInterval = 15f;
         [SerializeField, TitleGroup("Spawning")] private int maxNumber = 4;
         [SerializeField, TitleGroup("Spawning")] private Vector2 spawnRange;
+
+        [SerializeField, TitleGroup("Spawning")]
+        private SpawnQuadrant[] quadList;
 
         [SerializeField, TitleGroup("Debug")] private eEnemyType currentEnemyType;
         [SerializeField, TitleGroup("Debug"), ReadOnly] private float spawnTimer;
@@ -90,6 +95,7 @@ namespace Enemy
 
 
         }
+        
 
         [Button]
         private void SwitchEnemies(eEnemyType newType)
@@ -107,7 +113,61 @@ namespace Enemy
 
         private Vector2 GetRandomPosition()
         {
-            return new Vector2(Random.Range(-spawnRange.x, spawnRange.x), Random.Range(-spawnRange.y, spawnRange.y));
+            var selectedQuad = quadList.First(quadrant =>
+            {
+
+                for (int i = 0; i < transform.childCount; i++)
+                {
+                    var enemy = transform.GetChild(i);
+                    if (quadrant.IsPositionInsideQuadrant(enemy.position))
+                        return false;
+                }
+
+                return true;
+            });
+
+            selectedQuad = selectedQuad.IsUnityNull() ? quadList[Random.Range(0, quadList.Length)] : selectedQuad;
+            return selectedQuad.GetRandomPositionInQuadrant();
+        }
+
+        [Serializable]
+        public class SpawnQuadrant
+        {
+            public Vector2 center;
+            [OnValueChanged(nameof(UpdateRange), true)] public Vector2 range;
+
+            [SerializeField, ReadOnly]
+            private Vector2 halfRange;
+            
+            private Vector2 tempVal;
+
+            private void UpdateRange()
+            {
+                halfRange = range * 0.5f;
+            }
+            public Vector2 GetRandomPositionInQuadrant()
+            {
+                return new Vector2
+                {
+                    x = Random.Range(-halfRange.x , halfRange.x) + center.x,
+                    y = Random.Range(-range.y , halfRange.y) + center.y
+                };
+            }
+
+            public bool IsPositionInsideQuadrant(Vector2 position)
+            {
+                tempVal = position - center;
+                return tempVal.x > -halfRange.x && tempVal.x < halfRange.x && tempVal.y > -halfRange.y && tempVal.y < halfRange.y;
+            }
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.red;
+            foreach (var quadrant in quadList)
+            {
+                Gizmos.DrawWireCube(quadrant.center, quadrant.range);
+            }
         }
     }
 

@@ -52,6 +52,20 @@ MonoBehaviour:
     - {fileID: 7121704832930903525, guid: 732993d8d6fdf1e46ad3aa86abb7ed15, type: 3}
   spawning: 1
   spawnInterval: 5
+  maxNumber: 4
   spawnRange: {x: 5, y: 3}
+  quadList:
+  - center: {x: 5, y: 3}
+    range: {x: 7, y: 3}
+    halfRange: {x: 3.5, y: 1.5}
+  - center: {x: -5, y: 3}
+    range: {x: 7, y: 3}
+    halfRange: {x: 3.5, y: 1.5}
+  - center: {x: -5, y: -3}
+    range: {x: 7, y: 3}
+    halfRange: {x: 3.5, y: 1.5}
+  - center: {x: 5, y: -3}
+    range: {x: 7, y: 3}
+    halfRange: {x: 3.5, y: 1.5}
   currentEnemyType: 0
   spawnTimer: 3
