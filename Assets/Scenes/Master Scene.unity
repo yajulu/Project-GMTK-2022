@@ -270,6 +270,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7914585189756256121, guid: ef5a63e6d6a66dd4e8f15a238f40dab4, type: 3}
+      propertyPath: quadList.Array.data[0].halfRange.x
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7914585189756256121, guid: ef5a63e6d6a66dd4e8f15a238f40dab4, type: 3}
+      propertyPath: quadList.Array.data[0].halfRange.y
+      value: 3.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7914585189756256126, guid: ef5a63e6d6a66dd4e8f15a238f40dab4, type: 3}
       propertyPath: m_Name
       value: EnemyManager
