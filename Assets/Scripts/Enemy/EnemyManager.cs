@@ -89,7 +89,8 @@ namespace Enemy
             var spawnPosition = GetRandomPosition();
             var initialPosition = new Vector2(Mathf.Abs(spawnPosition.x) + spawnRange.x * 0.5f,
                 Mathf.Abs(spawnPosition.y) + spawnRange.y * 0.5f);
-            dummyCurrentEnemy = Instantiate(enemyTypeDict[currentEnemyType], spawnPosition, Quaternion.identity, transform);
+            var config = enemyTypeDict[currentEnemyType];
+            Instantiate(config.Prefab, spawnPosition, config.RandomizeRotation? Quaternion.Euler(0,0, Random.Range(0,360)) : Quaternion.identity, transform);
             dummyCurrentEnemy.transform.DOMove(spawnPosition, 3f)
                 .From(initialPosition);
 
@@ -105,7 +106,8 @@ namespace Enemy
             for (int i = 0; i < count; i++)
             {
                 var currentChild = transform.GetChild(i);
-                Instantiate(enemyTypeDict[currentEnemyType], currentChild.position, Quaternion.identity, transform);
+                var config = enemyTypeDict[currentEnemyType];
+                Instantiate(config.Prefab, currentChild.position, config.RandomizeRotation? Quaternion.Euler(0,0, Random.Range(0,360)) : Quaternion.identity, transform);
                 currentChild.gameObject.SetActive(false);
                 Destroy(currentChild.gameObject, 3f);
             }
@@ -172,9 +174,16 @@ namespace Enemy
     }
 
     [Serializable]
-    public class EnemyTypeDict : UnitySerializedDictionary<eEnemyType, GameObject>
+    public class EnemyTypeDict : UnitySerializedDictionary<eEnemyType, EnemySpawnConfig>
     {
 
+    }
+
+    [Serializable]
+    public class EnemySpawnConfig
+    {
+        public GameObject Prefab;
+        public bool RandomizeRotation;
     }
 
 }
