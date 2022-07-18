@@ -149,12 +149,13 @@ namespace Core
                 return;
             if (!user && aiRolling)
                 return;
-
+            
             AnimatorEventTrigger currentAnimator;
             if (user)
             {
                 currentAnimator = userAnimatorTrigger;
                 userRolling = true;
+                coolDownTimer = userCoolDownTime;
             }
             else
             {
