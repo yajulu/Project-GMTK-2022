@@ -576,6 +576,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   parallexEffect: 0.6
+  cameraPos: {fileID: 458907992}
 --- !u!1 &45124444
 GameObject:
   m_ObjectHideFlags: 0
@@ -1332,6 +1333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   parallexEffect: 0.6
+  cameraPos: {fileID: 458907992}
 --- !u!1001 &299087835
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1488,6 +1490,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   parallexEffect: 0.3
+  cameraPos: {fileID: 458907992}
 --- !u!1 &334467567
 GameObject:
   m_ObjectHideFlags: 0
@@ -1722,6 +1725,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   parallexEffect: 0.45
+  cameraPos: {fileID: 458907992}
 --- !u!1 &350574494
 GameObject:
   m_ObjectHideFlags: 0
@@ -2253,6 +2257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   parallexEffect: 0.45
+  cameraPos: {fileID: 458907992}
 --- !u!1 &439770830
 GameObject:
   m_ObjectHideFlags: 0
@@ -2457,6 +2462,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   parallexEffect: 0.45
+  cameraPos: {fileID: 458907992}
 --- !u!1 &456982669
 GameObject:
   m_ObjectHideFlags: 0
@@ -3589,6 +3595,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   parallexEffect: 0
+  cameraPos: {fileID: 458907992}
 --- !u!1 &644736653
 GameObject:
   m_ObjectHideFlags: 0
@@ -3688,6 +3695,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   parallexEffect: 1
+  cameraPos: {fileID: 458907992}
 --- !u!1 &650879400
 GameObject:
   m_ObjectHideFlags: 0
@@ -3787,6 +3795,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   parallexEffect: 0
+  cameraPos: {fileID: 458907992}
 --- !u!1001 &680492411
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4363,6 +4372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   parallexEffect: 0.15
+  cameraPos: {fileID: 458907992}
 --- !u!1 &781996339
 GameObject:
   m_ObjectHideFlags: 0
@@ -4546,6 +4556,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   parallexEffect: 1
+  cameraPos: {fileID: 458907992}
 --- !u!1 &819136539
 GameObject:
   m_ObjectHideFlags: 0
@@ -4779,6 +4790,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   parallexEffect: 0.9
+  cameraPos: {fileID: 458907992}
 --- !u!1 &835249673
 GameObject:
   m_ObjectHideFlags: 0
@@ -5119,6 +5131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   parallexEffect: 0.9
+  cameraPos: {fileID: 458907992}
 --- !u!4 &919522925 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7058684789700895332, guid: 85e91b89859a5e8479915bdc03f26463, type: 3}
@@ -5312,6 +5325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   parallexEffect: 0.75
+  cameraPos: {fileID: 458907992}
 --- !u!1 &1034955045
 GameObject:
   m_ObjectHideFlags: 0
@@ -6039,6 +6053,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   parallexEffect: 0.9
+  cameraPos: {fileID: 458907992}
 --- !u!1 &1206871033
 GameObject:
   m_ObjectHideFlags: 0
@@ -6490,6 +6505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   parallexEffect: 0
+  cameraPos: {fileID: 458907992}
 --- !u!1 &1276775359
 GameObject:
   m_ObjectHideFlags: 0
@@ -7075,6 +7091,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   parallexEffect: 0.6
+  cameraPos: {fileID: 458907992}
 --- !u!1 &1325527928
 GameObject:
   m_ObjectHideFlags: 0
@@ -7546,6 +7563,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   parallexEffect: 0.75
+  cameraPos: {fileID: 458907992}
 --- !u!1 &1422181721
 GameObject:
   m_ObjectHideFlags: 0
@@ -7866,6 +7884,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   parallexEffect: 0.3
+  cameraPos: {fileID: 458907992}
 --- !u!4 &1450286973 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7058684789700895332, guid: 85e91b89859a5e8479915bdc03f26463, type: 3}
@@ -8189,6 +8208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   parallexEffect: 0.75
+  cameraPos: {fileID: 458907992}
 --- !u!1001 &1652818201
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8443,6 +8463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   parallexEffect: 0.15
+  cameraPos: {fileID: 458907992}
 --- !u!1 &1688427654
 GameObject:
   m_ObjectHideFlags: 0
@@ -8542,6 +8563,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   parallexEffect: 1
+  cameraPos: {fileID: 458907992}
 --- !u!1 &1698307838
 GameObject:
   m_ObjectHideFlags: 0
@@ -8955,6 +8977,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   parallexEffect: 0.15
+  cameraPos: {fileID: 458907992}
 --- !u!1001 &1822474606
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9943,6 +9966,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   parallexEffect: 0.3
+  cameraPos: {fileID: 458907992}
 --- !u!114 &2047863384 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 878243742037264312, guid: b61cdead50b60c243b445510f690ce25, type: 3}

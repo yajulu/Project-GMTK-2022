@@ -26,11 +26,11 @@ public class ParallexEffect : MonoBehaviour
 
         if (parallexEffect != 0)
         {
-            transform.Translate(Vector3.left * (speed * parallexEffect) * Time.deltaTime);
+            transform.Translate(Vector3.left * (speed * parallexEffect * Time.deltaTime));
             if (transform.position.x <= endPos)
             {
-                transform.position = new Vector3(endPos, transform.position.y, transform.position.z);
-                transform.position = new Vector3(transform.position.x + (length * 3), transform.position.y, transform.position.z);
+                // transform.position = new Vector3(endPos, transform.position.y, transform.position.z);
+                transform.position = new Vector3(endPos + 90, transform.position.y, transform.position.z);
             }
 
         }
