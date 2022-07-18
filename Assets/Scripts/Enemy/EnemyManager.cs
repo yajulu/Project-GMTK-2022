@@ -67,7 +67,7 @@ namespace Enemy
         {
             if (spawning)
             {
-                if (spawnTimer < 0)
+                if (spawnTimer < 0 || transform.childCount < maxNumber)
                 {
                     SpawnEnemy();
                 }

@@ -64,6 +64,7 @@ namespace Core
             mainInput = FindObjectOfType<PlayerInputController>().MainInput;
             mainInput.Player.RollEnemyDice.performed += RollEnemyDiceOnPerformed;
             mainInput.Player.RollPlayerDice.performed += RollPlayerDiceOnPerformed;
+            _playerMainControllerBase.GetComponent<PlayerMainControllerBase>();
             _playerMainControllerBase.PlayerTypeChanged += UpdateCurrentPlayerType;
             // ENEMY_DICE_HASH = Animator.StringToHash(nameof(eEnemyType));
             // PLAYER_DICE_HASH = Animator.StringToHash(nameof(ePlayerType));
