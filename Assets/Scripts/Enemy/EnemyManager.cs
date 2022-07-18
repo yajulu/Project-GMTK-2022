@@ -90,7 +90,8 @@ namespace Enemy
             var initialPosition = new Vector2(Mathf.Abs(spawnPosition.x) + spawnRange.x * 0.5f,
                 Mathf.Abs(spawnPosition.y) + spawnRange.y * 0.5f);
             var config = enemyTypeDict[currentEnemyType];
-            dummyCurrentEnemy = Instantiate(config.Prefab, spawnPosition, config.RandomizeRotation ? Quaternion.Euler(0, 0, Random.Range(0, 360)) : Quaternion.identity, transform);
+            dummyCurrentEnemy = null;
+            dummyCurrentEnemy = Instantiate(config.Prefab, spawnPosition, config.RandomizeRotation? Quaternion.Euler(0,0, Random.Range(0,360)) : Quaternion.identity, transform);
             dummyCurrentEnemy.transform.DOMove(spawnPosition, 3f)
                 .From(initialPosition);
 
