@@ -14,10 +14,14 @@ namespace UI
 
         private Main mainInput;
 
+        [HideInInspector]
+        public float diceCooldown;
+
+
 
 
         [SerializeField]
-        GameObject StartMenuPanel, PauseMenuPanel, HUDPanel, CreditsPanel, TutorialPanel, GameOverPanel;
+        GameObject StartMenuPanel, PauseMenuPanel, HUDPanel, CreditsPanel, TutorialPanel, GameOverPanel, TutorialManager;
 
         TextMeshProUGUI hintTextBox;
 
@@ -54,15 +58,15 @@ namespace UI
         {
             mainInput.UI.Enable();
             mainInput.UI.Pause.performed += OnPausePerformed;
-            //hintTextBox = TutorialPanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+            hintTextBox = TutorialPanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
 
         }
 
         private void Start()
         {
-            //currentState = GameState.Tutorial;
-            //TutorialStarted?.Invoke();
-            StartGame();
+            currentState = GameState.Initialized;
+
+
         }
 
         private void OnPausePerformed(InputAction.CallbackContext obj)
@@ -71,6 +75,7 @@ namespace UI
             {
                 PauseMenuPanel.SetActive(true);
                 HUDPanel.SetActive(false);
+                currentState = GameState.Paused;
                 Time.timeScale = 0;
                 //Set "Start Game Boolean" here
             }
@@ -78,6 +83,7 @@ namespace UI
             {
                 PauseMenuPanel.SetActive(false);
                 HUDPanel.SetActive(true);
+                currentState = GameState.Paused;
                 Time.timeScale = 1;
 
             }
@@ -101,17 +107,30 @@ namespace UI
         {
             Debug.Log("Started");
 
+
+            TutorialPanel.SetActive(false);
+            HUDPanel.SetActive(true);
+            Time.timeScale = 1;
+            currentScore = 0;
+            currentState = GameState.Started;
+            GameStarted?.Invoke();
+
+
+            //Set "Start Game Boolean" here
+        }
+
+        public void StartTutorial()
+        {
             if (StartMenuPanel.activeSelf)
             {
                 StartMenuPanel.SetActive(false);
-                HUDPanel.SetActive(true);
+                TutorialPanel.SetActive(true);
                 Time.timeScale = 1;
-                currentScore = 0;
-                currentState = GameState.Started;
-                GameStarted?.Invoke();
+                currentState = GameState.Initialized;
+                TutorialStarted?.Invoke();
             }
 
-            //Set "Start Game Boolean" here
+
         }
 
 
@@ -175,6 +194,18 @@ namespace UI
         public void ShowHint(string hint)
         {
             hintTextBox.text = hint;
+        }
+
+
+
+        public void UpdateHP(int hp)
+        {
+
+        }
+
+        public void UpdateCooldown(float timeRemaining)
+        {
+
         }
 
 

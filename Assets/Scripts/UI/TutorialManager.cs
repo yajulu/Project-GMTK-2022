@@ -13,8 +13,7 @@ public class TutorialManager : MonoBehaviour
     public PlayerMainControllerBase playerController;
 
 
-    [SerializeField]
-    DiceManager diceManager;
+
 
 
 
@@ -22,7 +21,7 @@ public class TutorialManager : MonoBehaviour
     {
         if (currentHint < hints.Length)
         {
-            //UIManager.Instance.ShowHint(hints[currentHint]);
+            UIManager.Instance.ShowHint(hints[currentHint]);
             currentHint++;
         }
 
@@ -48,6 +47,9 @@ public class TutorialManager : MonoBehaviour
 
 
     }
+
+
+
 
 
 

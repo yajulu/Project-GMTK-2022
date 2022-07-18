@@ -49,14 +49,16 @@ namespace Player
         {
             if (isInvulnerable)
                 return;
+
             base.TakeDamage(dmg);
+
         }
 
         private void SetInvulnerability(bool enable)
         {
             isInvulnerable = enable;
         }
-        
+
         private void MainControllerOnPlayerTypeChanged(ePlayerType type)
         {
             maxHealthPoints = mainController.PlayerDict[type].MaxHealthPoints;

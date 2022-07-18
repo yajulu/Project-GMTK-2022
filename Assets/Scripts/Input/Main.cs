@@ -273,7 +273,7 @@ namespace Yajulu.Input
                 {
                     ""name"": """",
                     ""id"": ""f8e862e3-190f-4f81-be20-fdbf8d8dbad8"",
-                    ""path"": ""<Keyboard>/q"",
+                    ""path"": ""<Keyboard>/e"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": ""Mouse and Keyboard"",
@@ -284,7 +284,7 @@ namespace Yajulu.Input
                 {
                     ""name"": """",
                     ""id"": ""171cb73c-141c-4d27-a440-e3028378f82e"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""path"": ""<Keyboard>/q"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": ""Mouse and Keyboard"",

@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-
+using UI;
 namespace Essentials
 {
     [RequireComponent(typeof(Animator))]
@@ -22,13 +22,16 @@ namespace Essentials
         {
             attachedAnimator = GetComponent<Animator>();
         }
-        
+
         private void Update()
         {
+            if (UIManager.Instance.CurrentGameState != UIManager.GameState.Started)
+                return;
+
             // Debug.Log(attachedAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime);
             CheckAnimationState();
         }
-        
+
         public void AddStateCallBack(int stateHash, Action onCompleteCallBack)
         {
             currentCompleteCallBack = onCompleteCallBack;
@@ -37,7 +40,7 @@ namespace Essentials
             // currentState = attachedAnimator.GetCurrentAnimatorStateInfo(0);
             started = true;
         }
-        
+
         private void CheckAnimationState()
         {
             if (started)
@@ -47,7 +50,7 @@ namespace Essentials
                 {
                     currentState = stateInfo;
                 }
-                
+
                 if (currentState.shortNameHash == currentStateHash && currentState.normalizedTime >= 0.9f)
                 {
                     started = false;

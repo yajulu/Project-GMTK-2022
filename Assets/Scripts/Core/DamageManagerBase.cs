@@ -2,6 +2,7 @@ using System;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
+using UI;
 
 namespace Core
 {
@@ -26,7 +27,7 @@ namespace Core
 
         protected virtual void OnDisable()
         {
-            
+
         }
 
         protected virtual void InitDamageable()
@@ -34,16 +35,17 @@ namespace Core
             currentHealthPoint = maxHealthPoints;
             isDead = false;
         }
-        
+
         [Button]
         public virtual void TakeDamage(int dmg)
         {
             if (isDead || !enabled)
                 return;
             currentHealthPoint -= dmg;
+            UIManager.Instance.UpdateHP(currentHealthPoint);
             Debug.Log($"{gameObject.name} took {dmg} damage points, current HP {currentHealthPoint}");
             OnDamageTaken?.Invoke(dmg);
-            
+
             //Killed
             if (currentHealthPoint < 0 && !isDead)
             {
@@ -58,6 +60,6 @@ namespace Core
             OnDamageableKilledUnityEvent?.Invoke();
             OnDamageableKilled?.Invoke();
         }
-        
+
     }
 }

@@ -50,7 +50,7 @@ namespace Core
 
         [SerializeField] private bool userRolling;
         [SerializeField] private bool aiRolling;
-        
+
         private void Awake()
         {
             playingDices = new List<eDiceType>();
@@ -80,7 +80,7 @@ namespace Core
             // ENEMY_DICE_HASH = Animator.StringToHash(nameof(eEnemyType));
             // PLAYER_DICE_HASH = Animator.StringToHash(nameof(ePlayerType));
             // PLAYER_ENEMEY_DICE_HASH = Animator.StringToHash(PLAYER_ENEMEY_DICE);
-            
+
         }
 
 
@@ -92,8 +92,10 @@ namespace Core
             {
                 timer = Random.Range(10, 20);
                 RollDice(Random.Range(0, 4) > 1 ? eDiceType.Enemy : eDiceType.Player, false);
+                return;
             }
             timer -= Time.deltaTime;
+            UIManager.Instance.UpdateCooldown(timer);
 
         }
 
@@ -118,10 +120,10 @@ namespace Core
                     var localType = enemyType;
                     OnEnemyDiceRolled(localType);
                 });
-                userAnimatorTrigger.AttachedAnimator.SetInteger(diceIntegerHashes[eDiceType.Enemy], (int) enemyType);
+                userAnimatorTrigger.AttachedAnimator.SetInteger(diceIntegerHashes[eDiceType.Enemy], (int)enemyType);
                 userAnimatorTrigger.AttachedAnimator.SetTrigger(diceTriggerHashes[eDiceType.Enemy]);
             }
-            
+
         }
 
         [Button]
@@ -146,7 +148,7 @@ namespace Core
 
             Action callBack;
             int newStateHash;
-            
+
             switch (diceType)
             {
                 case eDiceType.Player:
@@ -240,7 +242,7 @@ namespace Core
                     ? (index + 1) % list.Count : index;
                 return index;
             }
-            
+
             T GetRandomType<T>(IReadOnlyList<T> list, T current)
             {
                 int index;
@@ -268,8 +270,8 @@ namespace Core
             PlayerDiceRolled?.Invoke(playerType);
             playerDiceRolledUnityEvent?.Invoke();
         }
-        
-        
+
+
         [Button]
         private void PrepareAnimationHashes()
         {
@@ -290,18 +292,18 @@ namespace Core
             {
                 diceTriggerHashes.Add((eDiceType)type, Animator.StringToHash(type.ToString()));
             }
-            
+
             diceIntegerHashes = new EnumAnimatorHashesDict<eDiceType>
             {
                 { eDiceType.Player, Animator.StringToHash(nameof(ePlayerType)) },
                 { eDiceType.Enemy, Animator.StringToHash(nameof(eEnemyType)) }
             };
         }
-        
+
         [Serializable]
         public class EnumAnimatorHashesDict<T> : UnitySerializedDictionary<T, int>
         {
-            
+
         }
 
     }
