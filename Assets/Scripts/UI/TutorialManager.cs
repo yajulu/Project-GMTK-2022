@@ -47,6 +47,25 @@ public class TutorialManager : MonoBehaviour
 
 
     }
+    public void DestroyThirdEnemy()
+    {
+        ActivateNextHint();
+        transform.GetChild(currentHint).gameObject.SetActive(true);
+        transform.GetChild(currentHint - 1).gameObject.SetActive(false);
+
+
+    }
+
+    public void FinalHint()
+    {
+        ActivateNextHint();
+        transform.GetChild(5).gameObject.SetActive(true);
+        transform.GetChild(4).gameObject.SetActive(false);
+
+
+    }
+
+
 
 
 

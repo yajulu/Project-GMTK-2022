@@ -112,15 +112,18 @@ namespace UI
 
         public void StartGame()
         {
-            Debug.Log("Started");
-
-
-            TutorialPanel.SetActive(false);
+            if (TutorialPanel.activeSelf)
+            {
+                TutorialManager.SetActive(false);
+                TutorialPanel.SetActive(false);
+            }
             HUDPanel.SetActive(true);
             Time.timeScale = 1;
             currentScore = 0;
             currentState = GameState.Started;
             GameStarted?.Invoke();
+
+
 
 
             //Set "Start Game Boolean" here
@@ -187,10 +190,12 @@ namespace UI
 
         public void Restart()
         {
-            if (PauseMenuPanel.activeSelf)
+
+            if (PauseMenuPanel.activeSelf || GameOverPanel.activeSelf)
             {
 
-                SceneManager.LoadScene(0);
+                //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                SceneManager.LoadScene(1);
 
 
                 //Set "Start Game Boolean" here
@@ -207,6 +212,8 @@ namespace UI
 
         public void UpdateHP(int hp)
         {
+            if (currentState != GameState.Started)
+                return;
             for (int i = 0; i < hp; i++)
             {
                 hpParent.GetChild(i).gameObject.SetActive(true);
