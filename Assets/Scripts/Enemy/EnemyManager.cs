@@ -90,13 +90,13 @@ namespace Enemy
             var initialPosition = new Vector2(Mathf.Abs(spawnPosition.x) + spawnRange.x * 0.5f,
                 Mathf.Abs(spawnPosition.y) + spawnRange.y * 0.5f);
             var config = enemyTypeDict[currentEnemyType];
-            dummyCurrentEnemy = Instantiate(config.Prefab, spawnPosition, config.RandomizeRotation? Quaternion.Euler(0,0, Random.Range(0,360)) : Quaternion.identity, transform);
+            dummyCurrentEnemy = Instantiate(config.Prefab, spawnPosition, config.RandomizeRotation ? Quaternion.Euler(0, 0, Random.Range(0, 360)) : Quaternion.identity, transform);
             dummyCurrentEnemy.transform.DOMove(spawnPosition, 3f)
                 .From(initialPosition);
 
 
         }
-        
+
 
         [Button]
         private void SwitchEnemies(eEnemyType newType)
@@ -107,7 +107,7 @@ namespace Enemy
             {
                 var currentChild = transform.GetChild(i);
                 var config = enemyTypeDict[currentEnemyType];
-                Instantiate(config.Prefab, currentChild.position, config.RandomizeRotation? Quaternion.Euler(0,0, Random.Range(0,360)) : Quaternion.identity, transform);
+                Instantiate(config.Prefab, currentChild.position, config.RandomizeRotation ? Quaternion.Euler(0, 0, Random.Range(0, 360)) : Quaternion.identity, transform);
                 currentChild.gameObject.SetActive(false);
                 Destroy(currentChild.gameObject, 3f);
             }
@@ -140,7 +140,7 @@ namespace Enemy
 
             [SerializeField, ReadOnly]
             private Vector2 halfRange;
-            
+
             private Vector2 tempVal;
 
             private void UpdateRange()
@@ -151,8 +151,8 @@ namespace Enemy
             {
                 return new Vector2
                 {
-                    x = Random.Range(-halfRange.x , halfRange.x) + center.x,
-                    y = Random.Range(-range.y , halfRange.y) + center.y
+                    x = Random.Range(-halfRange.x, halfRange.x) + center.x,
+                    y = Random.Range(-range.y, halfRange.y) + center.y
                 };
             }
 
@@ -165,7 +165,7 @@ namespace Enemy
 
         private void OnDrawGizmos()
         {
-            Gizmos.color = Color.red;
+            Gizmos.color = Color.green;
             foreach (var quadrant in quadList)
             {
                 Gizmos.DrawWireCube(quadrant.center, quadrant.range);

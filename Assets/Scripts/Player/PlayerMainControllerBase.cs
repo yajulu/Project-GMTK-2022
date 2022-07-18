@@ -21,11 +21,11 @@ namespace Player
             diceManager = FindObjectOfType<DiceManager>();
             diceManager.PlayerDiceRolled += SwitchPlayerType;
         }
-        
+
         protected override void Start()
         {
             base.Start();
-            SwitchPlayerType(currentPlayerType);
+            //SwitchPlayerType(currentPlayerType);
         }
 
         private void OnDestroy()

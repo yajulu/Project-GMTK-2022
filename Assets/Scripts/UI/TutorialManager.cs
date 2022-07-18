@@ -13,7 +13,10 @@ public class TutorialManager : MonoBehaviour
     public PlayerMainControllerBase playerController;
 
 
-
+    void Start()
+    {
+        playerController.SwitchPlayerType(Core.ePlayerType.Toktok);
+    }
 
 
 

@@ -274,90 +274,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7914585189756256121, guid: ef5a63e6d6a66dd4e8f15a238f40dab4, type: 3}
-      propertyPath: maxNumber
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7914585189756256121, guid: ef5a63e6d6a66dd4e8f15a238f40dab4, type: 3}
-      propertyPath: quadList.Array.data[0].range.x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7914585189756256121, guid: ef5a63e6d6a66dd4e8f15a238f40dab4, type: 3}
-      propertyPath: quadList.Array.data[1].range.x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7914585189756256121, guid: ef5a63e6d6a66dd4e8f15a238f40dab4, type: 3}
-      propertyPath: quadList.Array.data[2].range.x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7914585189756256121, guid: ef5a63e6d6a66dd4e8f15a238f40dab4, type: 3}
-      propertyPath: quadList.Array.data[3].range.x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7914585189756256121, guid: ef5a63e6d6a66dd4e8f15a238f40dab4, type: 3}
-      propertyPath: quadList.Array.data[0].center.x
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7914585189756256121, guid: ef5a63e6d6a66dd4e8f15a238f40dab4, type: 3}
-      propertyPath: quadList.Array.data[0].center.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7914585189756256121, guid: ef5a63e6d6a66dd4e8f15a238f40dab4, type: 3}
-      propertyPath: quadList.Array.data[1].center.x
-      value: -6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7914585189756256121, guid: ef5a63e6d6a66dd4e8f15a238f40dab4, type: 3}
-      propertyPath: quadList.Array.data[1].center.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7914585189756256121, guid: ef5a63e6d6a66dd4e8f15a238f40dab4, type: 3}
-      propertyPath: quadList.Array.data[2].center.x
-      value: -6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7914585189756256121, guid: ef5a63e6d6a66dd4e8f15a238f40dab4, type: 3}
-      propertyPath: quadList.Array.data[2].center.y
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7914585189756256121, guid: ef5a63e6d6a66dd4e8f15a238f40dab4, type: 3}
-      propertyPath: quadList.Array.data[3].center.x
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7914585189756256121, guid: ef5a63e6d6a66dd4e8f15a238f40dab4, type: 3}
-      propertyPath: quadList.Array.data[3].center.y
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7914585189756256121, guid: ef5a63e6d6a66dd4e8f15a238f40dab4, type: 3}
-      propertyPath: quadList.Array.data[0].halfRange.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7914585189756256121, guid: ef5a63e6d6a66dd4e8f15a238f40dab4, type: 3}
-      propertyPath: quadList.Array.data[0].halfRange.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7914585189756256121, guid: ef5a63e6d6a66dd4e8f15a238f40dab4, type: 3}
-      propertyPath: quadList.Array.data[1].halfRange.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7914585189756256121, guid: ef5a63e6d6a66dd4e8f15a238f40dab4, type: 3}
-      propertyPath: quadList.Array.data[1].halfRange.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7914585189756256121, guid: ef5a63e6d6a66dd4e8f15a238f40dab4, type: 3}
-      propertyPath: quadList.Array.data[2].halfRange.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7914585189756256121, guid: ef5a63e6d6a66dd4e8f15a238f40dab4, type: 3}
-      propertyPath: quadList.Array.data[2].halfRange.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7914585189756256121, guid: ef5a63e6d6a66dd4e8f15a238f40dab4, type: 3}
-      propertyPath: quadList.Array.data[3].halfRange.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7914585189756256121, guid: ef5a63e6d6a66dd4e8f15a238f40dab4, type: 3}
-      propertyPath: quadList.Array.data[3].halfRange.y
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 7914585189756256126, guid: ef5a63e6d6a66dd4e8f15a238f40dab4, type: 3}
       propertyPath: m_Name
       value: EnemyManager
@@ -946,6 +862,10 @@ PrefabInstance:
     - target: {fileID: 6799664143720429348, guid: 48d63531a10ea3d47b69a80d2950a75a, type: 3}
       propertyPath: m_Name
       value: Tutorial Objects
+      objectReference: {fileID: 0}
+    - target: {fileID: 6799664143720429348, guid: 48d63531a10ea3d47b69a80d2950a75a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6799664143720429349, guid: 48d63531a10ea3d47b69a80d2950a75a, type: 3}
       propertyPath: m_RootOrder

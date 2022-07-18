@@ -133,6 +133,7 @@ namespace UI
         {
             if (StartMenuPanel.activeSelf)
             {
+                TutorialManager.SetActive(true);
                 StartMenuPanel.SetActive(false);
                 TutorialPanel.SetActive(true);
                 Time.timeScale = 1;
@@ -194,8 +195,8 @@ namespace UI
             if (PauseMenuPanel.activeSelf || GameOverPanel.activeSelf)
             {
 
-                //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                //SceneManager.LoadScene(1);
 
 
                 //Set "Start Game Boolean" here
