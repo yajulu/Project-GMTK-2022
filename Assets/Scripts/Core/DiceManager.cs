@@ -16,13 +16,17 @@ namespace Core
 {
     public class DiceManager : MonoBehaviour
     {
-        [SerializeField] private float timer;
+        
+        [SerializeField] private float userCoolDownTime = 3f;
         [SerializeField] private List<eEnemyType> enemyTypes;
         [SerializeField] private List<ePlayerType> playerTypes;
 
         [SerializeField, ReadOnly] private eEnemyType currentEnemyType;
         [SerializeField, ReadOnly] private ePlayerType currentPlayerType;
 
+        [SerializeField, ReadOnly] private float aiDiceRollTimer;
+        [SerializeField, ReadOnly] private float coolDownTimer;
+        
         public event Action<eEnemyType> EnemyDiceRolled;
         public event Action<ePlayerType> PlayerDiceRolled;
 
@@ -61,10 +65,10 @@ namespace Core
         
         private void Start()
         {
-            mainInput = FindObjectOfType<PlayerInputController>().MainInput;
+            _playerMainControllerBase = FindObjectOfType<PlayerMainControllerBase>();
+            mainInput = _playerMainControllerBase.GetComponent<PlayerInputController>().MainInput;
             mainInput.Player.RollEnemyDice.performed += RollEnemyDiceOnPerformed;
             mainInput.Player.RollPlayerDice.performed += RollPlayerDiceOnPerformed;
-            _playerMainControllerBase.GetComponent<PlayerMainControllerBase>();
             _playerMainControllerBase.PlayerTypeChanged += UpdateCurrentPlayerType;
             // ENEMY_DICE_HASH = Animator.StringToHash(nameof(eEnemyType));
             // PLAYER_DICE_HASH = Animator.StringToHash(nameof(ePlayerType));
@@ -93,14 +97,16 @@ namespace Core
         {
             if (UIManager.Instance.CurrentGameState != UIManager.GameState.Started)
                 return;
-            if (timer < 0)
+            if (aiDiceRollTimer < 0)
             {
-                timer = Random.Range(10, 20);
+                aiDiceRollTimer = Random.Range(10, 20);
                 RollDice(Random.Range(0, 4) > 1 ? eDiceType.Enemy : eDiceType.Player, false);
                 return;
             }
-            timer -= Time.deltaTime;
-            UIManager.Instance.UpdateCooldown(timer);
+            aiDiceRollTimer -= Time.deltaTime;
+            coolDownTimer -= Time.deltaTime;
+            
+            UIManager.Instance.UpdateCooldown(coolDownTimer, userCoolDownTime);
 
         }
 
@@ -139,7 +145,7 @@ namespace Core
         [Button]
         private void RollDice(eDiceType diceType, bool user, bool immediate = false)
         {
-            if (user && userRolling)
+            if (user && (coolDownTimer > 0 || userRolling))
                 return;
             if (!user && aiRolling)
                 return;

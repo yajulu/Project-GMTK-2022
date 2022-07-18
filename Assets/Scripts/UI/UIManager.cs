@@ -218,7 +218,7 @@ namespace UI
             }
         }
 
-        public void UpdateCooldown(float timeRemaining)
+        public void UpdateCooldown(float timeRemaining, float maxTime)
         {
 
 
