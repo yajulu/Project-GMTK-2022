@@ -60,6 +60,12 @@ namespace Player
             isInvulnerable = enable;
         }
 
+        protected override void InitDamageable()
+        {
+            base.InitDamageable();
+            UIManager.Instance.UpdateHP(currentHealthPoint);
+        }
+
         private void MainControllerOnPlayerTypeChanged(ePlayerType type)
         {
             maxHealthPoints = mainController.PlayerDict[type].MaxHealthPoints;
