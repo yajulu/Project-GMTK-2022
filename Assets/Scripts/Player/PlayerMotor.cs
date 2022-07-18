@@ -17,6 +17,7 @@ namespace Player
         
         [SerializeField, MinValue(0)] private float movementSpeed = 10f;
         [SerializeField, OnValueChanged(nameof(UpdateClampValue))] private Vector2 movementRange;
+        [SerializeField] private Vector2 movementRangeCenter;
         [SerializeField, ReadOnly, TitleGroup("Debug")] private Vector2 movementRangeHalfExtent;
         [SerializeField, ReadOnly, TitleGroup("Debug")] private bool movementPause;
 
@@ -81,8 +82,8 @@ namespace Player
             currentDisplacement = currentMoveVector * (movementSpeed * Time.deltaTime);
             newPosition = currentPosition + currentDisplacement;
             
-            newPosition.x = Mathf.Clamp(newPosition.x, -movementRangeHalfExtent.x, movementRangeHalfExtent.x);
-            newPosition.y = Mathf.Clamp(newPosition.y, -movementRangeHalfExtent.y, movementRangeHalfExtent.y);
+            newPosition.x = Mathf.Clamp(newPosition.x, -movementRangeHalfExtent.x + movementRangeCenter.x, movementRangeHalfExtent.x + movementRangeCenter.x);
+            newPosition.y = Mathf.Clamp(newPosition.y, -movementRangeHalfExtent.y + movementRangeCenter.y, movementRangeHalfExtent.y + movementRangeCenter.y);
 
             currentDisplacement = newPosition - currentPosition;
             
@@ -98,7 +99,7 @@ namespace Player
         private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.green;
-            Gizmos.DrawWireCube(Vector3.zero, movementRange);
+            Gizmos.DrawWireCube(movementRangeCenter, movementRange);
         }
     }
 }
