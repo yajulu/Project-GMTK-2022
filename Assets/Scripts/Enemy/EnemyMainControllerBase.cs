@@ -10,10 +10,19 @@ namespace Enemy
 {
     public class EnemyMainControllerBase : MainControllerBase
     {
-        [SerializeField, TitleGroup("Refs")] private GameObject deadGraphics;
+        [SerializeField, TitleGroup("Refs")] private Animator enemyAnimator;
         [SerializeField, TitleGroup("Refs")] private GameObject weaponTransform; 
         [SerializeField, TitleGroup("Refs")] private Collider2D enemyCollider;
 
+        private int deadTriggerHash;
+
+        private AnimatorOverrideController animatorOverrideController;
+
+        protected override void Awake()
+        {
+            base.Awake();
+            deadTriggerHash = Animator.StringToHash("Dead");
+        }
 
         protected override void OnEnable()
         {
@@ -31,8 +40,8 @@ namespace Enemy
         {
             UIManager.Instance.UpdatePlayerScore(1000);
             weaponTransform.SetActive(false);
-            gfx.transform.gameObject.SetActive(false);
-            deadGraphics.SetActive(true);
+            // gfx.transform.gameObject.SetActive(false);
+            enemyAnimator.SetTrigger(deadTriggerHash);
             enemyCollider.enabled = false;
             if (!gameObject.transform.parent.SafeIsUnityNull()  && gameObject.transform.parent.name.Contains("EnemyHolder"))
             {
@@ -48,7 +57,7 @@ namespace Enemy
         protected override void SetRefs()
         {
             base.SetRefs();
-            deadGraphics = transform.FindDeepChild<GameObject>("DeadGFX");
+            enemyAnimator = GetComponentInChildren<Animator>();
             weaponTransform = transform.FindDeepChild<GameObject>("EnemyWeaponBase");
             enemyCollider = GetComponent<Collider2D>();
         }

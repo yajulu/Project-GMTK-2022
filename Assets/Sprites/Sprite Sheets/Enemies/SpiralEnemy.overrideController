@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SpiralEnemy
+  m_Controller: {fileID: 9100000, guid: 8f4618ee4d5c358488abc03b832f5e64, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 405788f8f904e6144b3a4daf585ed331, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c28a34e9b155b7a408738348190b55c7, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 3dd5eada3d9273f4993c791fb08dc701, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2d70250dfb4a9c6458943db759c22e02, type: 2}
