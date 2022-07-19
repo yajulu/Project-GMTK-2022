@@ -17,12 +17,15 @@ namespace Core
         
         [SerializeField] private int maxHealthPoints;
         
+        [SerializeField] private GameObject variantObject;
+        
         [SerializeField] private GameObject graphics;
 
         public float MovementSpeed => movementSpeed;
 
         public int MaxHealthPoints => maxHealthPoints;
 
+        public GameObject VariantObject => variantObject;
         public GameObject Graphics => graphics;
     }
 

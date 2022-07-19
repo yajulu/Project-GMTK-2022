@@ -15,6 +15,10 @@ namespace Player
         private DiceManager diceManager;
         public PlayerDataDictionary PlayerDict => playerDict;
 
+        public GameObject CurrentPlayerVariantGraphics => playerDict[currentPlayerType].Graphics;
+
+        private GameObject currentPlayerVariantGraphics;
+
         protected override void Awake()
         {
             base.Awake();
@@ -39,10 +43,10 @@ namespace Player
         {
             foreach (var properties in playerDict.Values)
             {
-                properties.Graphics.SetActive(false);
+                properties.VariantObject.SetActive(false);
             }
             currentPlayerType = type;
-            playerDict[currentPlayerType].Graphics.SetActive(true);
+            playerDict[currentPlayerType].VariantObject.SetActive(true);
             PlayerTypeChanged?.Invoke(currentPlayerType);
         }
 

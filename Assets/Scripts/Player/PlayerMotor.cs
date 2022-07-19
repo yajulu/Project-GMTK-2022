@@ -3,6 +3,7 @@ using Core;
 using Input;
 using Player.Abilities;
 using Sirenix.OdinInspector;
+using UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -26,6 +27,11 @@ namespace Player
         private Vector2 newPosition;
         private Vector2 currentDisplacement;
         private Vector2 currentPosition;
+        
+        private readonly Quaternion backRotation = Quaternion.Euler(0, 180, 0);
+        private readonly Quaternion forwardRotation = Quaternion.identity;
+        
+        private readonly Quaternion horseRotation = Quaternion.Euler(0, 0, 15); 
         
         private void Awake()
         {
@@ -77,6 +83,10 @@ namespace Player
         {
             if (movementPause)
                 return;
+
+            // if (UIManager.Instance.CurrentGameState != UIManager.GameState.Started &&
+            //     UIManager.Instance.CurrentGameState != UIManager.GameState.Tutorial)
+            //     return;
             inputController.GetPlayerInput(out currentMoveVector);
             currentPosition = transform.position;
             currentDisplacement = currentMoveVector * (movementSpeed * Time.deltaTime);
@@ -88,6 +98,9 @@ namespace Player
             currentDisplacement = newPosition - currentPosition;
             
             transform.Translate(currentDisplacement);
+            mainController.MainGraphicsHolder.transform.rotation =
+                currentMoveVector.x < 0 ? backRotation : forwardRotation;
+            mainController.CurrentPlayerVariantGraphics.transform.localRotation = Mathf.Abs(currentMoveVector.x) > 0 ? horseRotation : forwardRotation;
         }
 
         [Button]

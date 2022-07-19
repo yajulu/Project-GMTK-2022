@@ -16,6 +16,8 @@ namespace Core
 
         [SerializeField] protected Vector3 damageScale;
 
+        public Transform MainGraphicsHolder => gfx;
+
         protected virtual void Awake()
         {
             // damageScale = Vector3.one * 0.1f;
