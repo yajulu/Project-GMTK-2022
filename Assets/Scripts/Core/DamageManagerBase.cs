@@ -16,6 +16,7 @@ namespace Core
         public event Action OnDamageableKilled;
 
         public UnityEvent OnDamageableKilledUnityEvent;
+        public UnityEvent OnDamageaTakenUnityEvent;
 
         protected bool IsDead => isDead;
         public int MaxHealthPoints => maxHealthPoints;
@@ -45,7 +46,7 @@ namespace Core
 
             Debug.Log($"{gameObject.name} took {dmg} damage points, current HP {currentHealthPoint}");
             OnDamageTaken?.Invoke(dmg);
-
+            OnDamageaTakenUnityEvent?.Invoke();
             //Killed
             if (currentHealthPoint <= 0 && !isDead)
             {

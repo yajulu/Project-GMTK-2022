@@ -106,7 +106,7 @@ namespace Enemy
                 return;
             spawnTimer = spawnInterval;
             var spawnPosition = spawnCounter < maxNumber ? quadList[spawnCounter % quadList.Length].GetRandomPositionInQuadrant() : GetRandomPosition();
-            var initialPosition = spawnPosition.normalized * (20 - spawnPosition.magnitude);
+            var initialPosition = spawnPosition.normalized * 20;
             var config = enemyTypeDict[currentEnemyType];
             var holder = Instantiate(enemyHolder, spawnPosition, Quaternion.identity, transform);
             dummyCurrentEnemy = null;
@@ -172,7 +172,7 @@ namespace Enemy
                 return new Vector2
                 {
                     x = Random.Range(-halfRange.x, halfRange.x) + center.x,
-                    y = Random.Range(-range.y, halfRange.y) + center.y
+                    y = Random.Range(-halfRange.y, halfRange.y) + center.y
                 };
             }
 
