@@ -1,4 +1,5 @@
 using System;
+using Sirenix.OdinInspector;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -71,9 +72,7 @@ namespace UI
 
         private void Start()
         {
-            currentState = GameState.Initialized;
-
-
+            ResetScene();
         }
 
         private void OnPausePerformed(InputAction.CallbackContext obj)
@@ -188,19 +187,25 @@ namespace UI
         }
 
 
+        [Button]
         public void Restart()
         {
 
             if (PauseMenuPanel.activeSelf || GameOverPanel.activeSelf)
             {
-
-                //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-                SceneManager.LoadScene(1);
-
+                SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name).completed += (op) => { ResetScene(); };
 
                 //Set "Start Game Boolean" here
             }
         }
+
+        private void ResetScene()
+        {
+            currentState = GameState.Initialized;
+            StartMenuPanel.SetActive(true);
+            GameOverPanel.SetActive(false);
+        }
+        
 
 
         public void ShowHint(string hint)
