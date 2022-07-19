@@ -76,7 +76,7 @@ namespace Core
 
         }
 
-        private void OnDestroy()
+        private void OnDisable()
         {
             mainInput.Player.RollEnemyDice.performed -= RollEnemyDiceOnPerformed;
             mainInput.Player.RollPlayerDice.performed -= RollPlayerDiceOnPerformed;
@@ -149,7 +149,7 @@ namespace Core
                 return;
             if (!user && aiRolling)
                 return;
-            
+
             AnimatorEventTrigger currentAnimator;
             if (user)
             {

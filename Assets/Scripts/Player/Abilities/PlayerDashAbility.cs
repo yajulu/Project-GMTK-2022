@@ -28,7 +28,7 @@ namespace Player.Abilities
             dashTransform.right = CurrentAimDirection;
         }
 
-        private void OnDestroy()
+        private void OnDisable()
         {
             AbilityAction.performed -= OnAbilityPerformed;
             AbilityPerformed -= SetDashAbilityGraphics;

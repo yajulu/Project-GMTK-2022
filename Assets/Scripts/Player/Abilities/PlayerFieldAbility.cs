@@ -26,7 +26,7 @@ namespace Player.Abilities
             fieldTransform.gameObject.SetActive(enable);
         }
 
-        private void OnDestroy()
+        private void OnDisable()
         {
             AbilityAction.performed -= OnAbilityPerformed;
             AbilityPerformed -= SetAbilityField;
