@@ -33,6 +33,9 @@ namespace Core
 
         public UnityEvent enemyDiceRolledUnityEvent;
         public UnityEvent playerDiceRolledUnityEvent;
+        
+        public UnityEvent userDiceRolledAnimationStartedUnityEvent;
+        public UnityEvent aiDiceRolledAnimationStartedUnityEvent;
 
         [SerializeField] private AnimatorEventTrigger userAnimatorTrigger;
         [SerializeField] private AnimatorEventTrigger aiDiceAnimatorTrigger;
@@ -161,11 +164,13 @@ namespace Core
                 currentAnimator = userAnimatorTrigger;
                 userRolling = true;
                 coolDownTimer = userCoolDownTime;
+                userDiceRolledAnimationStartedUnityEvent?.Invoke();
             }
             else
             {
                 currentAnimator = aiDiceAnimatorTrigger;
                 aiRolling = true;
+                aiDiceRolledAnimationStartedUnityEvent?.Invoke();
             }
 
             Action callBack;
