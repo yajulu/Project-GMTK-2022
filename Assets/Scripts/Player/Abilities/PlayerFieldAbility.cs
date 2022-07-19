@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -28,7 +29,8 @@ namespace Player.Abilities
 
         private void OnDisable()
         {
-            AbilityAction.performed -= OnAbilityPerformed;
+            if (!AbilityAction.IsUnityNull())
+                AbilityAction.performed -= OnAbilityPerformed;
             AbilityPerformed -= SetAbilityField;
         }
     }
