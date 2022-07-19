@@ -158,10 +158,13 @@ namespace Core
         [Button]
         private void RollDice(eDiceType diceType, bool user, bool immediate = false)
         {
-            if (user && (coolDownTimer > 0 || userRolling))
-                return;
-            if (!user && aiRolling)
-                return;
+            
+            switch (user)
+            {
+                case true when ((coolDownTimer > 0 && UIManager.Instance.CurrentGameState == UIManager.GameState.Started) || userRolling):
+                case false when aiRolling:
+                    return;
+            }
 
             AnimatorEventTrigger currentAnimator;
             if (user)
