@@ -56,6 +56,7 @@ MonoBehaviour:
     - Prefab: {fileID: 7121704832930903525, guid: 732993d8d6fdf1e46ad3aa86abb7ed15, type: 3}
       RandomizeRotation: 0
       InitialSpawnPosition: {x: 0, y: 0}
+  enemyHolder: {fileID: 6085768932129878547, guid: 6f1e49541ce444bd3b9438b2e2ffe210, type: 3}
   spawning: 1
   spawnInterval: 5
   maxNumber: 5

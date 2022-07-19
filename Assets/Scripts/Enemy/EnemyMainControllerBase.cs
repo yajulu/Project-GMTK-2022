@@ -1,4 +1,5 @@
 using Core;
+using DG.Tweening;
 using UI;
 
 namespace Enemy
@@ -21,8 +22,15 @@ namespace Enemy
         {
             UIManager.Instance.UpdatePlayerScore(1000);
             gameObject.SetActive(false);
-            transform.SetParent(null);
-            Destroy(gameObject, 5f);
+            if (gameObject.transform.parent.name.Contains("EnemyHolder"))
+            {
+                var parent = gameObject.transform.parent;
+                parent.DOComplete();
+                parent.SetParent(null);
+                Destroy(parent.gameObject, 3f);
+            }
+            else
+                Destroy(gameObject, 5f);
         }
     }
 }
