@@ -21,12 +21,18 @@ namespace Enemy
         [SerializeField, TitleGroup("Spawning")] private float spawnInterval = 15f;
         [SerializeField, TitleGroup("Spawning")] private int maxNumber = 4;
         [SerializeField, TitleGroup("Spawning")] private Vector2 spawnRange;
-
         [SerializeField, TitleGroup("Spawning")]
         private SpawnQuadrant[] quadList;
 
+        [SerializeField, TitleGroup("Progression")]
+        private int maxProgressionSpawnValue;
+
+        [SerializeField, TitleGroup("Progression")]
+        private float incrementsTime;
+        
         [SerializeField, TitleGroup("Debug")] private eEnemyType currentEnemyType;
         [SerializeField, TitleGroup("Debug"), ReadOnly] private float spawnTimer;
+        [SerializeField, TitleGroup("Debug"), ReadOnly] private float progressionIncrementTimer;
         //[SerializeField, TitleGroup("Debug"), ReadOnly] private int spawnCounter;
 
 
@@ -39,6 +45,7 @@ namespace Enemy
             diceManager = FindObjectOfType<DiceManager>();
             diceManager.EnemyDiceRolled += SwitchEnemies;
             spawning = false;
+            progressionIncrementTimer = incrementsTime;
         }
 
         private void OnEnable()
@@ -77,7 +84,16 @@ namespace Enemy
                     SpawnEnemy();
                 }
 
+                if (maxNumber < maxProgressionSpawnValue && progressionIncrementTimer < 0)
+                {
+                    maxNumber++;
+                    progressionIncrementTimer = incrementsTime;
+                }
+                
+                    
+
                 spawnTimer -= Time.deltaTime;
+                progressionIncrementTimer -= Time.deltaTime;
             }
         }
 
