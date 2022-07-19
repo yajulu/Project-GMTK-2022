@@ -419,6 +419,7 @@ MonoBehaviour:
   GameOverPanel: {fileID: 5098668308939569668}
   TutorialManager: {fileID: 0}
   gameOverScoreText: {fileID: 5098668308813295169}
+  ScoreText: {fileID: 5098668309485471730}
 --- !u!1 &5098668308517955381
 GameObject:
   m_ObjectHideFlags: 0

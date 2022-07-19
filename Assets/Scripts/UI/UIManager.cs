@@ -32,7 +32,7 @@ namespace UI
 
         TextMeshProUGUI hintTextBox;
 
-        public TextMeshProUGUI gameOverScoreText;
+        public TextMeshProUGUI gameOverScoreText, ScoreText;
 
         public static event Action TutorialStarted;
         public static event Action GameStarted;
@@ -101,7 +101,11 @@ namespace UI
         public void UpdatePlayerScore(int score)
         {
             if (currentState == GameState.Started)
+            {
                 currentScore += score;
+                ScoreText.text = currentScore.ToString();
+            }
+
         }
 
         private void Update()
@@ -228,8 +232,9 @@ namespace UI
 
         public void UpdateCooldown(float timeRemaining, float maxTime)
         {
-
-
+            float fillAmountValue = 1 - Mathf.Max(timeRemaining, 0) / maxTime;
+            diceCoolDown.fillAmount = fillAmountValue;
+            dice.color = fillAmountValue == 1 ? Color.white : Color.grey;
         }
 
 
