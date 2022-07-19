@@ -9,9 +9,9 @@ namespace Core
 {
     public class MainControllerBase : MonoBehaviour
     {
-        [SerializeField, ReadOnly, FoldoutGroup("Refs")] protected DamageManagerBase damageManager;
+        [SerializeField, ReadOnly, TitleGroup("Refs")] protected DamageManagerBase damageManager;
 
-        [SerializeField, ReadOnly, FoldoutGroup("Refs")]
+        [SerializeField, ReadOnly, TitleGroup("Refs")]
         protected Transform gfx;
 
         [SerializeField] protected Vector3 damageScale;
@@ -50,7 +50,7 @@ namespace Core
         }
 
         [Button]
-        private void SetRefs()
+        protected virtual void SetRefs()
         {
             damageManager = GetComponent<DamageManagerBase>();
             gfx = transform.FindDeepChild<Transform>("GFX");

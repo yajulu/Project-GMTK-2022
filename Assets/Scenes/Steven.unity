@@ -130,10 +130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6847863627492367158, guid: 85e91b89859a5e8479915bdc03f26463, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7058684789700895331, guid: 85e91b89859a5e8479915bdc03f26463, type: 3}
       propertyPath: m_Name
       value: DiagonalEnemy (3)
@@ -195,10 +191,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6847863627492367158, guid: 85e91b89859a5e8479915bdc03f26463, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7058684789700895331, guid: 85e91b89859a5e8479915bdc03f26463, type: 3}
       propertyPath: m_Name
       value: DiagonalEnemy (1)
@@ -440,10 +432,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6847863627492367158, guid: 85e91b89859a5e8479915bdc03f26463, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7058684789700895331, guid: 85e91b89859a5e8479915bdc03f26463, type: 3}
       propertyPath: m_Name
       value: DiagonalEnemy (2)
@@ -625,11 +613,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4260912238789465939, guid: 0f4631a64cd055a4a894269a5bc4f0ec, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.54
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4260912238789465939, guid: 0f4631a64cd055a4a894269a5bc4f0ec, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.19
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4260912238789465939, guid: 0f4631a64cd055a4a894269a5bc4f0ec, type: 3}
       propertyPath: m_LocalPosition.z
@@ -666,10 +654,6 @@ PrefabInstance:
     - target: {fileID: 4260912238789465940, guid: 0f4631a64cd055a4a894269a5bc4f0ec, type: 3}
       propertyPath: m_Name
       value: AimEnemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 4260912238789465940, guid: 0f4631a64cd055a4a894269a5bc4f0ec, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f4631a64cd055a4a894269a5bc4f0ec, type: 3}

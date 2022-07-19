@@ -11,34 +11,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SprialEnemy Variant
       objectReference: {fileID: 0}
-    - target: {fileID: 622231757269494621, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
-      propertyPath: OnDamageableKilledUnityEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 622231757269494621, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
-      propertyPath: OnDamageableKilledUnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 622231757269494621, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
-      propertyPath: OnDamageableKilledUnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 622231757269494621, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
-      propertyPath: OnDamageableKilledUnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 622231757269494621, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
-      propertyPath: OnDamageableKilledUnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Play
-      objectReference: {fileID: 0}
-    - target: {fileID: 622231757269494621, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
-      propertyPath: OnDamageableKilledUnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.AudioSource, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 622231757269494621, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
-      propertyPath: OnDamageableKilledUnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 622231757269494622, guid: a2f5c8b840632ed45841158d3615ea85, type: 3}
       propertyPath: m_RootOrder
       value: 0
