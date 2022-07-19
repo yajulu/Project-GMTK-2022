@@ -36,9 +36,14 @@ namespace Core
         
         public UnityEvent userDiceRolledAnimationStartedUnityEvent;
         public UnityEvent aiDiceRolledAnimationStartedUnityEvent;
+        
+        public UnityEvent userDiceRolledAnimationCompletedUnityEvent;
+        public UnityEvent aiDiceRolledAnimationCompletedUnityEvent;
 
         [SerializeField] private AnimatorEventTrigger userAnimatorTrigger;
         [SerializeField] private AnimatorEventTrigger aiDiceAnimatorTrigger;
+        
+        
 
         private List<eDiceType> playingDices;
 
@@ -188,9 +193,16 @@ namespace Core
                         var localDice = diceType;
                         OnPlayerDiceRolled(newPlayerType);
                         if (user)
+                        {
                             userRolling = false;
+                            userDiceRolledAnimationCompletedUnityEvent?.Invoke();
+                        }
                         else
+                        {
                             aiRolling = false;
+                            aiDiceRolledAnimationCompletedUnityEvent?.Invoke();
+                        }
+                            
                     };
                     break;
                 case eDiceType.Enemy:
@@ -203,9 +215,15 @@ namespace Core
                         var localDice = diceType;
                         OnEnemyDiceRolled(newEnemyType);
                         if (user)
+                        {
                             userRolling = false;
+                            userDiceRolledAnimationCompletedUnityEvent?.Invoke();
+                        }
                         else
+                        {
                             aiRolling = false;
+                            aiDiceRolledAnimationCompletedUnityEvent?.Invoke();
+                        }
                     };
                     break;
                 default:
