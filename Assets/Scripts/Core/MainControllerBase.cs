@@ -14,11 +14,11 @@ namespace Core
         [SerializeField, ReadOnly, FoldoutGroup("Refs")]
         protected Transform gfx;
 
-        private Vector3 damageScale;
+        [SerializeField] protected Vector3 damageScale;
 
         protected virtual void Awake()
         {
-            damageScale = Vector3.one * 1.1f;
+            // damageScale = Vector3.one * 0.1f;
         }
 
         protected virtual void OnEnable()

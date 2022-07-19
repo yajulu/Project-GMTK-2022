@@ -20,6 +20,7 @@ namespace Player
             base.Awake();
             diceManager = FindObjectOfType<DiceManager>();
             diceManager.PlayerDiceRolled += SwitchPlayerType;
+            // damageScale = Vector3.one * 0.1f;
         }
 
         protected override void Start()
