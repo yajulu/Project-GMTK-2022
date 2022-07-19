@@ -49,10 +49,10 @@ namespace Enemy
                 var parent = gameObject.transform.parent;
                 parent.DOComplete();
                 parent.SetParent(null);
-                Destroy(parent.gameObject, 3f);
+                Destroy(parent.gameObject, 1f);
             }
             else
-                Destroy(gameObject, 5f);
+                Destroy(gameObject, 1f);
         }
 
         protected override void SetRefs()

@@ -7,9 +7,9 @@ AnimatorOverrideController:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: AimEnemyOverride
-  m_Controller: {fileID: 9100000, guid: 8f4618ee4d5c358488abc03b832f5e64, type: 2}
+  m_Controller: {fileID: 9100000, guid: 48b71fb8aaf3e2b42b1238819f1527bc, type: 2}
   m_Clips:
-  - m_OriginalClip: {fileID: 7400000, guid: 405788f8f904e6144b3a4daf585ed331, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: dcfd3a4f7700a20459b2adfb5a402bfe, type: 2}
-  - m_OriginalClip: {fileID: 7400000, guid: 3dd5eada3d9273f4993c791fb08dc701, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: dba2ccf8cba39e745b91ea0f2db87848, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: 6a5648909a9178643b59c3f81757afd1, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 9ceecb33f6a6433488ddc7cedf52e7d2, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: dcfd3a4f7700a20459b2adfb5a402bfe, type: 2}

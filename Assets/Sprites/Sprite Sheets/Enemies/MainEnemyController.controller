@@ -45,7 +45,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 2d70250dfb4a9c6458943db759c22e02, type: 2}
+  m_Motion: {fileID: 7400000, guid: dba2ccf8cba39e745b91ea0f2db87848, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -97,7 +97,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: c28a34e9b155b7a408738348190b55c7, type: 2}
+  m_Motion: {fileID: 7400000, guid: 9ceecb33f6a6433488ddc7cedf52e7d2, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -109,7 +109,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SpiralEnemyController
+  m_Name: MainEnemyController
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Dead
