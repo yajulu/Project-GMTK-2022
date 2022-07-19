@@ -33,6 +33,8 @@ namespace Enemy
         [SerializeField, TitleGroup("Debug")] private eEnemyType currentEnemyType;
         [SerializeField, TitleGroup("Debug"), ReadOnly] private float spawnTimer;
         [SerializeField, TitleGroup("Debug"), ReadOnly] private float progressionIncrementTimer;
+        [SerializeField, TitleGroup("Debug"), ReadOnly] private int nextQuadIndex;
+        [SerializeField, TitleGroup("Debug"), ReadOnly] private int spawnCounter;
         //[SerializeField, TitleGroup("Debug"), ReadOnly] private int spawnCounter;
 
 
@@ -102,15 +104,14 @@ namespace Enemy
             if (transform.childCount >= maxNumber)
                 return;
             spawnTimer = spawnInterval;
-            var spawnPosition = GetRandomPosition();
-            var initialPosition = new Vector2(Mathf.Abs(spawnPosition.x) + spawnRange.x * 0.5f,
-                Mathf.Abs(spawnPosition.y) + spawnRange.y * 0.5f);
+            var spawnPosition = spawnCounter < maxNumber ? quadList[spawnCounter % quadList.Length].GetRandomPositionInQuadrant() : GetRandomPosition();
+            var initialPosition = spawnPosition.normalized * (20 - spawnPosition.magnitude);
             var config = enemyTypeDict[currentEnemyType];
             dummyCurrentEnemy = null;
             dummyCurrentEnemy = Instantiate(config.Prefab, spawnPosition, config.RandomizeRotation ? Quaternion.Euler(0, 0, Random.Range(0, 360)) : Quaternion.identity, transform);
             dummyCurrentEnemy.transform.DOMove(spawnPosition, 3f)
                 .From(initialPosition);
-
+            spawnCounter++;
 
         }
 
@@ -132,7 +133,7 @@ namespace Enemy
 
         private Vector2 GetRandomPosition()
         {
-            var selectedQuad = quadList.First(quadrant =>
+            var selectedQuad = quadList.DefaultIfEmpty(quadList[spawnCounter % quadList.Length]).FirstOrDefault(quadrant =>
             {
 
                 for (int i = 0; i < transform.childCount; i++)
@@ -201,6 +202,7 @@ namespace Enemy
     {
         public GameObject Prefab;
         public bool RandomizeRotation;
+        public Vector2 InitialSpawnPosition;
     }
 
 }
