@@ -105,12 +105,12 @@ namespace Enemy
                 return;
             spawnTimer = spawnInterval;
             var spawnPosition = spawnCounter < maxNumber ? quadList[spawnCounter % quadList.Length].GetRandomPositionInQuadrant() : GetRandomPosition();
-            var initialPosition = spawnPosition.normalized * (20 - spawnPosition.magnitude);
+            var initialPosition = spawnPosition.normalized * 20;
             var config = enemyTypeDict[currentEnemyType];
-            dummyCurrentEnemy = null;
-            dummyCurrentEnemy = Instantiate(config.Prefab, spawnPosition, config.RandomizeRotation ? Quaternion.Euler(0, 0, Random.Range(0, 360)) : Quaternion.identity, transform);
-            dummyCurrentEnemy.transform.DOMove(spawnPosition, 3f)
-                .From(initialPosition);
+            // dummyCurrentEnemy = null;
+            var newEnemy = Instantiate(config.Prefab, initialPosition, config.RandomizeRotation ? Quaternion.Euler(0, 0, Random.Range(0, 360)) : Quaternion.identity, transform);
+            newEnemy.transform.DOMove(spawnPosition, 3f);
+            // Debug.Log($"Spawning {newEnemy.name} at {spawnPosition}");
             spawnCounter++;
 
         }
@@ -170,7 +170,7 @@ namespace Enemy
                 return new Vector2
                 {
                     x = Random.Range(-halfRange.x, halfRange.x) + center.x,
-                    y = Random.Range(-range.y, halfRange.y) + center.y
+                    y = Random.Range(-halfRange.y, halfRange.y) + center.y
                 };
             }
 
