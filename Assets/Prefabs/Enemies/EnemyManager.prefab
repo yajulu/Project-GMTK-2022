@@ -70,5 +70,8 @@ MonoBehaviour:
   - center: {x: 6, y: -2}
     range: {x: 10, y: 3.5}
     halfRange: {x: 5, y: 1.75}
+  maxProgressionSpawnValue: 8
+  incrementsTime: 30
   currentEnemyType: 0
   spawnTimer: 3
+  progressionIncrementTimer: 0
