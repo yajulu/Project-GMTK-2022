@@ -16,7 +16,9 @@ namespace Player
         private PlayerDashAbility dashAbility;
         private PlayerMainControllerBase mainController;
         
+        [SerializeField, MinValue(0), OnValueChanged(nameof(UpdateHorseRotation))] private float wheelyAngle = 20f;
         [SerializeField, MinValue(0)] private float movementSpeed = 10f;
+        [SerializeField, MinValue(0)] private float rotationSpeed = 10f;
         [SerializeField, OnValueChanged(nameof(UpdateClampValue))] private Vector2 movementRange;
         [SerializeField] private Vector2 movementRangeCenter;
         [SerializeField, ReadOnly, TitleGroup("Debug")] private Vector2 movementRangeHalfExtent;
@@ -31,13 +33,18 @@ namespace Player
         private readonly Quaternion backRotation = Quaternion.Euler(0, 180, 0);
         private readonly Quaternion forwardRotation = Quaternion.identity;
         
-        private readonly Quaternion horseRotation = Quaternion.Euler(0, 0, 15); 
+        private Quaternion horseRotation = Quaternion.Euler(0, 0, 15);
+
+        private float lastFrameDirection;
+
+        private Transform dummyGraphicsTransform;
         
         private void Awake()
         {
             inputController = GetComponent<PlayerInputController>();
             dashAbility = GetComponent<PlayerDashAbility>();
             mainController = GetComponent<PlayerMainControllerBase>();
+            UpdateHorseRotation();
         }
 
         private void OnEnable()
@@ -56,7 +63,7 @@ namespace Player
         
         void Start()
         {
-
+            
         }
 
         void Update()
@@ -72,6 +79,11 @@ namespace Player
         private void SetPlayerMovementPause(bool pause)
         {
             movementPause = pause;
+        }
+
+        private void UpdateHorseRotation()
+        {
+            horseRotation = Quaternion.Euler(0, 0, wheelyAngle);
         }
         
         private void MainControllerOnPlayerTypeChanged(ePlayerType type)
@@ -98,9 +110,26 @@ namespace Player
             currentDisplacement = newPosition - currentPosition;
             
             transform.Translate(currentDisplacement);
-            mainController.MainGraphicsHolder.transform.rotation =
-                currentMoveVector.x < 0 ? backRotation : forwardRotation;
-            mainController.CurrentPlayerVariantGraphics.transform.localRotation = Mathf.Abs(currentMoveVector.x) > 0 ? horseRotation : forwardRotation;
+            dummyGraphicsTransform = mainController.CurrentPlayerVariantGraphics.transform;
+            if (Mathf.Abs(currentMoveVector.x) > 0)
+            {
+                mainController.MainGraphicsHolder.transform.rotation =
+                    currentMoveVector.x < 0 ? backRotation : forwardRotation;
+                if (dummyGraphicsTransform.localRotation.eulerAngles.z < wheelyAngle)
+                {
+                    // Debug.Log(mainController.CurrentPlayerVariantGraphics.transform.localRotation.eulerAngles.z);
+                    dummyGraphicsTransform.Rotate(Vector3.forward * (rotationSpeed * Time.deltaTime), Space.Self);
+                }
+                else
+                    dummyGraphicsTransform.localRotation = horseRotation;
+            }
+            else
+            {
+                if (dummyGraphicsTransform.localRotation.eulerAngles.z > 0f  && dummyGraphicsTransform.localRotation.eulerAngles.z < wheelyAngle)
+                    dummyGraphicsTransform.Rotate(Vector3.back * (rotationSpeed * Time.deltaTime), Space.Self);
+                else
+                    dummyGraphicsTransform.localRotation = forwardRotation;
+            }
         }
 
         [Button]
