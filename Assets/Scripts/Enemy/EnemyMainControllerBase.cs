@@ -21,6 +21,7 @@ namespace Enemy
         protected override void Awake()
         {
             base.Awake();
+            enemyAnimator = GetComponentInChildren<Animator>();
             deadTriggerHash = Animator.StringToHash("Dead");
         }
 
