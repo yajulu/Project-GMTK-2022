@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7774367436456631942, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4c11064d6ef751345a358d7dc0395664, type: 3}
     - target: {fileID: 8982039543711013244, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
       propertyPath: enemyDiceRolledUnityEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -407,7 +411,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f4efef1202f23dc4aae4853836aa01d0, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.164
   m_Pitch: 1
   Loop: 1
   Mute: 0
