@@ -1,3 +1,4 @@
+using DG.Tweening;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -8,6 +9,7 @@ namespace Player.Abilities
     {
         [SerializeField] private Transform fieldTransform;
 
+        private Tweener fieldGraphicsTween;
         protected override void OnEnable()
         {
             base.OnEnable();
@@ -20,6 +22,22 @@ namespace Player.Abilities
             AbilityAction = InputController.MainInput.Player.Field;
             AbilityAction.performed += OnAbilityPerformed;
             AbilityPerformed += SetAbilityField;
+        }
+
+        protected override void OnAbilityPerformed(InputAction.CallbackContext obj)
+        {
+            if (fieldTransform.gameObject.activeSelf)
+                return;
+            // SetAbilityField(true);
+            fieldTransform.DOScale(1f, 0.25f)
+                .From(0)
+                .SetEase(Ease.OutBack)
+                .OnStart(Completed);
+
+            void Completed()
+            {
+                base.OnAbilityPerformed(obj);
+            }
         }
 
         private void SetAbilityField(bool enable)
