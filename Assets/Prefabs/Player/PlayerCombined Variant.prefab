@@ -1263,7 +1263,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e5f1e434de6928142b3da51174c6a744, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.057
+  m_Volume: 0.042
   m_Pitch: 2.36
   Loop: 1
   Mute: 0
@@ -1449,15 +1449,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8513044760601494685, guid: da759cea077bc6e4d863d7e434101f79, type: 3}
       propertyPath: damageScale.x
-      value: 1.02
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 8513044760601494685, guid: da759cea077bc6e4d863d7e434101f79, type: 3}
       propertyPath: damageScale.y
-      value: 1.02
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 8513044760601494685, guid: da759cea077bc6e4d863d7e434101f79, type: 3}
       propertyPath: damageScale.z
-      value: 1.02
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8513044760601494685, guid: da759cea077bc6e4d863d7e434101f79, type: 3}
       propertyPath: playerDict.keyData.Array.size

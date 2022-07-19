@@ -163,6 +163,7 @@ namespace UI
         public void StopGame()
         {
             currentState = GameState.Ended;
+            Time.timeScale = 0;
             gameOverScoreText.text = currentScore.ToString();
             HUDPanel.SetActive(false);
             GameOverPanel.SetActive(true);
