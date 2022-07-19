@@ -58,17 +58,17 @@ MonoBehaviour:
   maxNumber: 5
   spawnRange: {x: 5, y: 3}
   quadList:
-  - center: {x: 6, y: 1}
-    range: {x: 10, y: 3}
-    halfRange: {x: 5, y: 1.5}
-  - center: {x: -6, y: 1}
-    range: {x: 10, y: 3}
-    halfRange: {x: 5, y: 1.5}
-  - center: {x: -6, y: -1}
-    range: {x: 10, y: 3}
-    halfRange: {x: 5, y: 1.5}
-  - center: {x: 6, y: -1}
-    range: {x: 10, y: 3}
-    halfRange: {x: 5, y: 1.5}
+  - center: {x: 6, y: 2}
+    range: {x: 10, y: 3.5}
+    halfRange: {x: 5, y: 1.75}
+  - center: {x: -6, y: 2}
+    range: {x: 10, y: 3.5}
+    halfRange: {x: 5, y: 1.75}
+  - center: {x: -6, y: -2}
+    range: {x: 10, y: 3.5}
+    halfRange: {x: 5, y: 1.75}
+  - center: {x: 6, y: -2}
+    range: {x: 10, y: 3.5}
+    halfRange: {x: 5, y: 1.75}
   currentEnemyType: 0
   spawnTimer: 3
