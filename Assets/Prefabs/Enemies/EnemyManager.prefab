@@ -62,18 +62,18 @@ MonoBehaviour:
   maxNumber: 2
   spawnRange: {x: 5, y: 3}
   quadList:
-  - center: {x: 6, y: 3.2}
-    range: {x: 11, y: 5}
-    halfRange: {x: 5.5, y: 2.5}
-  - center: {x: -6, y: 3.2}
-    range: {x: 11, y: 5}
-    halfRange: {x: 5.5, y: 2.5}
-  - center: {x: -5, y: -2}
-    range: {x: 11, y: 5}
-    halfRange: {x: 5.5, y: 2.5}
-  - center: {x: 6, y: -2}
-    range: {x: 11, y: 5}
-    halfRange: {x: 5.5, y: 2.5}
+  - center: {x: 6, y: 2.58}
+    range: {x: 11, y: 3.4}
+    halfRange: {x: 5.5, y: 1.7}
+  - center: {x: -6, y: 2.46}
+    range: {x: 11, y: 3.41}
+    halfRange: {x: 5.5, y: 1.705}
+  - center: {x: -5, y: -1.68}
+    range: {x: 9.07, y: 4.12}
+    halfRange: {x: 4.535, y: 2.06}
+  - center: {x: 5.14, y: -1.7}
+    range: {x: 9.63, y: 4.21}
+    halfRange: {x: 4.815, y: 2.105}
   maxProgressionSpawnValue: 8
   incrementsTime: 45
   currentEnemyType: 0
