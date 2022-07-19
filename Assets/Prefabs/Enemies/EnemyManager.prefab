@@ -59,7 +59,7 @@ MonoBehaviour:
   enemyHolder: {fileID: 6085768932129878547, guid: 6f1e49541ce444bd3b9438b2e2ffe210, type: 3}
   spawning: 1
   spawnInterval: 5
-  maxNumber: 5
+  maxNumber: 2
   spawnRange: {x: 5, y: 3}
   quadList:
   - center: {x: 6, y: 3.2}
@@ -75,7 +75,7 @@ MonoBehaviour:
     range: {x: 11, y: 5}
     halfRange: {x: 5.5, y: 2.5}
   maxProgressionSpawnValue: 8
-  incrementsTime: 60
+  incrementsTime: 45
   currentEnemyType: 0
   spawnTimer: 3
   progressionIncrementTimer: 0

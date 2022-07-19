@@ -53,8 +53,9 @@ MonoBehaviour:
   hints:
   - Aim at the Enemy with the Toktok's Machine gun to kill it
   - Aim at the Enemy and press Left Mouse button to slice it with the Makana's Knife
-  - Press Left Mouse button to Shield yourself and Damage enemy with the Microbus's
-    Electric field
+    (You are Invunrable while Slicing)
+  - Press Left Mouse button to Shield yourself for 3 seconds and deal Pulse Damage
+    to  enemy with the Microbus's Electric field
   - Press Q to roll the (Changing Vehicle) dice
   - Press E to roll the (Changing Enemy) dice
   - Be careful! The Alien also can roll the dice and change both Vehicles and Enemies.                                     
@@ -206,7 +207,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6847863627492367162, guid: 85e91b89859a5e8479915bdc03f26463, type: 3}
       propertyPath: weaponConfig.damage
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6847863627492367163, guid: 85e91b89859a5e8479915bdc03f26463, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
@@ -424,7 +425,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 422439797562945037, guid: 0f4631a64cd055a4a894269a5bc4f0ec, type: 3}
       propertyPath: weaponConfig.damage
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4260912238789465936, guid: 0f4631a64cd055a4a894269a5bc4f0ec, type: 3}
       propertyPath: maxHealthPoints
@@ -638,7 +639,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6640666548624444604, guid: 732993d8d6fdf1e46ad3aa86abb7ed15, type: 3}
       propertyPath: weaponConfig.damage
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6640666548624444605, guid: 732993d8d6fdf1e46ad3aa86abb7ed15, type: 3}
       propertyPath: looping
@@ -744,7 +745,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 422439797562945037, guid: 0f4631a64cd055a4a894269a5bc4f0ec, type: 3}
       propertyPath: weaponConfig.damage
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4260912238789465936, guid: 0f4631a64cd055a4a894269a5bc4f0ec, type: 3}
       propertyPath: OnDamageableKilledUnityEvent.m_PersistentCalls.m_Calls.Array.size
@@ -954,7 +955,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6640666548624444604, guid: 732993d8d6fdf1e46ad3aa86abb7ed15, type: 3}
       propertyPath: weaponConfig.damage
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6640666548624444605, guid: 732993d8d6fdf1e46ad3aa86abb7ed15, type: 3}
       propertyPath: InitialModule.startSpeed.scalar

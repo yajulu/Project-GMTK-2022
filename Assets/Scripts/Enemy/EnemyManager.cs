@@ -20,7 +20,7 @@ namespace Enemy
         [SerializeField, TitleGroup("Spawning")] private GameObject enemyHolder;
         [SerializeField, TitleGroup("Spawning")] private bool spawning = true;
         [SerializeField, TitleGroup("Spawning")] private float spawnInterval = 15f;
-        [SerializeField, TitleGroup("Spawning")] private int maxNumber = 4;
+        [SerializeField, TitleGroup("Spawning")] private int maxNumber = 2;
         [SerializeField, TitleGroup("Spawning")] private Vector2 spawnRange;
         [SerializeField, TitleGroup("Spawning")]
         private SpawnQuadrant[] quadList;
@@ -30,7 +30,7 @@ namespace Enemy
 
         [SerializeField, TitleGroup("Progression")]
         private float incrementsTime;
-        
+
         [SerializeField, TitleGroup("Debug")] private eEnemyType currentEnemyType;
         [SerializeField, TitleGroup("Debug"), ReadOnly] private float spawnTimer;
         [SerializeField, TitleGroup("Debug"), ReadOnly] private float progressionIncrementTimer;
@@ -92,8 +92,8 @@ namespace Enemy
                     maxNumber++;
                     progressionIncrementTimer = incrementsTime;
                 }
-                
-                    
+
+
 
                 spawnTimer -= Time.deltaTime;
                 progressionIncrementTimer -= Time.deltaTime;
@@ -111,7 +111,7 @@ namespace Enemy
             var holder = Instantiate(enemyHolder, spawnPosition, Quaternion.identity, transform);
             dummyCurrentEnemy = null;
             dummyCurrentEnemy = Instantiate(config.Prefab, spawnPosition, config.RandomizeRotation ? Quaternion.Euler(0, 0, Random.Range(0, 360)) : Quaternion.identity, holder.transform);
-            holder.transform.DOMove( spawnPosition, 3f)
+            holder.transform.DOMove(spawnPosition, 3f)
                 .From(initialPosition);
             spawnCounter++;
 

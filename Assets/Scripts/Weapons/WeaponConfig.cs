@@ -5,9 +5,9 @@ using UnityEngine;
 namespace Weapons
 {
     [Serializable]
-    public class WeaponConfig 
+    public class WeaponConfig
     {
-        [SerializeField, MinValue(1)] private int damage;
+        [SerializeField, MinValue(0)] private int damage;
 
         public int Damage => damage;
     }
