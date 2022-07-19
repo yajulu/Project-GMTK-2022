@@ -3,6 +3,7 @@ using Core;
 using DG.Tweening;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using Weapons;
 
@@ -39,6 +40,7 @@ namespace Player.Abilities
         [SerializeField, ReadOnly, TitleGroup("Debug")] private float coolDownTimer;
 
         public event Action<bool> AbilityPerformed;
+        public UnityEvent AbilityPreformedUnityEvent;
 
         protected InputAction AbilityAction;
         private PlayerMotor motor;
@@ -98,6 +100,7 @@ namespace Player.Abilities
                 ApplyDamageToEnemies();
                 isPerformingAbility = true;
                 AbilityPerformed?.Invoke(true);
+                AbilityPreformedUnityEvent?.Invoke();
             }
 
             void DashComplete()
