@@ -964,6 +964,24 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 52.7
       objectReference: {fileID: 0}
+    - target: {fileID: 5098668309657654219, guid: bdfbc1653c6235d4883068147f609228, type: 3}
+      propertyPath: m_text
+      value: 'Developed by Yajulu Team
+
+        Omar ElSayed - Game Designer
+
+        Steven
+        Henry - Game Developer
+
+        George Ashraf - Lead Artist
+
+        Zeyad
+        ElGendy - Animator/Artist
+
+        George Ashraf - Composer/SoundDesigner
+
+'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdfbc1653c6235d4883068147f609228, type: 3}
 --- !u!1001 &6799664142879644408

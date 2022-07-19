@@ -332,7 +332,7 @@ MonoBehaviour:
   playOnEnable: 0
   playOnAwake: 0
   isMusic: 0
-  clip: {fileID: 8300000, guid: 52ab4f3f80287af419a917fe780c0a62, type: 3}
+  clip: {fileID: 8300000, guid: d664ed6ec16efa6479f038ac50ddc5b8, type: 3}
   volume: 0
 --- !u!1 &2846669024270248802
 GameObject:

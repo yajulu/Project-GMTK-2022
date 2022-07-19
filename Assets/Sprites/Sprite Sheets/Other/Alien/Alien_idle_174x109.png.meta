@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 55050400584f0e04695f241b4defa13d
+guid: 07fe93c0c30f8d644861b20e8ed90c50
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -140,7 +140,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ALIEN3_IDLE_0
+      name: Alien_idle_174x109_0
       rect:
         serializedVersion: 2
         x: 0
@@ -154,14 +154,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 706934b5fbdd28b458a4b2a167ae8120
-      internalID: -989231957
+      spriteID: 4b1535d63b20184458a5579e14ae4474
+      internalID: 1765227927
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ALIEN3_IDLE_1
+      name: Alien_idle_174x109_1
       rect:
         serializedVersion: 2
         x: 174
@@ -175,14 +175,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 000b16a4d1c29474faec1d5e11793de5
-      internalID: -1776110513
+      spriteID: 0a3b1be465b32f84d8a1ab28835d7f85
+      internalID: 1470605167
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ALIEN3_IDLE_2
+      name: Alien_idle_174x109_2
       rect:
         serializedVersion: 2
         x: 348
@@ -196,14 +196,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd0c35d77cf9a5a4ab3f6146ee2b4e30
-      internalID: 1566545602
+      spriteID: bb9dd3274cd168647b3a570377377d2f
+      internalID: 1579493471
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ALIEN3_IDLE_3
+      name: Alien_idle_174x109_3
       rect:
         serializedVersion: 2
         x: 522
@@ -217,14 +217,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6fa014c662a837e469b64e0d0d54e153
-      internalID: 1679335110
+      spriteID: 00b69c9e82339844f8dfedfd27f61434
+      internalID: 2035651369
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ALIEN3_IDLE_4
+      name: Alien_idle_174x109_4
       rect:
         serializedVersion: 2
         x: 696
@@ -238,14 +238,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28767f19a554d314f940bf6c1254e1f0
-      internalID: 800069746
+      spriteID: 4b8c5807089057843a130bff5199797e
+      internalID: -1185763042
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ALIEN3_IDLE_5
+      name: Alien_idle_174x109_5
       rect:
         serializedVersion: 2
         x: 870
@@ -259,14 +259,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d0f0c796e4220641a1ffbb60463a555
-      internalID: -643037723
+      spriteID: e50e8afe7555c9d478758c3ca4d8ed31
+      internalID: -1470980136
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ALIEN3_IDLE_6
+      name: Alien_idle_174x109_6
       rect:
         serializedVersion: 2
         x: 1044
@@ -280,14 +280,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2dbd51e97cf56b849a3314f2a72c1a97
-      internalID: 34116954
+      spriteID: c3c8fba7b993c2a4fa862c5ea8a2ec04
+      internalID: -709161922
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ALIEN3_IDLE_7
+      name: Alien_idle_174x109_7
       rect:
         serializedVersion: 2
         x: 1218
@@ -301,14 +301,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42da6feb99ea62043985ab1a1938c424
-      internalID: -2021583069
+      spriteID: 6ecb40c6ff8e6ef42b6c74190a91e1c5
+      internalID: 214992451
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ALIEN3_IDLE_8
+      name: Alien_idle_174x109_8
       rect:
         serializedVersion: 2
         x: 1392
@@ -322,14 +322,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f3ee931a4d1fbe45a50e9e5f63ed472
-      internalID: -1394678879
+      spriteID: ae12f5d9f82bf8f45823bb869356fc1f
+      internalID: 2010371109
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ALIEN3_IDLE_9
+      name: Alien_idle_174x109_9
       rect:
         serializedVersion: 2
         x: 1566
@@ -343,14 +343,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8acb33503c6cb574c827ceed7dabb8c0
-      internalID: -1830423376
+      spriteID: f922bb2aaab4a9d4aa3329a07bdac671
+      internalID: 1909995700
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ALIEN3_IDLE_10
+      name: Alien_idle_174x109_10
       rect:
         serializedVersion: 2
         x: 1740
@@ -364,14 +364,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb9626cf18ee5b9449efe697c1744b44
-      internalID: -1811560955
+      spriteID: f2011cb7d9b3fad44807f55a3502d4c2
+      internalID: 1830334505
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ALIEN3_IDLE_11
+      name: Alien_idle_174x109_11
       rect:
         serializedVersion: 2
         x: 1914
@@ -385,14 +385,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86474dea6d8121a448f7c4256d1cd5b5
-      internalID: -1489967284
+      spriteID: 830df31f50bcf4145ac1b4361ebb4be4
+      internalID: -151361139
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ALIEN3_IDLE_12
+      name: Alien_idle_174x109_12
       rect:
         serializedVersion: 2
         x: 2088
@@ -406,14 +406,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d2698aa2fb947d4b8cfd283fda8cf4f
-      internalID: 352323075
+      spriteID: f973faa25df7385458f7cb1238ba1a52
+      internalID: -1608240756
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ALIEN3_IDLE_13
+      name: Alien_idle_174x109_13
       rect:
         serializedVersion: 2
         x: 2262
@@ -427,14 +427,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 978459a92f79a824bb4c2befbb64b4d6
-      internalID: -745696085
+      spriteID: 62df01aa79f1823498960c733e9cc81e
+      internalID: 1909924831
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ALIEN3_IDLE_14
+      name: Alien_idle_174x109_14
       rect:
         serializedVersion: 2
         x: 2436
@@ -448,14 +448,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55b4d8d4e4de7904c95da83acda0c1a3
-      internalID: -1127585377
+      spriteID: 6090959c0748a6d429ffcd6079b72afa
+      internalID: 121461683
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ALIEN3_IDLE_15
+      name: Alien_idle_174x109_15
       rect:
         serializedVersion: 2
         x: 2610
@@ -469,8 +469,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28329635be1bcc94193fc61c892d205f
-      internalID: -638795996
+      spriteID: d062d22caebf67b499af4d723fbfdcbf
+      internalID: 1199662357
       vertices: []
       indices: 
       edges: []
@@ -486,22 +486,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ALIEN3_IDLE_12: 352323075
-      ALIEN3_IDLE_7: -2021583069
-      ALIEN3_IDLE_6: 34116954
-      ALIEN3_IDLE_15: -638795996
-      ALIEN3_IDLE_1: -1776110513
-      ALIEN3_IDLE_10: -1811560955
-      ALIEN3_IDLE_9: -1830423376
-      ALIEN3_IDLE_5: -643037723
-      ALIEN3_IDLE_14: -1127585377
-      ALIEN3_IDLE_4: 800069746
-      ALIEN3_IDLE_11: -1489967284
-      ALIEN3_IDLE_13: -745696085
-      ALIEN3_IDLE_0: -989231957
-      ALIEN3_IDLE_2: 1566545602
-      ALIEN3_IDLE_3: 1679335110
-      ALIEN3_IDLE_8: -1394678879
+      Alien_idle_174x109_5: -1470980136
+      Alien_idle_174x109_10: 1830334505
+      Alien_idle_174x109_4: -1185763042
+      Alien_idle_174x109_15: 1199662357
+      Alien_idle_174x109_8: 2010371109
+      Alien_idle_174x109_0: 1765227927
+      Alien_idle_174x109_6: -709161922
+      Alien_idle_174x109_7: 214992451
+      Alien_idle_174x109_13: 1909924831
+      Alien_idle_174x109_11: -151361139
+      Alien_idle_174x109_12: -1608240756
+      Alien_idle_174x109_9: 1909995700
+      Alien_idle_174x109_14: 121461683
+      Alien_idle_174x109_3: 2035651369
+      Alien_idle_174x109_1: 1470605167
+      Alien_idle_174x109_2: 1579493471
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
