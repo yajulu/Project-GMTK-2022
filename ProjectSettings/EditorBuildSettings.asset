@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Omar.unity
     guid: 6b9101a1c156312449985dd5a2947dbd
   - enabled: 0
