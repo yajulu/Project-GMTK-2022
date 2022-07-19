@@ -9,6 +9,7 @@ using UnityEngine.InputSystem;
 using Yajulu.Input;
 using Random = UnityEngine.Random;
 using UI;
+using Unity.VisualScripting;
 using UnityEngine.Events;
 using UnityEngine.Rendering;
 
@@ -78,9 +79,13 @@ namespace Core
 
         private void OnDisable()
         {
-            mainInput.Player.RollEnemyDice.performed -= RollEnemyDiceOnPerformed;
-            mainInput.Player.RollPlayerDice.performed -= RollPlayerDiceOnPerformed;
-            _playerMainControllerBase.PlayerTypeChanged -= UpdateCurrentPlayerType;
+            if (!mainInput.IsUnityNull())
+            {
+                mainInput.Player.RollEnemyDice.performed -= RollEnemyDiceOnPerformed;
+                mainInput.Player.RollPlayerDice.performed -= RollPlayerDiceOnPerformed;    
+            }
+            if (_playerMainControllerBase.IsUnityNull())
+                _playerMainControllerBase.PlayerTypeChanged -= UpdateCurrentPlayerType;
         }
 
         private void RollPlayerDiceOnPerformed(InputAction.CallbackContext obj)
