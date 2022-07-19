@@ -49,10 +49,14 @@ MonoBehaviour:
     valueData:
     - Prefab: {fileID: 4260912238789465940, guid: 0f4631a64cd055a4a894269a5bc4f0ec, type: 3}
       RandomizeRotation: 0
+      InitialSpawnPosition: {x: 0, y: 0}
     - Prefab: {fileID: 7058684789700895331, guid: 85e91b89859a5e8479915bdc03f26463, type: 3}
       RandomizeRotation: 1
+      InitialSpawnPosition: {x: 0, y: 0}
     - Prefab: {fileID: 7121704832930903525, guid: 732993d8d6fdf1e46ad3aa86abb7ed15, type: 3}
       RandomizeRotation: 0
+      InitialSpawnPosition: {x: 0, y: 0}
+  enemyHolder: {fileID: 6085768932129878547, guid: 6f1e49541ce444bd3b9438b2e2ffe210, type: 3}
   spawning: 1
   spawnInterval: 5
   maxNumber: 5
@@ -75,3 +79,5 @@ MonoBehaviour:
   currentEnemyType: 0
   spawnTimer: 3
   progressionIncrementTimer: 0
+  nextQuadIndex: 0
+  spawnCounter: 0

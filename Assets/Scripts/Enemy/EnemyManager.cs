@@ -17,6 +17,7 @@ namespace Enemy
         public event Action<eEnemyType> EnemySwitched;
 
         [SerializeField, TitleGroup("Spawning")] private EnemyTypeDict enemyTypeDict;
+        [SerializeField, TitleGroup("Spawning")] private GameObject enemyHolder;
         [SerializeField, TitleGroup("Spawning")] private bool spawning = true;
         [SerializeField, TitleGroup("Spawning")] private float spawnInterval = 15f;
         [SerializeField, TitleGroup("Spawning")] private int maxNumber = 4;
@@ -107,9 +108,10 @@ namespace Enemy
             var spawnPosition = spawnCounter < maxNumber ? quadList[spawnCounter % quadList.Length].GetRandomPositionInQuadrant() : GetRandomPosition();
             var initialPosition = spawnPosition.normalized * (20 - spawnPosition.magnitude);
             var config = enemyTypeDict[currentEnemyType];
+            var holder = Instantiate(enemyHolder, spawnPosition, Quaternion.identity, transform);
             dummyCurrentEnemy = null;
-            dummyCurrentEnemy = Instantiate(config.Prefab, spawnPosition, config.RandomizeRotation ? Quaternion.Euler(0, 0, Random.Range(0, 360)) : Quaternion.identity, transform);
-            dummyCurrentEnemy.transform.DOMove(spawnPosition, 3f)
+            dummyCurrentEnemy = Instantiate(config.Prefab, spawnPosition, config.RandomizeRotation ? Quaternion.Euler(0, 0, Random.Range(0, 360)) : Quaternion.identity, holder.transform);
+            holder.transform.DOMove( spawnPosition, 3f)
                 .From(initialPosition);
             spawnCounter++;
 
@@ -125,9 +127,9 @@ namespace Enemy
             {
                 var currentChild = transform.GetChild(i);
                 var config = enemyTypeDict[currentEnemyType];
-                Instantiate(config.Prefab, currentChild.position, config.RandomizeRotation ? Quaternion.Euler(0, 0, Random.Range(0, 360)) : Quaternion.identity, transform);
-                currentChild.gameObject.SetActive(false);
-                Destroy(currentChild.gameObject, 3f);
+                Instantiate(config.Prefab, currentChild.position, config.RandomizeRotation ? Quaternion.Euler(0, 0, Random.Range(0, 360)) : Quaternion.identity, currentChild);
+                currentChild.GetChild(0).gameObject.SetActive(false);
+                Destroy(currentChild.GetChild(0).gameObject, 3f);
             }
         }
 
