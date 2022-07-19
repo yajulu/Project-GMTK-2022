@@ -406,7 +406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85571745c58247146b8e1e78e5e1c2ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _persistent: 1
+  _persistent: 0
   diceCooldown: 0
   dice: {fileID: 5098668308639946667}
   diceCoolDown: {fileID: 5098668309233276370}

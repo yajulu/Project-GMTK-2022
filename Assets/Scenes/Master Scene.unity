@@ -131,10 +131,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8982039543711013244, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
-      propertyPath: userCoolDownTime
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 8982039543711013244, guid: e8afd4dd9688e6f478c008115c3caa5c, type: 3}
       propertyPath: enemyDiceRolledUnityEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 841477598}
@@ -827,10 +823,6 @@ PrefabInstance:
     - target: {fileID: 6799664143720429348, guid: 48d63531a10ea3d47b69a80d2950a75a, type: 3}
       propertyPath: m_Name
       value: Tutorial Objects
-      objectReference: {fileID: 0}
-    - target: {fileID: 6799664143720429348, guid: 48d63531a10ea3d47b69a80d2950a75a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6799664143720429349, guid: 48d63531a10ea3d47b69a80d2950a75a, type: 3}
       propertyPath: m_RootOrder

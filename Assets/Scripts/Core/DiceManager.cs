@@ -82,9 +82,9 @@ namespace Core
             if (!mainInput.IsUnityNull())
             {
                 mainInput.Player.RollEnemyDice.performed -= RollEnemyDiceOnPerformed;
-                mainInput.Player.RollPlayerDice.performed -= RollPlayerDiceOnPerformed;    
+                mainInput.Player.RollPlayerDice.performed -= RollPlayerDiceOnPerformed;
             }
-            if (_playerMainControllerBase.IsUnityNull())
+            if (!_playerMainControllerBase.IsUnityNull())
                 _playerMainControllerBase.PlayerTypeChanged -= UpdateCurrentPlayerType;
         }
 

@@ -198,13 +198,9 @@ namespace UI
 
             if (PauseMenuPanel.activeSelf || GameOverPanel.activeSelf)
             {
-                SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name).completed += (op) => { ResetScene(); };
-
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-                //SceneManager.LoadScene(1);
+                SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
 
 
-                //Set "Start Game Boolean" here
             }
         }
 
@@ -214,7 +210,7 @@ namespace UI
             StartMenuPanel.SetActive(true);
             GameOverPanel.SetActive(false);
         }
-        
+
 
 
         public void ShowHint(string hint)

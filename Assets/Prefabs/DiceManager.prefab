@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be4c2de466692cd479e5104b4d0eb569, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  userCoolDownTime: 3
+  userCoolDownTime: 15
   enemyTypes: 000000000200000003000000
   playerTypes: 000000000100000002000000
   currentEnemyType: 0
