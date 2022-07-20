@@ -142,8 +142,8 @@ MonoBehaviour:
   playOnEnable: 0
   playOnAwake: 0
   isMusic: 0
-  clip: {fileID: 8300000, guid: f4606b1ec5951644fa7acb4d3bb71714, type: 3}
-  volume: 0.442
+  clip: {fileID: 8300000, guid: 6590ec8110b3d0c4485505cae3a184a6, type: 3}
+  volume: 0.7
 --- !u!114 &6461210009479803730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,8 +159,8 @@ MonoBehaviour:
   playOnEnable: 0
   playOnAwake: 0
   isMusic: 0
-  clip: {fileID: 8300000, guid: da59b655e0f02db48a808dd169fd770a, type: 3}
-  volume: 0
+  clip: {fileID: 8300000, guid: fbb81dc5958ba754fa555a5ea7e9a78d, type: 3}
+  volume: 1
 --- !u!1 &622231757332585181
 GameObject:
   m_ObjectHideFlags: 0
