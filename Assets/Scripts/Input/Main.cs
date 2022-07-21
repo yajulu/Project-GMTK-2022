@@ -206,6 +206,17 @@ namespace Yajulu.Input
                 },
                 {
                     ""name"": """",
+                    ""id"": ""d55f5555-e9b7-4ebd-b4c3-e3f70255f285"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""0de5937f-bb7a-48a6-a5fe-09830c508bf6"",
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": ""Press"",

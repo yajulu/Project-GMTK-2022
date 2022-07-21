@@ -121,6 +121,7 @@ namespace UI
                 TutorialPanel.SetActive(false);
             }
             HUDPanel.SetActive(true);
+            HUDPanel.transform.GetChild(1).transform.GetChild(4).gameObject.SetActive(false);
             Time.timeScale = 1;
             currentScore = 0;
             currentState = GameState.Started;
@@ -139,6 +140,8 @@ namespace UI
                 TutorialManager.SetActive(true);
                 StartMenuPanel.SetActive(false);
                 TutorialPanel.SetActive(true);
+                HUDPanel.SetActive(true);
+                HUDPanel.transform.GetChild(1).GetChild(4).gameObject.SetActive(false);
                 Time.timeScale = 1;
                 currentState = GameState.Initialized;
                 TutorialStarted?.Invoke();
